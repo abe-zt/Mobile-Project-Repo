@@ -9,9 +9,11 @@
             Source="pillboylogo.png"
             VerticalOptions="FillAndExpand"/>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Pill-Boy" 
+        <Label 
+           Text="Welcome to Pill-Boy" 
            HorizontalOptions="Center"
-           VerticalOptions="StartAndExpand" />
+           VerticalOptions="StartAndExpand"
+            FontSize="Large"/>
     </StackLayout>
 
 </ContentPage>
