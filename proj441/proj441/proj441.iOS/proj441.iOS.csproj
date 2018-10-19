@@ -158,6 +158,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\pillboylogo.png" />
+    <BundleResource Include="Resources\pillboylogored.png" />
   </ItemGroup>
 </Project>

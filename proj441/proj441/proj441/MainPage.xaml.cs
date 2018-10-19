@@ -12,6 +12,7 @@ namespace proj441
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);  //THIS IS THE IDEAL LOCATION (underneath InitializeComponent
         }
     }
 }

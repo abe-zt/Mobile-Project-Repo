@@ -4,16 +4,58 @@
              xmlns:local="clr-namespace:proj441"
              x:Class="proj441.MainPage">
 
-    <StackLayout>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="5, 20, 5, 0" />
+            <On Platform="Android, UWP" Value="5, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <Grid BackgroundColor="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
         <Image 
-            Source="pillboylogo.png"
-            VerticalOptions="FillAndExpand"/>
+            Grid.Row="0"
+            Margin="20"
+            Source="pillboylogored.png"
+            VerticalOptions="Fill"/>
         <!-- Place new controls here -->
         <Label 
-           Text="Welcome to Pill-Boy" 
-           HorizontalOptions="Center"
-           VerticalOptions="StartAndExpand"
+            Grid.Row="1"
+            Text="Welcome to Pill-Boy" 
+            HorizontalOptions="Center"
+            VerticalOptions="StartAndExpand"
+            TextColor="Black" 
             FontSize="Large"/>
-    </StackLayout>
-
+        <Grid BackgroundColor="LightBlue"
+            Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="0"
+                BorderColor="Black"
+                BorderWidth="5"
+                BackgroundColor="Transparent"
+                HorizontalOptions="Fill"
+                x:Name="RecurringButton"
+                Text="Scheduled Dosages"
+                />
+            <Button
+                Grid.Column="1"
+                BorderColor="Black"
+                BorderWidth="5"
+                BackgroundColor="Transparent"
+                HorizontalOptions="Fill"
+                x:Name="AsNeededButton"
+                Text="Taken As Needed"
+                />
+        </Grid>
+    </Grid>
 </ContentPage>

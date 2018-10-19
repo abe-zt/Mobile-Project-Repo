@@ -4,31 +4,36 @@ using System.Text;
 
 namespace proj441
 {
-    class MedicineCabinet
+    class Prescription
     {
         public string Name
         {
             get;
             set;
         }
-        
-        public double Dosage
+
+        public string Strength
         {
             get;
             set;
         }
 
-        public int Count
+        public string Instructions
         {
             get;
             set;
         }
 
-        public string Notes
+        public string PhysicalDescription
         {
             get;
             set;
         }
 
+        public int Quantity
+        {
+            get;
+            set;
+        }
     }
 }
