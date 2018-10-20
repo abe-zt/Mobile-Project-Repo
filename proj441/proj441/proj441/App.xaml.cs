@@ -10,8 +10,8 @@ namespace proj441
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new MainPage());
+
         }
 
         protected override void OnStart()
