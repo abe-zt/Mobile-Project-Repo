@@ -13,7 +13,7 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <Grid BackgroundColor="LightYellow" Padding="10">
+    <Grid BackgroundColor="Orange" Padding="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="Auto"/>
@@ -63,6 +63,7 @@
                 HorizontalOptions="FillAndExpand"
                 x:Name="RecurringButton"
                 Text="Scheduled Dosages"
+                TextColor="Black"
                 />
             <Button
                 BorderRadius="0"
@@ -74,6 +75,7 @@
                 HorizontalOptions="FillAndExpand"
                 x:Name="AsNeededButton"
                 Text="Taken As Needed"
+                TextColor="Black"
                 />
             <Button
                 BorderRadius="0"
@@ -85,6 +87,7 @@
                 HorizontalOptions="FillAndExpand"
                 x:Name="RecurringButton2"
                 Text="Scheduled Dosages"
+                TextColor="Black"
                 />
             <Button
                 BorderRadius="0"
@@ -96,6 +99,7 @@
                 HorizontalOptions="FillAndExpand"
                 x:Name="AsNeededButton2"
                 Text="Taken As Needed"
+                TextColor="Black"
                 />
         </Grid>
     </Grid>
