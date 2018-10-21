@@ -20,7 +20,7 @@ namespace proj441.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
-            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#ff0000"));  //changes top color
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#D32F2F"));  //changes top color  
         }
     }
 }

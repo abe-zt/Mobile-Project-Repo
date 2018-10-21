@@ -2,9 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:proj441"
-             x:Class="proj441.MainPage">
-
-    
+             x:Class="proj441.MainPage" >
     
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
@@ -13,94 +11,73 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <Grid BackgroundColor="Orange" Padding="10">
+    <Grid RowSpacing="0"  
+          ColumnSpacing="0" >
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*" />
             <RowDefinition Height="*"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Image Grid.Row="0"
+               Grid.RowSpan="5"
+               Source="doodlepills.png"
+               Aspect="AspectFill"/>
+
         <Image 
-            BackgroundColor="LightGreen"
             Grid.Row="1"
             Margin="0"
-            Source="pillboylogored.png"
-            Aspect="AspectFit" />
-        
-        <Label 
-            Grid.Row="2"
-            Text="Welcome to Pill-Boy" 
-            HorizontalOptions="Center"
-            VerticalOptions="StartAndExpand"
-            TextColor="Black" 
-            FontSize="Large"/>
-        
-        <Grid BackgroundColor="LightBlue"
+            Source="pillboylogoredshadow.png"
+            BackgroundColor="White"
+            Aspect="AspectFit" 
+        />
+
+        <StackLayout
             Padding="0"
-            Grid.Row="3"
-            RowSpacing="10"
-            ColumnSpacing="10" >
+            Grid.Row="2" 
+            BackgroundColor="White" 
+            VerticalOptions="Start">
             
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+            <Label 
+                Text="Welcome to Pill-Boy" 
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                TextColor="#212121" 
+                FontSize="Large"/>
             
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            
+        
+        </StackLayout>
+
+        <StackLayout Spacing="0"
+            BackgroundColor="Yellow"
+            Padding="0, 0, 0, 0"
+            Grid.Row="4">
+
             <Button
                 BorderRadius="0"
-                Grid.Row="0"
-                Grid.Column="0"
                 BorderColor="Red"
                 BorderWidth="2"
                 BackgroundColor="White"
                 HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
                 x:Name="RecurringButton"
                 Text="Scheduled Dosages"
                 TextColor="Black"
                 />
+            
             <Button
                 BorderRadius="0"
-                Grid.Row="0"
-                Grid.Column="1"
                 BorderColor="Red"
                 BorderWidth="2"
                 BackgroundColor="White"
                 HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
                 x:Name="AsNeededButton"
                 Text="Taken As Needed"
                 TextColor="Black"
                 />
-            <Button
-                BorderRadius="0"
-                Grid.Row="1"
-                Grid.Column="0"
-                BorderColor="Red"
-                BorderWidth="2"
-                BackgroundColor="White"
-                HorizontalOptions="FillAndExpand"
-                x:Name="RecurringButton2"
-                Text="Scheduled Dosages"
-                TextColor="Black"
-                />
-            <Button
-                BorderRadius="0"
-                Grid.Row="1"
-                Grid.Column="1"
-                BorderColor="Red"
-                BorderWidth="2"
-                BackgroundColor="White"
-                HorizontalOptions="FillAndExpand"
-                x:Name="AsNeededButton2"
-                Text="Taken As Needed"
-                TextColor="Black"
-                />
-        </Grid>
+            
+        </StackLayout>
     </Grid>
 </ContentPage>

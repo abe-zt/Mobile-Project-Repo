@@ -158,6 +158,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\pillboylogored.png" />
+    <BundleResource Include="Resources\pillboylogonewred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pillboylogowhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\doodlepills.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pillboylogoredshadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pillboylogoredthicc.png" />
   </ItemGroup>
 </Project>
