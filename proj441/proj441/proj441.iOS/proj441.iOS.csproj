@@ -172,4 +172,16 @@
   <ItemGroup>
     <BundleResource Include="Resources\pillboylogoredthicc.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\calendaricon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\homeicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\remindersicon.png" />
+  </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@ namespace proj441
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new proj441.MainPage();
 
         }
 

@@ -130,12 +130,16 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="calendaricon.png" />
     <Content Include="doodlepills.png" />
+    <Content Include="homeicon.png" />
+    <Content Include="logicon.png" />
     <Content Include="pillboylogonewred.png" />
     <Content Include="pillboylogoredshadow.png" />
     <Content Include="pillboylogoredthicc.png" />
     <Content Include="pillboylogowhite.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="remindersicon.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace proj441
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Recurring : ContentPage
+	public partial class LogPage : ContentPage
 	{
-		public Recurring ()
+		public LogPage ()
 		{
 			InitializeComponent ();
 		}

@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace proj441
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MasterPage : ContentPage
+	public partial class ReminderPage : ContentPage
 	{
-		public MasterPage ()
+		public ReminderPage ()
 		{
-			InitializeComponent();
+			InitializeComponent ();
 		}
 	}
 }
