@@ -13,10 +13,10 @@
 
     <Grid RowSpacing="0"  ColumnSpacing="0" >
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1.1*"/>
+            <RowDefinition Height="1.4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -32,45 +32,36 @@
         <StackLayout
             Grid.Row="0"
             Grid.Column="0"
-            BackgroundColor="Transparent" 
+            BackgroundColor="DarkRed" 
             HorizontalOptions="Fill"
             VerticalOptions="Fill">
         </StackLayout>
 
+
         <StackLayout 
-            Spacing="5"
-            BackgroundColor="White"
+            Margin="10, 20, 10, 10"
             Grid.Row="1"
-            Grid.Column="0">
-            <BoxView
-                VerticalOptions="Start"
-                HeightRequest="10"
-                HorizontalOptions="Fill"
-                Color="#212121"/>
-            <BoxView
-                VerticalOptions="End"
-                HeightRequest="10"
-                HorizontalOptions="Fill"
-                Color="#212121"/>
+            Grid.Column="0"
+            VerticalOptions="Start"
+            HorizontalOptions="CenterAndExpand"
+            BackgroundColor="#F44336"
+            Padding="5">
 
-            <Image
-                VerticalOptions="Center"
+            <StackLayout 
                 Margin="0"
-                Source="pillboylogoredshadow.png"
-                BackgroundColor="Transparent"
-                Aspect="AspectFit" />
-
-            <BoxView
-                VerticalOptions="Start"
-                HeightRequest="10"
-                HorizontalOptions="Fill"
-                Color="#212121"/>
-            <BoxView
-                VerticalOptions="End"
-                HeightRequest="10"
-                HorizontalOptions="Fill"
-                Color="#212121"/>
-
+                Padding="5"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                BackgroundColor="White">
+                <Image
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Source="pillboylogoredshadow.png"
+                    Scale="1"
+                    Aspect="AspectFit"
+                    BackgroundColor="White"
+                    />
+            </StackLayout>
         </StackLayout>
 
         <StackLayout
@@ -94,7 +85,7 @@
                 FontSize="Micro"/>
         </StackLayout>
         
-        <Grid Grid.Row="3" Grid.Column="0" RowSpacing="0" BackgroundColor="Transparent" Padding="5, 0, 5, 40" >
+        <Grid Grid.Row="3" Grid.Column="0" RowSpacing="10" BackgroundColor="Transparent" Padding="10, 10, 10, 20" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*"/>
@@ -102,14 +93,15 @@
             </Grid.RowDefinitions>
 
             <Button
+                
                 Grid.Row="0"
                 BorderRadius="0"
                 BorderColor="#F44336"
                 BorderWidth="5"
                 BackgroundColor="White"
-                HorizontalOptions="Fill"
-                VerticalOptions="Center"
-                x:Name="LogTakenButton"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                x:Name="LogDosageButton"
                 Text="LOG A DOSAGE"
                 TextColor="#212121"
                 />
@@ -120,25 +112,27 @@
                 BorderColor="#F44336"
                 BorderWidth="5"
                 BackgroundColor="White"
-                HorizontalOptions="Fill"
-                VerticalOptions="Center"
-                x:Name="RecurringButton"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                x:Name="ReminderButton"
+                Text="SET A REMINDER"
+                TextColor="#212121"
+                />
+
+            <Button
+                Grid.Row="2"
+                BorderRadius="0"
+                BorderColor="#F44336"
+                BorderWidth="5"
+                BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                x:Name="HistoryButton"
                 Text="SEE DOSAGE history"
                 TextColor="#212121"
                 />
             
-            <Button
-                Grid.Row="2"
-                BorderRadius="1"
-                BorderColor="#F44336"
-                BorderWidth="5"
-                BackgroundColor="White"
-                HorizontalOptions="Fill"
-                VerticalOptions="Center"
-                x:Name="AsNeededButton"
-                Text="Taken As Needed"
-                TextColor="#212121"
-                />
+
         </Grid>
         
     </Grid>
