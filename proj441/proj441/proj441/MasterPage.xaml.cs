@@ -15,6 +15,9 @@ namespace proj441
 		public MasterPage ()
 		{
 			InitializeComponent();
-		}
+            //Title = "PageTitle";
+
+            //((MasterDetailPage)Application.Current.MainPage).BackgroundColor = Color.DarkRed;
+        }
 	}
 }

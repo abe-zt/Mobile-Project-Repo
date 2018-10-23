@@ -7,7 +7,7 @@
         <local:MasterPage x:Name="masterPage" />
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage>
+        <NavigationPage BarBackgroundColor="DarkRed" >
             <x:Arguments>
                 <local:HomePage />
             </x:Arguments>
