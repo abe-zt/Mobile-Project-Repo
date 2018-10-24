@@ -75,7 +75,7 @@
                 FontSize="Micro"/>
         </StackLayout>
 
-        <Grid VerticalOptions="EndAndExpand" Grid.Row="2" Grid.Column="0" RowSpacing="10" BackgroundColor="Transparent" Padding="10, 10, 10, 20" >
+        <Grid VerticalOptions="EndAndExpand" Grid.Row="2" Grid.Column="0" RowSpacing="5" BackgroundColor="Transparent" Padding="10, 10, 10, 20" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*"/>
@@ -93,6 +93,7 @@
                 VerticalOptions="FillAndExpand"
                 x:Name="LogDosageButton"
                 Text="LOG A DOSAGE"
+                FontSize="Medium"
                 TextColor="#212121"
                 />
 
@@ -106,6 +107,7 @@
                 VerticalOptions="FillAndExpand"
                 x:Name="ReminderButton"
                 Text="SET A REMINDER"
+                FontSize="Medium"
                 TextColor="#212121"
                 />
 
@@ -118,7 +120,8 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                 x:Name="HistoryButton"
-                Text="SEE DOSAGE history"
+                Text="SEE DOSAGE HISTORY"
+                FontSize="Medium"
                 TextColor="#212121"
                 />
 

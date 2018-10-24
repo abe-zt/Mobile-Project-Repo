@@ -3,28 +3,32 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:proj441"
 			 x:Class="proj441.MasterPage"
-			 Padding="0,40,0,0"
+			 Padding="0,0,0,0"
 			 Title="Personal Organiser">
     <StackLayout>
-        <ListView x:Name="listView" x:FieldModifier="public">
+        <ListView x:Name="listView" x:FieldModifier="public" RowHeight="50" >
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:MasterPageItem}">
                     <local:MasterPageItem Title="Home" IconSource="homeicon.png" TargetType="{x:Type local:HomePage}" />
-                    <local:MasterPageItem Title="Log" IconSource="logicon.png" TargetType="{x:Type local:LogPage}" />
+                    <local:MasterPageItem Title="Logbook" IconSource="logicon.png" TargetType="{x:Type local:LogPage}" />
                     <local:MasterPageItem Title="Reminders" IconSource="remindersicon.png" TargetType="{x:Type local:ReminderPage}" />
                     <local:MasterPageItem Title="History" IconSource="calendaricon.png" TargetType="{x:Type local:HistoryPage}" />
+                    <local:MasterPageItem Title="Log Out" IconSource="usericon.png" TargetType="{x:Type local:HomePage}"/>
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="5,10">
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="30"/>
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding IconSource}" />
-                            <Label Grid.Column="1" Text="{Binding Title}" />
+                            <Image HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Aspect="AspectFit" Source="{Binding IconSource}" />
+                            <Label Margin="10, 0, 0, 0" HorizontalOptions="Start" VerticalOptions="Center"  Grid.Column="1" FontSize="Medium" TextColor="#212121" Text="{Binding Title}" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

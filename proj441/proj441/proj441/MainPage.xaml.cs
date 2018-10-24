@@ -25,11 +25,15 @@ namespace proj441
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as MasterPageItem;
-            if (item != null)
+            if (item != null && item.Title != "Log Out" )
             {
-                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType)) { BarBackgroundColor=Color.DarkRed};
+                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType)) { BarBackgroundColor=Color.FromHex("#D32F2F") };
                 masterPage.listView.SelectedItem = null;
                 IsPresented = false;
+            }
+            else if(item != null && item.Title == "Log Out")
+            {
+
             }
         }
     }
