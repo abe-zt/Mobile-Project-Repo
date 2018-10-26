@@ -28,11 +28,13 @@
                 HorizontalOptions="StartAndExpand" 
                 VerticalOptions="End" />
         </StackLayout>
- 
+
         <ListView x:Name="listView" 
                   x:FieldModifier="public" 
-                  RowHeight="50" >
-            
+                  RowHeight="50" 
+                  SeparatorVisibility="None"
+                  HeightRequest="100" >
+
             <ListView.ItemsSource>
                 <x:Array 
                     Type="{x:Type local:MasterPageItem}">
