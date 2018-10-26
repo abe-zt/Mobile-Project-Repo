@@ -5,30 +5,84 @@
 			 x:Class="proj441.MasterPage"
 			 Padding="0,0,0,0"
 			 Title="Personal Organiser">
+    
     <StackLayout>
-        <ListView x:Name="listView" x:FieldModifier="public" RowHeight="50" >
+        <StackLayout 
+            Padding="10"
+            BackgroundColor="#D32F2F"
+            HeightRequest="100" >
+            <Label 
+                Margin="0,10,0,0"
+                x:Name="UserLabel"
+                Text="User Name"
+                TextColor="White"
+                FontSize="Medium"
+                HorizontalOptions="StartAndExpand" 
+                VerticalOptions="EndAndExpand" />
+            <Label 
+                Margin="0,0,0,10"
+                x:Name="emailLabel"
+                Text="email@gmail.com"
+                TextColor="LightGray"
+                FontSize="Small"
+                HorizontalOptions="StartAndExpand" 
+                VerticalOptions="End" />
+        </StackLayout>
+ 
+        <ListView x:Name="listView" 
+                  x:FieldModifier="public" 
+                  RowHeight="50" >
+            
             <ListView.ItemsSource>
-                <x:Array Type="{x:Type local:MasterPageItem}">
-                    <local:MasterPageItem Title="Home" IconSource="homeicon.png" TargetType="{x:Type local:HomePage}" />
-                    <local:MasterPageItem Title="Logbook" IconSource="logicon.png" TargetType="{x:Type local:LogPage}" />
-                    <local:MasterPageItem Title="Reminders" IconSource="remindersicon.png" TargetType="{x:Type local:ReminderPage}" />
-                    <local:MasterPageItem Title="History" IconSource="calendaricon.png" TargetType="{x:Type local:HistoryPage}" />
-                    <local:MasterPageItem Title="Log Out" IconSource="usericon.png" TargetType="{x:Type local:HomePage}"/>
+                <x:Array 
+                    Type="{x:Type local:MasterPageItem}">
+                    <local:MasterPageItem 
+                        Title="Home" 
+                        IconSource="homeicon.png" 
+                        TargetType="{x:Type local:HomePage}" />
+                    <local:MasterPageItem 
+                        Title="See Reminders" 
+                        IconSource="remindersicon.png" 
+                        TargetType="{x:Type local:ReminderPage}" />
+                    <local:MasterPageItem 
+                        Title="See Dosage History" 
+                        IconSource="calendaricon.png" 
+                        TargetType="{x:Type local:HistoryPage}" />
+                    <local:MasterPageItem 
+                        Title="Log Out" 
+                        IconSource="usericon.png" 
+                        TargetType="{x:Type local:HomePage}"/>
                 </x:Array>
             </ListView.ItemsSource>
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="10">
+                        <Grid 
+                            Padding="10">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Image HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Aspect="AspectFit" Source="{Binding IconSource}" />
-                            <Label Margin="10, 0, 0, 0" HorizontalOptions="Start" VerticalOptions="Center"  Grid.Column="1" FontSize="Medium" TextColor="#212121" Text="{Binding Title}" />
+                            
+                            <Image 
+                                Margin="15, 0" 
+                                HorizontalOptions="Center" 
+                                VerticalOptions="Center" 
+                                Grid.Column="0" 
+                                Aspect="AspectFit" 
+                                Source="{Binding IconSource}" />
+                            <Label 
+                                Margin="10, 0" 
+                                HorizontalOptions="Start" 
+                                VerticalOptions="Center"  
+                                Grid.Column="1" 
+                                FontSize="Small" 
+                                TextColor="#212121" 
+                                Text="{Binding Title}" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
