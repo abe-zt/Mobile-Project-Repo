@@ -49,9 +49,10 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: abezat@gmail.com (N92M39B2MW)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>iOS Team Provisioning Profile: Abel.proj441mac</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -153,7 +154,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\proj441\proj441.csproj">
-      <Project>{6F274C4F-D8B1-4FC1-ACE1-98B0D1168937}</Project>
+      <Project>{A2301BDC-96F8-43C5-8D80-362B5869CA6D}</Project>
       <Name>proj441</Name>
     </ProjectReference>
   </ItemGroup>
