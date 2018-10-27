@@ -9,7 +9,7 @@
     <StackLayout>
         <StackLayout 
             Padding="10"
-            BackgroundColor="#D32F2F"
+            BackgroundColor="DarkRed"
             HeightRequest="150" >
             <Label 
                 Margin="0,10,0,0"
@@ -66,8 +66,8 @@
                                 <RowDefinition Height="50" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             
                             <Image 
@@ -90,5 +90,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </StackLayout>
+        <Button>
+            
+        </Button>
+         </StackLayout>
 </ContentPage>
