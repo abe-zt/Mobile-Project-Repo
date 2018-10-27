@@ -25,13 +25,15 @@ namespace proj441
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as MasterPageItem;
-            if (item != null && Detail.Title != item.Title && item.Title != "Log Out" )  //don't do anything on the logout cell is pressed
+            var detailPage = ((App.Current.MainPage as MasterDetailPage).Detail as NavigationPage).CurrentPage;  //get the current masterdetailpage Detail page 
+            
+            if (item != null &&  detailPage.Title != item.Title && item.Title != "Log Out" )  //don't do anything on the logout cell is pressed
             {
-                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType)) { BarBackgroundColor=Color.FromHex("#D32F2F") };
+                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType)) { BarBackgroundColor=Color.DarkRed };
                 masterPage.listView.SelectedItem = null;
                 IsPresented = false;
             }
-            else if(item != null && item.Title == "Log Out")  //don't do anything on the logout cell is pressed
+            else if(item != null)  //don't do anything on the logout cell is pressed
             {
                 masterPage.listView.SelectedItem = null;
                 IsPresented = false;
