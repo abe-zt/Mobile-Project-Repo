@@ -4,10 +4,39 @@
              x:Class="proj441.HistoryPage"
              Title="History">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to the History Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid
+            RowSpacing="0"
+            ColumnSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image 
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.RowSpan="3"
+            Source="doodlepills.png"
+            Aspect="AspectFill"/>
+
+            <Button
+                Margin="10, 20, 10, 10"
+                Grid.Row="0"
+                BorderRadius="0"
+                BorderColor="#F44336"
+                BorderWidth="5"
+                BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                x:Name="LogDosageButton2"
+                Text="SET A REMINDER"
+                FontSize="Medium"
+                TextColor="#212121"
+                />
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

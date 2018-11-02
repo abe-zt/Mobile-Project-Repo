@@ -4,10 +4,23 @@
              x:Class="proj441.ReminderPage"
              Title="Reminders">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to the Reminder Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowSpacing="0"  ColumnSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image 
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.RowSpan="3"
+            Source="doodlepills.png"
+            Aspect="AspectFill"/>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
