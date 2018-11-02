@@ -16,5 +16,11 @@ namespace proj441
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private async void SetReminderButton2_Clicked(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            await Navigation.PushAsync(new SetReminderPage());
+        }
+    }
 }

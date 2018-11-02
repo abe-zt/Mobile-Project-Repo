@@ -2,13 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="proj441.LogPage"
-             Title="Log">
+             Title="Log Dosage">
     <ContentPage.Content>
-
-        <Grid RowSpacing="0"  ColumnSpacing="0" >
+        <Grid
+            RowSpacing="0"
+            ColumnSpacing="0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="6*"/>
+                <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -21,20 +22,8 @@
             Source="doodlepills.png"
             Aspect="AspectFill"/>
 
-            <Button
-                Grid.Row="1"
-                BorderRadius="0"
-                BorderColor="#F44336"
-                BorderWidth="5"
-                BackgroundColor="White"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                x:Name="LogDosageButton2"
-                Text="SET A REMINDER"
-                FontSize="Medium"
-                TextColor="#212121"
-                />
-            
+
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

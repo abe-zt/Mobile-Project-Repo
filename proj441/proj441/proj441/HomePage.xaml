@@ -14,9 +14,9 @@
 
     <Grid RowSpacing="0"  ColumnSpacing="0" >
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -55,80 +55,77 @@
             </StackLayout>
         </StackLayout>
 
-        <StackLayout
-            IsVisible="False"
-            Grid.Row="1"
-            Grid.Column="0"
-            BackgroundColor="White"
-            HorizontalOptions="Fill"
-            VerticalOptions="Start" >
-            <Label 
-                Text="Welcome to Pill-Boy" 
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="Start"
-                TextColor="#212121" 
-                FontSize="Small"/>
-            <Label
-                Text="Secondary Text" 
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="Start"
-                TextColor="#757575" 
-                FontSize="Micro"/>
-        </StackLayout>
-
-        <Grid VerticalOptions="EndAndExpand" Grid.Row="2" Grid.Column="0" RowSpacing="5" BackgroundColor="Transparent" Padding="10, 10, 10, 20" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
+        <StackLayout 
+            Padding="10, 10, 10, 20"
+            Spacing="5"
+            VerticalOptions="EndAndExpand" 
+            Grid.Row="2" 
+            Grid.Column="0"  
+            BackgroundColor="Transparent" >
+            
             <Button
-                
-                Grid.Row="0"
+                Margin="0"
+                HeightRequest="50"
                 BorderRadius="0"
                 BorderColor="#F44336"
                 BorderWidth="5"
                 BackgroundColor="White"
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
+                VerticalOptions="Center"
                 x:Name="LogDosageButton"
                 Text="LOG A DOSAGE"
                 FontSize="Medium"
                 TextColor="#212121"
+                Clicked="LogDosageButton_Clicked"
                 />
 
             <Button
-                Grid.Row="1"
+                Margin="0"
+                HeightRequest="50"
                 BorderRadius="0"
                 BorderColor="#F44336"
                 BorderWidth="5"
                 BackgroundColor="White"
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                x:Name="ReminderButton"
+                VerticalOptions="Center"
+                x:Name="SetReminderButton"
                 Text="SET A REMINDER"
                 FontSize="Medium"
                 TextColor="#212121"
+                Clicked="SetReminderButton_Clicked"
                 />
 
             <Button
-                Grid.Row="2"
+                Margin="0"
+                HeightRequest="50"
                 BorderRadius="0"
                 BorderColor="#F44336"
                 BorderWidth="5"
                 BackgroundColor="White"
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
-                x:Name="HistoryButton"
-                Text="SEE DOSAGE HISTORY"
+                VerticalOptions="Center"
+                x:Name="seeRemindersButton"
+                Text="Reminders"
                 FontSize="Medium"
                 TextColor="#212121"
+                Clicked="SeeRemindersButton_Clicked"
                 />
-
-
-        </Grid>
-
+            
+            <Button
+                Margin="0"
+                HeightRequest="50"
+                BorderRadius="0"
+                BorderColor="#F44336"
+                BorderWidth="5"
+                BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                x:Name="seeHistoryButton"
+                Text="DOSAGE HISTORY"
+                FontSize="Medium"
+                TextColor="#212121"
+                Clicked="SeeHistoryButton_Clicked"
+                />
+        </StackLayout>
     </Grid>
-
 </ContentPage>

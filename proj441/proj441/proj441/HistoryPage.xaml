@@ -8,8 +8,8 @@
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="5*"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -23,6 +23,7 @@
             Aspect="AspectFill"/>
 
             <Button
+                HeightRequest="50"
                 Margin="10, 20, 10, 10"
                 Grid.Row="0"
                 BorderRadius="0"
@@ -32,9 +33,10 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                 x:Name="LogDosageButton2"
-                Text="SET A REMINDER"
+                Text="LOG A DOSAGE"
                 FontSize="Medium"
                 TextColor="#212121"
+                Clicked="LogDosageButton2_Clicked"
                 />
 
         </Grid>

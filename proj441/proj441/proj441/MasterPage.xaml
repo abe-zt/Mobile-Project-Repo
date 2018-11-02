@@ -90,8 +90,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button>
-            
-        </Button>
-         </StackLayout>
+        </StackLayout>
 </ContentPage>
