@@ -132,8 +132,10 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="calendaricon.png" />
     <Content Include="doodlepills.png" />
+    <Content Include="doodlepills3.png" />
     <Content Include="homeicon.png" />
     <Content Include="logicon.png" />
+    <Content Include="pillboylogodeepredoutline.png" />
     <Content Include="pillboylogonewred.png" />
     <Content Include="pillboylogoredshadow.png" />
     <Content Include="pillboylogoredthicc.png" />

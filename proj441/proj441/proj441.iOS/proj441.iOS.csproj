@@ -188,4 +188,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\usericon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\doodlepills3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pillboylogodeepredoutline.png" />
+  </ItemGroup>
 </Project>

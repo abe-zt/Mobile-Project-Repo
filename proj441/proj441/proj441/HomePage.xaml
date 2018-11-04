@@ -26,7 +26,7 @@
             Grid.Row="0"
             Grid.Column="0"
             Grid.RowSpan="3"
-            Source="doodlepills.png"
+            Source="doodlepills3.png"
             Aspect="AspectFill"/>
 
         <StackLayout 
@@ -35,7 +35,7 @@
             Grid.Column="0"
             VerticalOptions="Start"
             HorizontalOptions="CenterAndExpand"
-            BackgroundColor="#F44336"
+            BackgroundColor="Transparent"
             Padding="5">
 
             <StackLayout 
@@ -43,89 +43,55 @@
                 Padding="5"
                 VerticalOptions="StartAndExpand"
                 HorizontalOptions="CenterAndExpand"
-                BackgroundColor="White">
+                BackgroundColor="Transparent">
                 <Image
                     VerticalOptions="Start"
                     HorizontalOptions="Center"
-                    Source="pillboylogoredshadow.png"
+                    Source="pillboylogodeepredoutline.png"
                     Scale="1"
                     Aspect="AspectFit"
-                    BackgroundColor="White"
+                    BackgroundColor="Transparent"
                     />
             </StackLayout>
         </StackLayout>
 
         <StackLayout 
             Padding="10, 10, 10, 20"
-            Spacing="5"
+            Spacing="10"
             VerticalOptions="EndAndExpand" 
             Grid.Row="2" 
             Grid.Column="0"  
             BackgroundColor="Transparent" >
             
+            
             <Button
-                Margin="0"
-                HeightRequest="50"
-                BorderRadius="0"
-                BorderColor="#F44336"
-                BorderWidth="5"
-                BackgroundColor="White"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="Center"
+                Style="{StaticResource MainButtonStyle}" 
                 x:Name="LogDosageButton"
                 Text="LOG A DOSAGE"
-                FontSize="Medium"
-                TextColor="#212121"
                 Clicked="LogDosageButton_Clicked"
+                />
+            
+            <Button
+                Style="{StaticResource MainButtonStyle}" 
+                x:Name="seeHistoryButton"
+                Text="DOSAGE HISTORY"
+                Clicked="SeeHistoryButton_Clicked"
                 />
 
             <Button
-                Margin="0"
-                HeightRequest="50"
-                BorderRadius="0"
-                BorderColor="#F44336"
-                BorderWidth="5"
-                BackgroundColor="White"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="Center"
+                Style="{StaticResource MainButtonStyle}" 
                 x:Name="SetReminderButton"
                 Text="SET A REMINDER"
-                FontSize="Medium"
-                TextColor="#212121"
                 Clicked="SetReminderButton_Clicked"
                 />
 
             <Button
-                Margin="0"
-                HeightRequest="50"
-                BorderRadius="0"
-                BorderColor="#F44336"
-                BorderWidth="5"
-                BackgroundColor="White"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="Center"
+                Style="{StaticResource MainButtonStyle}"
                 x:Name="seeRemindersButton"
                 Text="Reminders"
-                FontSize="Medium"
-                TextColor="#212121"
                 Clicked="SeeRemindersButton_Clicked"
                 />
-            
-            <Button
-                Margin="0"
-                HeightRequest="50"
-                BorderRadius="0"
-                BorderColor="#F44336"
-                BorderWidth="5"
-                BackgroundColor="White"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="Center"
-                x:Name="seeHistoryButton"
-                Text="DOSAGE HISTORY"
-                FontSize="Medium"
-                TextColor="#212121"
-                Clicked="SeeHistoryButton_Clicked"
-                />
+ 
         </StackLayout>
     </Grid>
 </ContentPage>

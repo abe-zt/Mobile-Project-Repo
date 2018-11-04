@@ -8,8 +8,8 @@
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="7*"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -19,10 +19,31 @@
             Grid.Row="0"
             Grid.Column="0"
             Grid.RowSpan="3"
-            Source="doodlepills.png"
+            Source="doodlepills3.png"
             Aspect="AspectFill"/>
 
-
+            <Button
+                Grid.Row="0"
+                Margin="10, 20, 10, 10"
+                Style="{StaticResource MainButtonStyle}" 
+                x:Name="AddPrescriptionButton"
+                Text="ADD NEW PRESCRIPTION"
+                Clicked="AddPrescriptionButton_Clicked"
+                />
+            
+            <ListView  Grid.Row="1" 
+                       HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Label
+                                    />
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
         </Grid>
     </ContentPage.Content>

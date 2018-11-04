@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proj441.AddPerscriptionPage"
+             Title="New Prescription" >
+    <ContentPage.Content>
+        <Grid
+            Padding="0"
+            RowSpacing="0"
+            ColumnSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image 
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.RowSpan="2"
+            Source="doodlepills3.png"
+            Aspect="AspectFill"/>
+
+            <Frame
+                Padding="0"
+                Margin="30"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                OutlineColor="Red"
+                CornerRadius="10"
+                HasShadow="True"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                >
+                <StackLayout 
+                    Padding="0,0,0,80"
+                    Margin="0,0,0,0"
+                    BackgroundColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    >
+
+                    <Label
+                        Margin="10, 20, 0, 0"
+                        Text="Name"
+                        TextColor="Black"
+                        FontSize="Small"
+                        />
+                    
+                    <Entry
+                        x:Name="preName"
+                        Margin="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        BackgroundColor="White"
+                        FontSize="Medium"
+                        TextColor="Black"
+                        Placeholder="Enter prescription name"
+                        PlaceholderColor="LightGray"
+                    />
+                    <Label
+                        Margin="10, 20, 0, 0"
+                        Text="Strength (mg)"
+                        TextColor="Black"
+                        FontSize="Small"
+                        />
+
+                    <Entry
+                        x:Name="preStrength"
+                        Margin="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        BackgroundColor="White"
+                        FontSize="Medium"
+                        TextColor="Black"
+                        Placeholder="Enter Prescription Strength "
+                        PlaceholderColor="LightGray"
+                    />
+
+                    <Label
+                        Margin="10, 20, 0, 0"
+                        Text="Instructions"
+                        TextColor="Black"
+                        FontSize="Small"
+                        />
+
+                    <Entry
+                        x:Name="userEntry"
+                        Margin="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        BackgroundColor="White"
+                        FontSize="Medium"
+                        TextColor="Black"
+                        Placeholder="Enter Dosage Instructions "
+                        PlaceholderColor="LightGray"
+                    />
+
+                    <Label
+                        Margin="10, 20, 0, 0"
+                        Text="Physical Description"
+                        TextColor="Black"
+                        FontSize="Small"
+                        />
+
+                    <Entry
+                        x:Name="preDescription"
+                        Margin="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        BackgroundColor="White"
+                        FontSize="Medium"
+                        TextColor="Black"
+                        Placeholder="Enter Description Information"
+                        PlaceholderColor="LightGray"
+                    />
+
+                    <Label
+                        Margin="10, 20, 0, 0"
+                        Text="Quantity"
+                        TextColor="Black"
+                        FontSize="Small"
+                        />
+
+                    <Entry
+                        x:Name="preQuantity"
+                        Margin="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        BackgroundColor="White"
+                        FontSize="Medium"
+                        TextColor="Black"
+                        Placeholder="Enter Quantity"
+                        PlaceholderColor="LightGray"
+                    />
+
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

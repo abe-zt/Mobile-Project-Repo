@@ -8,7 +8,7 @@
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
+                <RowDefinition Height="100"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -19,10 +19,8 @@
             Grid.Row="0"
             Grid.Column="0"
             Grid.RowSpan="3"
-            Source="doodlepills.png"
+            Source="doodlepills3.png"
             Aspect="AspectFill"/>
-
-
 
         </Grid>
     </ContentPage.Content>
