@@ -29,6 +29,7 @@ namespace proj441
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
+
             await Navigation.PushAsync(new AddPerscriptionPage());
         }
     }
