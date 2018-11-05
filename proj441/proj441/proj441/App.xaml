@@ -4,12 +4,12 @@
              x:Class="proj441.App">
     <Application.Resources>
         <ResourceDictionary>
-
-            <Style x:Key="MainButtonStyle" TargetType="Button">
+            <Color x:Key="MainColor">#D32F2F</Color>
+            <Style x:Key="MainButtonStyle" TargetType="Button" >
                 <Setter Property="HeightRequest" Value="45" />
                 <Setter Property="BorderRadius" Value="10" />
                 <Setter Property="BorderColor" Value="#D32F2F" />
-                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="BorderWidth" Value="4" />
                 <Setter Property="BackgroundColor" Value="White" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalOptions" Value="Center" />

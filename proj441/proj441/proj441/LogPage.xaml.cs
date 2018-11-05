@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,15 @@ namespace proj441
 		public LogPage ()
 		{
 			InitializeComponent ();
-		}
+            PopulateLogList();
+
+        }
+
+        public void PopulateLogList()
+        {
+            ObservableCollection<Prescription> myPreCollection = new ObservableCollection<Prescription>();
+            ListLog.ItemsSource = myPreCollection;
+        }
 
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
         {

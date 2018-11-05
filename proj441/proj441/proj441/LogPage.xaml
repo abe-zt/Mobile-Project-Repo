@@ -31,8 +31,10 @@
                 Clicked="AddPrescriptionButton_Clicked"
                 />
             
-            <ListView  Grid.Row="1" 
-                       HasUnevenRows="True">
+            <ListView  
+                x:Name="ListLog"
+                Grid.Row="1" 
+                HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

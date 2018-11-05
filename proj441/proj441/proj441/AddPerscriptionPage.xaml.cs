@@ -16,5 +16,21 @@ namespace proj441
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
+        {
+            Prescription p1 = new Prescription
+            {
+                Name = preName.Text,
+                Strength = preStrength.Text,
+                Instructions = preInstructions.Text,
+                PhysicalDescription = preDescription.Text,
+                Quantity = Convert.ToInt32(preQuantity.Text)
+            };
+
+            LogPage logPage = new LogPage();
+            logPage.BindingContext = p1;
+            await Navigation.PushAsync(logPage);
+        }
+    }
 }
