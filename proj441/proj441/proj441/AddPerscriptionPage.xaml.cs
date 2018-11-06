@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +13,18 @@ namespace proj441
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddPerscriptionPage : ContentPage
 	{
-		public AddPerscriptionPage ()
-		{
-			InitializeComponent ();
-		}
+        //public ObservableCollection<Prescription> myPreCollection;
+
+        public AddPerscriptionPage()
+        {
+            InitializeComponent();
+            //InitializeCollection();
+        }
+
+        //public void InitializeCollection()
+        //{
+        //    myPreCollection = new ObservableCollection<Prescription>();
+        //}
 
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
         {
@@ -28,9 +37,10 @@ namespace proj441
                 Quantity = Convert.ToInt32(preQuantity.Text)
             };
 
-            LogPage logPage = new LogPage();
-            logPage.BindingContext = p1;
-            await Navigation.PushAsync(logPage);
+            //myPreCollection.Add(p1);
+            //LogPage logPage = new LogPage(p1);
+
+            await Navigation.PopAsync();
         }
     }
 }

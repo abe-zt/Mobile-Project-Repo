@@ -4,7 +4,7 @@ using System.Text;
 
 namespace proj441
 {
-    class Prescription
+    public class Prescription
     {
         public string Name
         {
