@@ -141,6 +141,7 @@
     <Content Include="pillboylogoredthicc.png" />
     <Content Include="pillboylogowhite.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="redpillwhitefill.png" />
     <Content Include="remindersicon.png" />
     <Content Include="usericon.png" />
   </ItemGroup>

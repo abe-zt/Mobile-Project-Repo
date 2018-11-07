@@ -9,8 +9,8 @@
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="65"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
 
             <Image 
@@ -22,10 +22,12 @@
 
             <Frame
                 Grid.Row="0"
-                Grid.RowSpan="2"
-                Margin="15"
+
+                Margin="15,15,15,0"
                 Padding="5"
-                CornerRadius="10"
+                CornerRadius="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
                 BorderColor="{StaticResource MainColor}"
                 BackgroundColor="#F5F5F5">
 
@@ -65,11 +67,11 @@
                         FontSize="12"
                         />
                     <Frame
-                        Margin="10,1"
+                        Margin="5,1"
                         Padding="2"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
-                        CornerRadius="10"
+                        CornerRadius="0"
                         BorderColor="{StaticResource MainColor}"
                         BackgroundColor="White"
                         HasShadow="True">
@@ -96,11 +98,11 @@
                         />
                     
                     <Frame
-                        Margin="10,1"
+                        Margin="5,1"
                         Padding="2"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
-                        CornerRadius="10"
+                        CornerRadius="0"
                         BorderColor="{StaticResource MainColor}"
                         BackgroundColor="White"
                         HasShadow="True">
@@ -128,11 +130,11 @@
                         />
 
                     <Frame
-                        Margin="10,1"
+                        Margin="5,1"
                         Padding="2"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
-                        CornerRadius="10"                        
+                        CornerRadius="0"                        
                         BorderColor="{StaticResource MainColor}"
                         BackgroundColor="White"
                         HasShadow="True">
@@ -159,11 +161,11 @@
                         />
 
                     <Frame
-                        Margin="10,1"
+                        Margin="5,1"
                         Padding="2"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
-                        CornerRadius="10"
+                        CornerRadius="0"
                         BorderColor="{StaticResource MainColor}"
                         BackgroundColor="White"
                         HasShadow="True">
@@ -190,11 +192,11 @@
                         />
 
                     <Frame
-                        Margin="10,1"
+                        Margin="5,1"
                         Padding="2"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
-                        CornerRadius="10"
+                        CornerRadius="0"
                         BorderColor="{StaticResource MainColor}"
                         BackgroundColor="White"
                         HasShadow="True">
@@ -211,16 +213,22 @@
                         </Entry>
                     </Frame>
 
-                    <Button
-                        Style="{StaticResource MainButtonStyle}" 
-                        VerticalOptions="EndAndExpand"
-                        x:Name="AddPrescriptionButton"
-                        Text="ADD NEW PRESCRIPTION"
-                        Clicked="AddPrescriptionButton_Clicked">
-                    </Button>
+                    
 
                 </StackLayout>
             </Frame>
+            <StackLayout
+                Padding="10, 20, 10, 20"
+                Grid.Row="1">
+                <Button
+                    Style="{StaticResource MainButtonStyle}" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    x:Name="AddPrescriptionButton"
+                    Text="ADD PRESCRIPTION"
+                    Clicked="AddPrescriptionButton_Clicked">
+                </Button>
+            </StackLayout>
             
         </Grid>
     </ContentPage.Content>

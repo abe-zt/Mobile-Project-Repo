@@ -13,24 +13,24 @@ namespace proj441
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LogPage : ContentPage
 	{
-        public ObservableCollection<Prescription> myPrescriptionCollection = new ObservableCollection<Prescription>();
+        //public ObservableCollection<Prescription> myPrescriptionCollection = new ObservableCollection<Prescription>();
 
         public LogPage()
         {
             InitializeComponent();
+            PopulateMyList(App.myPrescrpitions);
         }
 
-        public LogPage (Prescription p)
-		{
-			InitializeComponent ();
-            AddMyPrescription(p);
-            PopulateMyList(myPrescriptionCollection);
-        }
+  //      public LogPage (Prescription p)
+		//{
+		//	InitializeComponent ();
+  //          //AddMyPrescription(p);
+  //          PopulateMyList(App.myPrescrpitions);
+  //      }
 
-        private void AddMyPrescription(Prescription p)
-        {
-            myPrescriptionCollection.Add(p);
-        }
+        //private void AddMyPrescription(Prescription p)
+        //{
+        //}
 
         private void PopulateMyList(ObservableCollection<Prescription> o)
         {

@@ -194,4 +194,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\pillboylogodeepredoutline.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\redpillwhitefill.png" />
+  </ItemGroup>
 </Project>

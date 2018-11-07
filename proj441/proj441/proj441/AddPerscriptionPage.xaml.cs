@@ -14,6 +14,7 @@ namespace proj441
 	public partial class AddPerscriptionPage : ContentPage
 	{
         //public ObservableCollection<Prescription> myPreCollection;
+        
 
         public AddPerscriptionPage()
         {
@@ -28,7 +29,7 @@ namespace proj441
 
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
         {
-            Prescription p1 = new Prescription
+            Prescription p = new Prescription
             {
                 Name = preName.Text,
                 Strength = preStrength.Text,
@@ -37,9 +38,8 @@ namespace proj441
                 Quantity = Convert.ToInt32(preQuantity.Text)
             };
 
-            //myPreCollection.Add(p1);
+            App.myPrescrpitions.Add(p);
             //LogPage logPage = new LogPage(p1);
-
             await Navigation.PopAsync();
         }
     }

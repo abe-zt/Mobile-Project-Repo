@@ -30,24 +30,44 @@
                 Text="ADD NEW PRESCRIPTION"
                 Clicked="AddPrescriptionButton_Clicked"
                 />
-            
-            <ListView  
-                x:Name="MyList"
-                Grid.Row="1" 
-                HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <Label
-                                    Text="{Binding Name}"
-                                    />
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
 
+            <Frame
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                Margin="15"
+                Padding="5"
+                CornerRadius="10"
+                BorderColor="{StaticResource MainColor}"
+                BackgroundColor="#F5F5F5">
+
+                <ListView
+                    Margin="0"
+                    BackgroundColor="#F5F5F5"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Grid.Row="1" 
+                    x:Name = "MyList"
+                    HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout
+                                        Orientation="Horizontal">
+                                        <Image
+                                            HeightRequest="50"
+                                            Source="redpillwhitefill.png"
+                                            Aspect="AspectFill"/>
+                                        <Label
+                                            FontSize="Large"
+                                            Text="{Binding Name}" />
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
