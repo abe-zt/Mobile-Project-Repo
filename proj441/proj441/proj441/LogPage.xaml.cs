@@ -43,5 +43,21 @@ namespace proj441
 
             await Navigation.PushAsync(new AddPerscriptionPage());
         }
+
+        async void Handle_ContextMenuInfoButton(object sender, EventArgs e)
+        {
+            var menuItem = (MenuItem)sender;
+            var contextSelected = (Prescription)menuItem.CommandParameter;
+            await Navigation.PushAsync(new PrescriptionInfoPage(contextSelected));
+        }
+
+        private void Handle_ContextMenuDeleteButton(object sender, EventArgs e)
+        {
+            var menuItem = (MenuItem)sender;
+            var contextSelected = (Prescription)menuItem.CommandParameter;
+            DisplayAlert("Deleted:", contextSelected.Name, "OK");
+
+            App.myPrescrpitions.Remove(contextSelected);
+        }
     }
 }

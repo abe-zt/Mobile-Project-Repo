@@ -51,6 +51,17 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem
+                                   Text="Info"
+                                   Clicked="Handle_ContextMenuInfoButton"
+                                   CommandParameter="{Binding .}"/>
+                                    <MenuItem
+                                   Text="Delete"
+                                   CommandParameter="{Binding .}"
+                                    Clicked="Handle_ContextMenuDeleteButton"
+                                   IsDestructive="True"/>
+                                </ViewCell.ContextActions>
                                 <ViewCell.View>
                                     <StackLayout
                                         Orientation="Horizontal">
