@@ -18,7 +18,7 @@ namespace proj441
         public LogPage()
         {
             InitializeComponent();
-            PopulateMyList(App.myPrescrpitions);
+            PopulateMyList(App.MyPrescrpitions);
         }
 
   //      public LogPage (Prescription p)
@@ -34,7 +34,7 @@ namespace proj441
 
         private void PopulateMyList(ObservableCollection<Prescription> o)
         {
-            MyList.ItemsSource = o;
+            MyLogList.ItemsSource = o;
         }
 
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
@@ -57,7 +57,14 @@ namespace proj441
             var contextSelected = (Prescription)menuItem.CommandParameter;
             DisplayAlert("Deleted:", contextSelected.Name, "OK");
 
-            App.myPrescrpitions.Remove(contextSelected);
+            App.MyPrescrpitions.Remove(contextSelected);
+        }
+
+        private void MyLogList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ListView l = (ListView)sender;
+            Prescription p = (Prescription)l.SelectedItem;
+            App.MyHistory.Add(p);
         }
     }
 }

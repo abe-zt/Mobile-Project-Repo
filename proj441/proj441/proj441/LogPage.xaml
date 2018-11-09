@@ -46,8 +46,9 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     Grid.Row="1" 
-                    x:Name = "MyList"
-                    HasUnevenRows="True">
+                    x:Name = "MyLogList"
+                    HasUnevenRows="True"
+                    ItemSelected="MyLogList_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

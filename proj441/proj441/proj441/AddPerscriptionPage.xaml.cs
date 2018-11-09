@@ -38,7 +38,7 @@ namespace proj441
                 Quantity = Convert.ToInt32(preQuantity.Text)
             };
 
-            App.myPrescrpitions.Add(p);
+            App.MyPrescrpitions.Add(p);
             //LogPage logPage = new LogPage(p1);
             await Navigation.PopAsync();
         }

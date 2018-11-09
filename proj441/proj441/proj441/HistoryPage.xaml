@@ -5,31 +5,83 @@
              Title="History">
     <ContentPage.Content>
         <Grid
+            Padding="0"
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
 
             <Image 
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.RowSpan="3"
-            Source="doodlepills3.png"
-            Aspect="AspectFill"/>
-
-            <Button
                 Grid.Row="0"
-                Margin="10, 20, 10, 10"
-                Style="{StaticResource MainButtonStyle}" 
-                x:Name="LogDosageButton2"
-                Text="LOG A DOSAGE"
-                Clicked="LogDosageButton2_Clicked"
-                />
+                Grid.Column="0"
+                Grid.RowSpan="2"
+                Source="doodlepills3.png"
+                Aspect="AspectFill"/>
+       
+            <Frame
+                Grid.Row="0"
+
+                Margin="15, 15, 15, 0"
+                Padding="5"
+                CornerRadius="10"
+                BorderColor="{StaticResource MainColor}"
+                BackgroundColor="#F5F5F5">
+
+                <ListView
+                    Margin="0"
+                    BackgroundColor="#F5F5F5"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Grid.Row="1" 
+                    x:Name = "MyHistoryList"
+                    HasUnevenRows="True"
+                    ItemTapped="MyHistoryList_ItemTapped" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem
+                                   Text="Info"
+                                   Clicked="Handle_ContextMenuInfoButton"
+                                   CommandParameter="{Binding .}"/>
+                                    <MenuItem
+                                   Text="Delete"
+                                   CommandParameter="{Binding .}"
+                                    Clicked="Handle_ContextMenuDeleteButton"
+                                   IsDestructive="True"/>
+                                </ViewCell.ContextActions>
+                                <ViewCell.View>
+                                    <StackLayout
+                                        Orientation="Horizontal">
+                                        <Image
+                                            HeightRequest="50"
+                                            Source="redpillwhitefill.png"
+                                            Aspect="AspectFill"/>
+                                        <Label
+                                            FontSize="Large"
+                                            Text="{Binding Name}" />
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+
+            <StackLayout
+                Padding="10, 20, 10, 20"
+                Grid.Row="1">
+                <Button
+                    Style="{StaticResource MainButtonStyle}" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    x:Name="LogDosageButton2"
+                    Text="LOG A DOSAGE"
+                    Clicked="LogDosageButton2_Clicked">
+                </Button>
+            </StackLayout>
 
         </Grid>
     </ContentPage.Content>
