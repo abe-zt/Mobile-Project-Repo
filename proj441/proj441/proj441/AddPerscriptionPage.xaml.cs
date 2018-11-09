@@ -35,7 +35,7 @@ namespace proj441
                 Strength = preStrength.Text,
                 Instructions = preInstructions.Text,
                 PhysicalDescription = preDescription.Text,
-                Quantity = Convert.ToInt32(preQuantity.Text)
+                Quantity = Convert.ToInt32(preQuantity.Text),    
             };
 
             App.MyPrescrpitions.Add(p);

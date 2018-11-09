@@ -67,12 +67,23 @@
                                     <StackLayout
                                         Orientation="Horizontal">
                                         <Image
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"
                                             HeightRequest="50"
                                             Source="redpillwhitefill.png"
                                             Aspect="AspectFill"/>
                                         <Label
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"
                                             FontSize="Large"
                                             Text="{Binding Name}" />
+                                        <Label
+                                            HorizontalOptions="EndAndExpand"
+                                            VerticalOptions="Center"
+                                            FontSize="28"
+                                            FontAttributes="Bold"
+                                            TextColor="{StaticResource MainColor}"
+                                            Text="+" />
                                     </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>
