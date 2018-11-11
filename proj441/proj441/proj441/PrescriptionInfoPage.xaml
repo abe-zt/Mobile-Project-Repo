@@ -62,6 +62,14 @@
                         FontAttributes="Bold"
                         VerticalOptions="StartAndExpand"
                         HorizontalOptions="StartAndExpand"/>
+                    
+                    <Label 
+                        Text="{Binding PrescribedDosage}"
+                        TextColor="Black"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="StartAndExpand"/>
 
                     <Label 
                         Text="{Binding Instructions}"

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace proj441
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LogPopup
 	{
+        public Prescription pre = new Prescription();
 		public LogPopup ()
 		{
 			InitializeComponent ();
@@ -20,12 +22,24 @@ namespace proj441
         public LogPopup(Prescription p)
         {
             InitializeComponent();
-            BindingContext = p;
+            pre = p;
+            DosageStepper.Value = p.PrescribedDosage;
         }
 
         private void DosageStepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             AmountLabel.Text = ((int)DosageStepper.Value).ToString();  //converting from double to int to string
+        }
+
+        private async Task AddToHistory_ClickedAsync(object sender, EventArgs e)
+        {
+            App.MyHistory.Add(pre);
+            await PopupNavigation.Instance.PopAsync(true);
+        }
+
+        private async void CancelToHistory_Clicked(object sender, EventArgs e)
+        {
+            await PopupNavigation.Instance.PopAsync(true);
         }
     }
 }
