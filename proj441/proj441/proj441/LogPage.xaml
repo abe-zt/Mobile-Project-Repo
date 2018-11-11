@@ -74,16 +74,17 @@
                                             Aspect="AspectFill"/>
                                         <Label
                                             HorizontalOptions="Start"
-                                            VerticalOptions="Center"
+                                            VerticalOptions="CenterAndExpand"
                                             FontSize="Large"
                                             Text="{Binding Name}" />
                                         <Label
+                                            Margin="0,0,15,0"
                                             HorizontalOptions="EndAndExpand"
                                             VerticalOptions="Center"
-                                            FontSize="28"
+                                            FontSize="32"
                                             FontAttributes="Bold"
                                             TextColor="{StaticResource MainColor}"
-                                            Text="+" />
+                                            Text="+   " />
                                     </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>

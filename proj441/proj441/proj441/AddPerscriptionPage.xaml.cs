@@ -33,9 +33,11 @@ namespace proj441
             {
                 Name = preName.Text,
                 Strength = preStrength.Text,
+                PrescribedDosage = Convert.ToInt32(preDosage.Text),
                 Instructions = preInstructions.Text,
                 PhysicalDescription = preDescription.Text,
-                Quantity = Convert.ToInt32(preQuantity.Text),    
+                Quantity = Convert.ToInt32(preQuantity.Text),
+                Remaining = Convert.ToInt32(preRemaining.Text)
             };
 
             App.MyPrescrpitions.Add(p);

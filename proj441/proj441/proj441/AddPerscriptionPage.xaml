@@ -87,38 +87,99 @@
                             x:Name="preName">
                         </Entry>
                     </Frame>
-                    
-                    <Label
-                        Margin="15,10,0,1"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Start"
-                        Text="Strength (mg)"
-                        TextColor="Black"
-                        FontSize="12"
-                        />
-                    
-                    <Frame
-                        Margin="5,1"
-                        Padding="2"
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Center"
-                        CornerRadius="0"
-                        BorderColor="{StaticResource MainColor}"
-                        BackgroundColor="White"
-                        HasShadow="True">
-                        <Entry
-                            Margin="10,0,10,0"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="Fill"
-                            BackgroundColor="White"
-                            FontSize="Small"
-                            TextColor="Black"
-                            Placeholder="Enter Prescription Strength"
-                            PlaceholderColor="LightGray"
-                            x:Name="preStrength">
+
+
+                    <Grid
+                        Padding="0"
+                        Margin="0"
+                        RowSpacing="0"
+                        ColumnSpacing="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Padding="0"
+                            Margin="0"
+                            Spacing="0">
                             
-                        </Entry>
-                    </Frame>
+                            <Label
+                                Margin="15,10,0,1"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"
+                                Text="Strength (mg)"
+                                TextColor="Black"
+                                FontSize="12"/>
+
+                            <Frame
+                                Margin="5,1"
+                                Padding="2"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center"
+                                CornerRadius="0"
+                                BorderColor="{StaticResource MainColor}"
+                                BackgroundColor="White"
+                                HasShadow="True">
+                                <Entry
+                                    Margin="10,0,10,0"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Fill"
+                                    BackgroundColor="White"
+                                    FontSize="Small"
+                                    TextColor="Black"
+                                    Placeholder="Enter Prescription Strength"
+                                    PlaceholderColor="LightGray"
+                                    x:Name="preStrength">
+
+                                </Entry>
+                            </Frame>
+                        </StackLayout>
+
+
+                        <StackLayout
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Padding="0"
+                            Margin="0"
+                            Spacing="0">
+
+                            <Label
+                                Margin="15,10,0,1"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"
+                                Text="Prescribed Dosage"
+                                TextColor="Black"
+                                FontSize="12"/>
+
+                            <Frame
+                                Margin="5,1"
+                                Padding="2"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center"
+                                CornerRadius="0"
+                                BorderColor="{StaticResource MainColor}"
+                                BackgroundColor="White"
+                                HasShadow="True">
+                                <Entry
+                                    Margin="10,0,10,0"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Fill"
+                                    BackgroundColor="White"
+                                    FontSize="Small"
+                                    TextColor="Black"
+                                    Placeholder="Enter Prescribed Dosage"
+                                    PlaceholderColor="LightGray"
+                                    x:Name="preDosage">
+
+                                </Entry>
+                            </Frame>
+                        </StackLayout>
+
+
+                    </Grid>
 
                     <Label
                         Margin="15,10,0,1"
@@ -182,38 +243,93 @@
                         </Entry>
                     </Frame>
 
-                    <Label
-                        Margin="15,10,0,1"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Start"
-                        Text="Quantity (QTY)"
-                        TextColor="Black"
-                        FontSize="12"
-                        />
+                    <Grid
+                        Padding="0"
+                        Margin="0"
+                        RowSpacing="0"
+                        ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                    
+                        <StackLayout
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Padding="0"
+                            Margin="0"
+                            Spacing="0">
+                            <Label
+                                Margin="15,10,0,1"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"
+                                Text="Quantity (QTY)"
+                                TextColor="Black"
+                                FontSize="12"
+                                />
 
-                    <Frame
-                        Margin="5,1"
-                        Padding="2"
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Center"
-                        CornerRadius="0"
-                        BorderColor="{StaticResource MainColor}"
-                        BackgroundColor="White"
-                        HasShadow="True">
-                        <Entry
-                            Margin="10,0,10,0"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="Fill"
-                            BackgroundColor="White"
-                            FontSize="Small"
-                            TextColor="Black"
-                            Placeholder="Enter Quantity"
-                            PlaceholderColor="LightGray"
-                            x:Name="preQuantity">
-                        </Entry>
-                    </Frame>
+                            <Frame
+                                Margin="5,1"
+                                Padding="2"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center"
+                                CornerRadius="0"
+                                BorderColor="{StaticResource MainColor}"
+                                BackgroundColor="White"
+                                HasShadow="True">
+                                <Entry
+                                    Margin="10,0,10,0"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Fill"
+                                    BackgroundColor="White"
+                                    FontSize="Small"
+                                    TextColor="Black"
+                                    Placeholder="Enter Quantity"
+                                    PlaceholderColor="LightGray"
+                                    x:Name="preQuantity">
+                                </Entry>
+                            </Frame>
+                        </StackLayout>
 
                     
+                        <StackLayout
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Padding="0"
+                            Margin="0"
+                            Spacing="0">
+                            <Label
+                                Margin="15,10,0,1"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"
+                                Text="Remaining"
+                                TextColor="Black"
+                                FontSize="12"
+                                />
+
+                            <Frame
+                                Margin="5,1"
+                                Padding="2"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center"
+                                CornerRadius="0"
+                                BorderColor="{StaticResource MainColor}"
+                                BackgroundColor="White"
+                                HasShadow="True">
+                                <Entry
+                                    Margin="10,0,10,0"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Fill"
+                                    BackgroundColor="White"
+                                    FontSize="Small"
+                                    TextColor="Black"
+                                    Placeholder="Enter Remaining"
+                                    PlaceholderColor="LightGray"
+                                    x:Name="preRemaining">
+                                </Entry>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
 
                 </StackLayout>
             </Frame>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="proj441.LogPopup"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+
+    <StackLayout
+        BackgroundColor="White"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        Margin="15"
+        Padding="15"
+        Spacing="15" >
+
+        <Label
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            FontSize="32"
+            FontAttributes="Bold"
+            Text="Please Confirm :"
+            />
+        <StackLayout Orientation="Horizontal">
+            <Label
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                FontSize="Large"
+                Text="Amount taken: "
+                />
+            
+            <Label
+                x:Name="AmountLabel"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                FontSize="Large"
+                TextColor="Red"
+                Text="0"
+                />
+        </StackLayout>
+
+        <Stepper 
+            x:Name="DosageStepper"
+            Maximum="99"
+            Minimum="1"
+            Increment="1"
+            Value="{Binding PrescribedDosage}"
+            ValueChanged="DosageStepper_ValueChanged"
+            />
+
+
+        <StackLayout Orientation="Horizontal">
+            <Button 
+                BackgroundColor="Transparent"
+                Text="Cancel"
+                />
+            <Button
+                BackgroundColor="Transparent"
+                Text="Add"
+                />
+        </StackLayout>
+    </StackLayout>
+    
+</pages:PopupPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -51,20 +52,40 @@ namespace proj441
             await Navigation.PushAsync(new PrescriptionInfoPage(contextSelected));
         }
 
-        private void Handle_ContextMenuDeleteButton(object sender, EventArgs e)
+        private async void Handle_ContextMenuDeleteButton(object sender, EventArgs e)
         {
             var menuItem = (MenuItem)sender;
             var contextSelected = (Prescription)menuItem.CommandParameter;
-            DisplayAlert("Deleted:", contextSelected.Name, "OK");
-
-            App.MyPrescrpitions.Remove(contextSelected);
+            //DisplayAlert("Deleted:", contextSelected.Name, "OK");
+            bool answer = await DisplayAlert("Confirm:", "Delete '" + contextSelected.Name + "' ?", "Yes", "No");
+            if (answer)
+            {
+                App.MyPrescrpitions.Remove(contextSelected);
+            }
         }
 
-        private void MyLogList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void MyLogList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             ListView l = (ListView)sender;
             Prescription p = (Prescription)l.SelectedItem;
-            App.MyHistory.Add(p);
+            if (l.SelectedItem != null)
+            {
+                await PopupNavigation.Instance.PushAsync(new LogPopup(p));
+
+                //Prescription p = (Prescription)l.SelectedItem;
+                //bool answer = await DisplayAlert("Confirm:", "Log a dosage of '" + p.Name + "' in Dosage History?", "Yes", "No");
+                //if (answer)
+                //{
+                //    App.MyHistory.Add(p);
+                //    l.SelectedItem = null;
+                //    //await Navigation.PopToRootAsync();
+                //}
+                //else
+                //{
+                //    l.SelectedItem = null;
+                //}
+            }
+            l.SelectedItem = null;
         }
     }
 }

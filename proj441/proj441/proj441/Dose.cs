@@ -4,15 +4,15 @@ using System.Text;
 
 namespace proj441
 {
-    class HistoryItem
+    public class Dose
     {
-        public Prescription Item
+        public Prescription PrescriptionDose
         {
             get;
             set;
         }
 
-        public DateTime Time
+        public DateTime TimeDose
         {
             get;
             set;

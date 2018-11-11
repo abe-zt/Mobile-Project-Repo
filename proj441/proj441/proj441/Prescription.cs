@@ -24,6 +24,12 @@ namespace proj441
             set;
         }
 
+        public int PrescribedDosage
+        {
+            get;
+            set;
+        }
+
         public string PhysicalDescription
         {
             get;
@@ -31,6 +37,12 @@ namespace proj441
         }
 
         public int Quantity
+        {
+            get;
+            set;
+        }
+
+        public int Remaining
         {
             get;
             set;
