@@ -47,5 +47,17 @@ namespace proj441
             get;
             set;
         }
+
+        public Prescription CopyPrescription(Prescription p)
+        {
+            Name = p.Name;
+            Strength = p.Strength;
+            Instructions = p.Instructions;
+            PrescribedDosage = p.PrescribedDosage;
+            PhysicalDescription = p.PhysicalDescription;
+            Quantity = p.Quantity;
+            Remaining = p.Remaining;
+            return this;
+        }
     }
 }

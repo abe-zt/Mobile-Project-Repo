@@ -22,8 +22,8 @@ namespace proj441
         public LogPopup(Prescription p)
         {
             InitializeComponent();
-            pre = p;
-            DosageStepper.Value = p.PrescribedDosage;
+            pre.CopyPrescription(p);
+            DosageStepper.Value = pre.PrescribedDosage;
         }
 
         private void DosageStepper_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -31,7 +31,7 @@ namespace proj441
             AmountLabel.Text = ((int)DosageStepper.Value).ToString();  //converting from double to int to string
         }
 
-        private async Task AddToHistory_ClickedAsync(object sender, EventArgs e)
+        private async Task AddToHistory_Clicked(object sender, EventArgs e)
         {
             App.MyHistory.Add(pre);
             await PopupNavigation.Instance.PopAsync(true);
