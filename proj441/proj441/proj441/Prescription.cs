@@ -48,15 +48,16 @@ namespace proj441
             set;
         }
 
-        public Prescription CopyPrescription(Prescription p)
+        //copy constructor
+        public Prescription CopyPrescription(Prescription pervious)
         {
-            Name = p.Name;
-            Strength = p.Strength;
-            Instructions = p.Instructions;
-            PrescribedDosage = p.PrescribedDosage;
-            PhysicalDescription = p.PhysicalDescription;
-            Quantity = p.Quantity;
-            Remaining = p.Remaining;
+            Name = pervious.Name;
+            Strength = pervious.Strength;
+            Instructions = pervious.Instructions;
+            PrescribedDosage = pervious.PrescribedDosage;
+            PhysicalDescription = pervious.PhysicalDescription;
+            Quantity = pervious.Quantity;
+            Remaining = pervious.Remaining;
             return this;
         }
     }
