@@ -4,6 +4,8 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
 namespace proj441.iOS
 {
@@ -24,6 +26,7 @@ namespace proj441.iOS
         {
             Rg.Plugins.Popup.Popup.Init();
             Xamarin.Forms.Forms.Init();
+            UINavigationBar.Appearance.TintColor = Color.White.ToUIColor(); //to change icon color to white
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:proj441"
 			 x:Class="proj441.MasterPage"
 			 Padding="0,0,0,0"
+             Icon="hamburger2x.png"
 			 Title="Menu">
     
     <StackLayout>

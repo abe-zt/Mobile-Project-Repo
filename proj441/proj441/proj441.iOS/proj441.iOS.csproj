@@ -200,4 +200,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\redpillwhitefill.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hamburger2x.png" />
+  </ItemGroup>
 </Project>
