@@ -17,5 +17,11 @@ namespace proj441
             get;
             set;
         }
+
+        public int DoseQuantity
+        {
+            get;
+            set;
+        }
     }
 }

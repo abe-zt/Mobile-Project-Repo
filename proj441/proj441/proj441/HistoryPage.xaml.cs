@@ -39,13 +39,9 @@ namespace proj441
             if (answer)
             {
                 App.MyHistory.Remove(contextSelected);
-            }
-
-            
+            }          
         }
 
-
-               
         private async void LogDosageButton2_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -53,9 +49,6 @@ namespace proj441
         }
 
 
-        private void MyHistoryList_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
 
-        }
     }
 }

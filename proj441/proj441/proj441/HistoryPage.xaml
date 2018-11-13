@@ -37,7 +37,7 @@
                     Grid.Row="1" 
                     x:Name = "MyHistoryList"
                     HasUnevenRows="True"
-                    ItemTapped="MyHistoryList_ItemTapped" >
+                    SelectionMode="None" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
