@@ -6,19 +6,19 @@ namespace proj441
 {
     public class Dose
     {
-        public Prescription PrescriptionDose
+        public Prescription PrescriptionTaken
         {
             get;
             set;
         }
 
-        public DateTime TimeDose
+        public DateTime DateTimeTaken
         {
             get;
             set;
         }
 
-        public int DoseQuantity
+        public int QuantityTaken
         {
             get;
             set;
