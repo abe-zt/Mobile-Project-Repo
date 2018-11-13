@@ -6,15 +6,15 @@
                  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
     
     <pages:PopupPage.Animation>
-        <animations:ScaleAnimation DurationIn="400"
-                                   DurationOut="300"
+        <animations:ScaleAnimation DurationIn="500"
+                                   DurationOut="500"
                                    EasingIn="SinOut"
                                    EasingOut="SinIn"
                                    HasBackgroundAnimation="True"
                                    PositionIn="Center"
                                    PositionOut="Center"
-                                   ScaleIn="1.2"
-                                   ScaleOut="0.8" />
+                                   ScaleIn="1.4"
+                                   ScaleOut="0.6" />
     </pages:PopupPage.Animation>
 
 
@@ -24,7 +24,8 @@
         VerticalOptions="Center"
         Margin="25"
         Padding="25"
-        Spacing="15" >
+        Spacing="15" 
+        x:Name="LogPopupStackLayout">
 
         <Label
             HorizontalOptions="Start"

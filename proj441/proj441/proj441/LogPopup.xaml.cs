@@ -34,6 +34,8 @@ namespace proj441
         private async Task AddToHistory_Clicked(object sender, EventArgs e)
         {
             App.MyHistory.Add(pre);
+            LogPopupStackLayout.IsVisible = false;
+            await DisplayAlert("Added:", "Added " + pre.Name + " to History", "OK");
             await PopupNavigation.Instance.PopAsync(true);
         }
 

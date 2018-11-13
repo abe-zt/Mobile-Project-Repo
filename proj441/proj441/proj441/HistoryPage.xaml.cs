@@ -31,13 +31,17 @@ namespace proj441
             await Navigation.PushAsync(new PrescriptionInfoPage(contextSelected));
         }
 
-        private void Handle_ContextMenuDeleteButton(object sender, EventArgs e)
+        private async void Handle_ContextMenuDeleteButton(object sender, EventArgs e)
         {
             var menuItem = (MenuItem)sender;
             var contextSelected = (Prescription)menuItem.CommandParameter;
-            DisplayAlert("Deleted:", contextSelected.Name, "OK");
+            bool answer = await DisplayAlert("Confirm:", "Delete '" + contextSelected.Name + "' ?", "Yes", "No");
+            if (answer)
+            {
+                App.MyHistory.Remove(contextSelected);
+            }
 
-            App.MyHistory.Remove(contextSelected);
+            
         }
 
 
