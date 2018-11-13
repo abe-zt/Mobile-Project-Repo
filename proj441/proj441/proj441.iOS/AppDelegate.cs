@@ -26,7 +26,8 @@ namespace proj441.iOS
         {
             Rg.Plugins.Popup.Popup.Init();
             Xamarin.Forms.Forms.Init();
-            UINavigationBar.Appearance.TintColor = Color.White.ToUIColor(); //to change icon color to white
+            UINavigationBar.Appearance.TintColor = Color.White.ToUIColor(); //to change navigation icon color to white
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes() { TextColor = UIColor.White });  //to navigation change text color to white
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
