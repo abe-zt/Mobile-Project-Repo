@@ -84,7 +84,7 @@
                                             FontSize="32"
                                             FontAttributes="Bold"
                                             TextColor="{StaticResource MainColor}"
-                                            Text="+   " />
+                                            Text="  " />
                                     </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>

@@ -67,7 +67,7 @@
             <Button
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="LogDosageButton"
-                Text="Prescriptions"
+                Text="LOG A DOSAGE"
                 Clicked="LogDosageButton_Clicked"
                 />
             
@@ -88,7 +88,7 @@
             <Button
                 Style="{StaticResource MainButtonStyle}"
                 x:Name="seeRemindersButton"
-                Text="Reminders"
+                Text="REMINDERS"
                 Clicked="SeeRemindersButton_Clicked"
                 />
  

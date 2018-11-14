@@ -13,11 +13,15 @@ namespace proj441
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LogPopup
 	{
+        
+
         public Prescription pre = new Prescription();
 		public LogPopup ()
 		{
 			InitializeComponent ();
-		}
+            
+            
+        }
 
         public LogPopup(Prescription p)
         {
@@ -50,6 +54,11 @@ namespace proj441
         private async void CancelToHistory_Clicked(object sender, EventArgs e)
         {
             await PopupNavigation.Instance.PopAsync(true);
+        }
+
+        private void OnTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
         }
     }
 }

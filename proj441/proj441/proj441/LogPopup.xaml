@@ -22,9 +22,9 @@
         BackgroundColor="White"
         HorizontalOptions="Center"
         VerticalOptions="Center"
-        Margin="25"
-        Padding="25"
-        Spacing="15" 
+        Margin="20"
+        Padding="20"
+        Spacing="10" 
         x:Name="LogPopupStackLayout">
 
         <Label
@@ -35,19 +35,21 @@
             TextColor="Black"
             Text="Please Confirm :"
             />
-        <StackLayout 
-            Orientation="Horizontal"
-            Spacing="5">
-            <Label
+
+        <Label
                 HorizontalOptions="Start"
-                VerticalOptions="Center"
+                VerticalOptions="Start"
                 FontSize="Medium"
                 Text="Amount taken: "
                 />
-            
+
+        <StackLayout 
+            Orientation="Horizontal"
+            Spacing="5">
+
             <Label
                 x:Name="AmountLabel"
-                HorizontalOptions="Start"
+                HorizontalOptions="CenterAndExpand"
                 VerticalOptions="Center"
                 FontSize="Medium"
                 FontAttributes="Bold"
@@ -55,9 +57,8 @@
                 Text="1"
                 />
 
-
             <Stepper 
-                HorizontalOptions="Center"
+                HorizontalOptions="End"
                 VerticalOptions="Center"
                 x:Name="DosageStepper"
                 Maximum="99"
@@ -66,10 +67,13 @@
                 Value="1"
                 ValueChanged="DosageStepper_ValueChanged"
                 />
-            
-        </StackLayout>
-        
 
+        </StackLayout>
+
+
+        
+        
+        
         <StackLayout Orientation="Horizontal">
             <Button 
                 HorizontalOptions="EndAndExpand"
@@ -79,7 +83,7 @@
                 x:Name="CancelToHistory"
                 Clicked="CancelToHistory_Clicked"
                 />
-            
+
             <Button
                 HorizontalOptions="End"
                 VerticalOptions="Center"
@@ -89,6 +93,8 @@
                 Clicked="AddToHistory_Clicked"
                 />
         </StackLayout>
+        
+        
+        
     </StackLayout>
-    
 </pages:PopupPage>
