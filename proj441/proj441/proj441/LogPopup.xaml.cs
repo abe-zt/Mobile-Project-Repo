@@ -31,7 +31,7 @@ namespace proj441
             AmountLabel.Text = ((int)DosageStepper.Value).ToString();  //converting from double to int to string
         }
 
-        private async Task AddToHistory_Clicked(object sender, EventArgs e)
+        private async void AddToHistory_Clicked(object sender, EventArgs e)
         {
 
             Dose d1 = new Dose
