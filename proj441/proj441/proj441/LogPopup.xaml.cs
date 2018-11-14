@@ -33,9 +33,17 @@ namespace proj441
 
         private async Task AddToHistory_Clicked(object sender, EventArgs e)
         {
-            App.MyHistory.Add(pre);
+
+            Dose d1 = new Dose
+            {
+                PrescriptionTaken = pre,
+                DateTimeTaken = DateTime.Now,
+                QuantityTaken = (int)DosageStepper.Value
+            };
+
+            App.MyHistory.Add(d1);
             LogPopupStackLayout.IsVisible = false;
-            await DisplayAlert("Added:", "Added " + pre.Name + " to History", "OK");
+            await DisplayAlert("Added:", "Added " + " ("+ d1.QuantityTaken +") " + d1.PrescriptionTaken.Name + " to History at " + d1.DateTimeTaken.ToString(), "OK");
             await PopupNavigation.Instance.PopAsync(true);
         }
 

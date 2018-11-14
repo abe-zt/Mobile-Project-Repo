@@ -19,7 +19,7 @@ namespace proj441
             PopulateMyList(App.MyHistory);
         }
 
-        private void PopulateMyList(ObservableCollection<Prescription> o)
+        private void PopulateMyList(ObservableCollection<Dose> o)
         {
             MyHistoryList.ItemsSource = o;
         }
@@ -27,15 +27,15 @@ namespace proj441
         async void Handle_ContextMenuInfoButton(object sender, EventArgs e)
         {
             var menuItem = (MenuItem)sender;
-            var contextSelected = (Prescription)menuItem.CommandParameter;
-            await Navigation.PushAsync(new PrescriptionInfoPage(contextSelected));
+            var contextSelected = (Dose)menuItem.CommandParameter;
+            await Navigation.PushAsync(new HistoryInfoPage(contextSelected));
         }
 
         private async void Handle_ContextMenuDeleteButton(object sender, EventArgs e)
         {
             var menuItem = (MenuItem)sender;
-            var contextSelected = (Prescription)menuItem.CommandParameter;
-            bool answer = await DisplayAlert("Confirm:", "Delete '" + contextSelected.Name + "' ?", "Yes", "No");
+            var contextSelected = (Dose)menuItem.CommandParameter;
+            bool answer = await DisplayAlert("Confirm:", "Delete '" + contextSelected.PrescriptionTaken.Name + "' ?", "Yes", "No");
             if (answer)
             {
                 App.MyHistory.Remove(contextSelected);

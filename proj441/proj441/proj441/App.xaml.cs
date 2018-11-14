@@ -10,7 +10,7 @@ namespace proj441
     {
 
         public static ObservableCollection<Prescription> MyPrescrpitions { get; set; } = new ObservableCollection<Prescription>();
-        public static ObservableCollection<Prescription> MyHistory { get; set; } = new ObservableCollection<Prescription>();
+        public static ObservableCollection<Dose> MyHistory { get; set; } = new ObservableCollection<Dose>();
 
         public App()
         {

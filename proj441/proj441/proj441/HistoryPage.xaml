@@ -43,25 +43,31 @@
                             <ViewCell>
                                 <ViewCell.ContextActions>
                                     <MenuItem
-                                   Text="Info"
-                                   Clicked="Handle_ContextMenuInfoButton"
-                                   CommandParameter="{Binding .}"/>
+                                       Text="Info"
+                                       Clicked="Handle_ContextMenuInfoButton"
+                                       CommandParameter="{Binding .}"/>
                                     <MenuItem
-                                   Text="Delete"
-                                   CommandParameter="{Binding .}"
-                                    Clicked="Handle_ContextMenuDeleteButton"
-                                   IsDestructive="True"/>
+                                       Text="Delete"
+                                       CommandParameter="{Binding .}"
+                                       Clicked="Handle_ContextMenuDeleteButton"
+                                       IsDestructive="True"/>
                                 </ViewCell.ContextActions>
                                 <ViewCell.View>
-                                    <StackLayout
-                                        Orientation="Horizontal">
-                                        <Image
-                                            HeightRequest="50"
-                                            Source="redpillwhitefill.png"
-                                            Aspect="AspectFill"/>
+                                    <StackLayout>
+                                        <StackLayout
+                                            Orientation="Horizontal">
+                                            <Label 
+                                                x:Name="quantityLabel"
+                                                FontSize="Large"
+                                                TextColor="Blue"
+                                                Text="{Binding QuantityTaken}"/>
+                                            <Label
+                                                FontSize="Large"
+                                                Text="{Binding PrescriptionTaken.Name}" />
+                                        </StackLayout>
                                         <Label
-                                            FontSize="Large"
-                                            Text="{Binding Name}" />
+                                            x:Name="dateTimeLabel"
+                                            Text="{Binding DateTimeTaken}"/>
                                     </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>
