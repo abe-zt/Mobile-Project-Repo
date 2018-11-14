@@ -67,14 +67,14 @@
             <Button
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="LogDosageButton"
-                Text="LOG A DOSAGE"
+                Text="Prescriptions"
                 Clicked="LogDosageButton_Clicked"
                 />
             
             <Button
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="seeHistoryButton"
-                Text="DOSAGE HISTORY"
+                Text="HISTORY"
                 Clicked="SeeHistoryButton_Clicked"
                 />
 

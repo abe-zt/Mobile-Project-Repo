@@ -44,13 +44,13 @@
                         IconSource="homeicon.png" 
                         TargetType="{x:Type local:HomePage}" />
                     <local:MasterPageItem 
-                        Title="See Reminders" 
-                        IconSource="remindersicon.png" 
-                        TargetType="{x:Type local:ReminderPage}" />
-                    <local:MasterPageItem 
                         Title="See Dosage History" 
                         IconSource="calendaricon.png" 
                         TargetType="{x:Type local:HistoryPage}" />
+                    <local:MasterPageItem 
+                        Title="See Reminders" 
+                        IconSource="remindersicon.png" 
+                        TargetType="{x:Type local:ReminderPage}" />
                     <local:MasterPageItem 
                         Title="Log Out" 
                         IconSource="usericon.png" 

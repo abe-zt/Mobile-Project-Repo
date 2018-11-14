@@ -45,7 +45,7 @@ namespace proj441
         private async void LogDosageButton2_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            await Navigation.PushAsync(new LogPage());
+            await Navigation.PushAsync(new PrescriptionsPage());
         }
 
 

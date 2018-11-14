@@ -20,7 +20,7 @@ namespace proj441
         private async void LogDosageButton_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            await Navigation.PushAsync(new LogPage());
+            await Navigation.PushAsync(new PrescriptionsPage());
         }
 
         private async void SetReminderButton_Clicked(object sender, EventArgs e)
