@@ -94,14 +94,7 @@
                         FontAttributes="Bold"
                         VerticalOptions="StartAndExpand"
                         HorizontalOptions="StartAndExpand"/>
-                    <Label 
-                        x:Name="RemainingLabel"
-                        
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"
-                        VerticalOptions="StartAndExpand"
-                        HorizontalOptions="StartAndExpand"/>
+                    
 
                 </StackLayout>
             </Frame>

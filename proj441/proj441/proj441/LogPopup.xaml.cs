@@ -13,27 +13,25 @@ namespace proj441
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LogPopup
 	{
-        
 
-        public Prescription pre = new Prescription();
-		public LogPopup ()
-		{
-			InitializeComponent ();
-            
-            
-        }
+        DateTime d = new DateTime();
+        Prescription pre = new Prescription();
 
         public LogPopup(Prescription p)
         {
             InitializeComponent();
+            BindingContext = p;
+
             pre.CopyPrescription(p);
             DosageStepper.Value = pre.PrescribedDosage;
+            d = DateTime.Now;
+            _timePicker.Time = d.TimeOfDay;
         }
 
-        private void DosageStepper_ValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            AmountLabel.Text = ((int)DosageStepper.Value).ToString();  //converting from double to int to string
-        }
+        //private void DosageStepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //   AmountLabel.Text = ((int)DosageStepper.Value).ToString();  //converting from double to int to string
+        //}
 
         private async void AddToHistory_Clicked(object sender, EventArgs e)
         {
@@ -45,9 +43,11 @@ namespace proj441
                 QuantityTaken = (int)DosageStepper.Value
             };
 
+
+            d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;
             App.MyHistory.Add(d1);
             LogPopupStackLayout.IsVisible = false;
-            await DisplayAlert("Added:", "Added " + " ("+ d1.QuantityTaken +") " + d1.PrescriptionTaken.Name + " to History at " + d1.DateTimeTaken.ToString(), "OK");
+            await DisplayAlert("Added to History:", "Taken " + " ("+ d1.QuantityTaken +") " + d1.PrescriptionTaken.Name + " at " + d1.DateTimeTaken.ToString(), "OK");
             await PopupNavigation.Instance.PopAsync(true);
         }
 
@@ -57,6 +57,14 @@ namespace proj441
         }
 
         private void OnTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Time")
+            {
+                SetTriggerTime();
+            }
+        }
+
+        private void SetTriggerTime()
         {
 
         }

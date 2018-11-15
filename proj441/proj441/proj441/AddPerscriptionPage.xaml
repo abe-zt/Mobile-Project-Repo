@@ -67,7 +67,7 @@
                         FontSize="12"
                         />
                     <Frame
-                        Margin="5,1"
+                        Margin="2"
                         Padding="2"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
@@ -115,7 +115,7 @@
                                 FontSize="12"/>
 
                             <Frame
-                                Margin="5,1"
+                                Margin="2"
                                 Padding="2"
                                 HorizontalOptions="Fill"
                                 VerticalOptions="Center"
@@ -155,7 +155,7 @@
                                 FontSize="12"/>
 
                             <Frame
-                                Margin="5,1"
+                                Margin="2"
                                 Padding="2"
                                 HorizontalOptions="Fill"
                                 VerticalOptions="Center"
@@ -191,7 +191,7 @@
                         />
 
                     <Frame
-                        Margin="5,1"
+                        Margin="2"
                         Padding="2"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
@@ -222,7 +222,7 @@
                         />
 
                     <Frame
-                        Margin="5,1"
+                        Margin="2"
                         Padding="2"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
@@ -269,7 +269,7 @@
                                 />
 
                             <Frame
-                                Margin="5,1"
+                                Margin="2"
                                 Padding="2"
                                 HorizontalOptions="Fill"
                                 VerticalOptions="Center"
@@ -308,7 +308,7 @@
                                 />
 
                             <Frame
-                                Margin="5,1"
+                                Margin="2"
                                 Padding="2"
                                 HorizontalOptions="Fill"
                                 VerticalOptions="Center"
