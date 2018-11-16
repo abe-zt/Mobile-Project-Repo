@@ -4,17 +4,18 @@
                  x:Class="proj441.LogPopup"
                  xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
                  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
-    
+
     <pages:PopupPage.Animation>
-        <animations:ScaleAnimation DurationIn="500"
-                                   DurationOut="500"
-                                   EasingIn="SinOut"
-                                   EasingOut="SinIn"
-                                   HasBackgroundAnimation="True"
-                                   PositionIn="Center"
-                                   PositionOut="Center"
-                                   ScaleIn="1.4"
-                                   ScaleOut="0.6" />
+        <animations:ScaleAnimation 
+            DurationIn="500"
+            DurationOut="500"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.4"
+            ScaleOut="0.6" />
     </pages:PopupPage.Animation>
 
 
@@ -37,24 +38,36 @@
             />
 
         <Label
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                FontSize="Medium"
-                Text="Time taken: "
-                />
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            FontSize="Medium"
+            Text="Date taken: "
+            />
+
+        <DatePicker
+            x:Name="_datePicker"
+            MinimumDate="1/1/2018"
+            DateSelected="_datePicker_DateSelected"         
+            />
+
+        <Label
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            FontSize="Medium"
+            Text="Time taken: "
+            />
 
         <TimePicker
             x:Name="_timePicker"
-            
             Format="T"
             PropertyChanged="OnTimePicker_PropertyChanged" />
-        
+
         <Label
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                FontSize="Medium"
-                Text="Amount taken: "
-                />
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            FontSize="Medium"
+            Text="Amount taken: "
+            />
 
         <StackLayout 
             Orientation="Horizontal"
@@ -72,7 +85,7 @@
                 Text="{Binding Value}"
                 />
             <Stepper 
-                HorizontalOptions="End"
+                HorizontalOptions="CenterAndExpand"
                 VerticalOptions="Center"
                 x:Name="DosageStepper"
                 Maximum="99"
@@ -80,21 +93,18 @@
                 Increment="1"
                 Value="1"
                 />
-            
+
         </StackLayout>
-        
+
         <BoxView 
-                
-                Color="Red"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="Center"
-                HeightRequest="1"
-                WidthRequest="300"
-                />
-        
-        
-        
-        
+            Margin="0,0,0,20"
+            Color="Red"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Center"
+            HeightRequest="1"
+            WidthRequest="300"
+            />
+
         <StackLayout Orientation="Horizontal">
             <Button 
                 HorizontalOptions="EndAndExpand"
@@ -114,8 +124,8 @@
                 Clicked="AddToHistory_Clicked"
                 />
         </StackLayout>
-        
-        
-        
+
+
+
     </StackLayout>
 </pages:PopupPage>

@@ -25,6 +25,8 @@ namespace proj441
             pre.CopyPrescription(p);
             DosageStepper.Value = pre.PrescribedDosage;
             dt = DateTime.Now;
+            _datePicker.Date = DateTime.Today;
+            _datePicker.MaximumDate = DateTime.Today;
             _timePicker.Time = DateTime.Now.TimeOfDay;
         }
 
@@ -33,21 +35,28 @@ namespace proj441
         //   AmountLabel.Text = ((int)DosageStepper.Value).ToString();  //converting from double to int to string
         //}
 
+        private void _datePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            TimeSpan ts2 = dt.TimeOfDay;
+            dt = e.NewDate;
+            dt += ts2;
+        }
+
         private void OnTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "Time")
+            
+            TimeSpan ts = _timePicker.Time;
+            dt = DateTime.Today;
+
+            dt += ts;                   //timespan can be added to datetime :)
+
+            if (dt > DateTime.Now)
             {
-                TimeSpan ts = _timePicker.Time;
-                dt = DateTime.Today;
-
-                dt += ts;                   //timespan can be added to datetime :)
-
-                if (dt > DateTime.Now)
-                {
-                    TimeSpan oneDay = new TimeSpan(24,0,0);
-                    dt -= oneDay;
-                }
+                TimeSpan oneDay = new TimeSpan(24,0,0);
+                dt -= oneDay;
+                _datePicker.Date = dt.Date;
             }
+            
         }
 
         private async void AddToHistory_Clicked(object sender, EventArgs e)
@@ -72,5 +81,7 @@ namespace proj441
         {
             await PopupNavigation.Instance.PopAsync(true);
         }
+
+        
     }
 }
