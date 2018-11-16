@@ -40,6 +40,19 @@
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
                 FontSize="Medium"
+                Text="Time taken: "
+                />
+
+        <TimePicker
+            x:Name="_timePicker"
+            
+            Format="T"
+            PropertyChanged="OnTimePicker_PropertyChanged" />
+        
+        <Label
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                FontSize="Medium"
                 Text="Amount taken: "
                 />
 
@@ -72,25 +85,14 @@
         
         <BoxView 
                 
-                Color="#C0C0C0"
+                Color="Red"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="Center"
                 HeightRequest="1"
                 WidthRequest="300"
                 />
         
-        <Label
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                FontSize="Medium"
-                Text="Time taken: "
-                />
-
-        <TimePicker
-            x:Name="_timePicker"
-            
-            Format="T"
-            PropertyChanged="OnTimePicker_PropertyChanged" />
+        
         
         
         <StackLayout Orientation="Horizontal">

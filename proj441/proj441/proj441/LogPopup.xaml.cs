@@ -38,11 +38,15 @@ namespace proj441
             if (e.PropertyName == "Time")
             {
                 TimeSpan ts = _timePicker.Time;
-
                 dt = DateTime.Today;
 
-                dt += ts;                   //timespan type can be added to datetime type :)
+                dt += ts;                   //timespan can be added to datetime :)
 
+                if (dt > DateTime.Now)
+                {
+                    TimeSpan oneDay = new TimeSpan(24,0,0);
+                    dt -= oneDay;
+                }
             }
         }
 

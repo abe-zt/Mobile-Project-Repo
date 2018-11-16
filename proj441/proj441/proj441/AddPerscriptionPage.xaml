@@ -124,6 +124,7 @@
                                 BackgroundColor="White"
                                 HasShadow="True">
                                 <Entry
+                                    Keyboard="Numeric"
                                     Margin="10,0,10,0"
                                     HorizontalOptions="Fill"
                                     VerticalOptions="Fill"
@@ -164,6 +165,7 @@
                                 BackgroundColor="White"
                                 HasShadow="True">
                                 <Entry
+                                    Keyboard="Numeric"
                                     Margin="10,0,10,0"
                                     HorizontalOptions="Fill"
                                     VerticalOptions="Fill"
@@ -278,6 +280,7 @@
                                 BackgroundColor="White"
                                 HasShadow="True">
                                 <Entry
+                                    Keyboard="Numeric"
                                     Margin="10,0,10,0"
                                     HorizontalOptions="Fill"
                                     VerticalOptions="Fill"
@@ -317,6 +320,7 @@
                                 BackgroundColor="White"
                                 HasShadow="True">
                                 <Entry
+                                    Keyboard="Numeric"
                                     Margin="10,0,10,0"
                                     HorizontalOptions="Fill"
                                     VerticalOptions="Fill"
