@@ -48,16 +48,16 @@
             Spacing="5">
 
             <Label
+                Margin="20,0"
                 x:Name="AmountLabel"
                 BindingContext="{x:Reference Name=DosageStepper}"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="Center"
-                FontSize="Medium"
+                FontSize="Large"
                 FontAttributes="Bold"
                 TextColor="Red"
                 Text="{Binding Value}"
                 />
-
             <Stepper 
                 HorizontalOptions="End"
                 VerticalOptions="Center"
@@ -66,10 +66,19 @@
                 Minimum="1"
                 Increment="1"
                 Value="1"
-                HeightRequest="100"
                 />
-
+            
         </StackLayout>
+        
+        <BoxView 
+                
+                Color="#C0C0C0"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Center"
+                HeightRequest="1"
+                WidthRequest="300"
+                />
+        
         <Label
                 HorizontalOptions="Start"
                 VerticalOptions="Start"

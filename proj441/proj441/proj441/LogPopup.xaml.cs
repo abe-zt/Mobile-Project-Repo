@@ -14,7 +14,7 @@ namespace proj441
 	public partial class LogPopup
 	{
 
-        DateTime d = new DateTime();
+        DateTime dt = new DateTime();
         Prescription pre = new Prescription();
 
         public LogPopup(Prescription p)
@@ -24,8 +24,8 @@ namespace proj441
 
             pre.CopyPrescription(p);
             DosageStepper.Value = pre.PrescribedDosage;
-            d = DateTime.Now;
-            _timePicker.Time = d.TimeOfDay;
+            dt = DateTime.Now;
+            _timePicker.Time = DateTime.Now.TimeOfDay;
         }
 
         //private void DosageStepper_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -33,13 +33,26 @@ namespace proj441
         //   AmountLabel.Text = ((int)DosageStepper.Value).ToString();  //converting from double to int to string
         //}
 
+        private void OnTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Time")
+            {
+                TimeSpan ts = _timePicker.Time;
+
+                dt = DateTime.Today;
+
+                dt += ts;                   //timespan type can be added to datetime type :)
+
+            }
+        }
+
         private async void AddToHistory_Clicked(object sender, EventArgs e)
         {
 
             Dose d1 = new Dose
             {
                 PrescriptionTaken = pre,
-                DateTimeTaken = DateTime.Now,
+                DateTimeTaken = dt,
                 QuantityTaken = (int)DosageStepper.Value
             };
 
@@ -54,19 +67,6 @@ namespace proj441
         private async void CancelToHistory_Clicked(object sender, EventArgs e)
         {
             await PopupNavigation.Instance.PopAsync(true);
-        }
-
-        private void OnTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == "Time")
-            {
-                SetTriggerTime();
-            }
-        }
-
-        private void SetTriggerTime()
-        {
-
         }
     }
 }
