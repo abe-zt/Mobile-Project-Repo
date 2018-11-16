@@ -58,6 +58,10 @@
                                    Clicked="Handle_ContextMenuInfoButton"
                                    CommandParameter="{Binding .}"/>
                                     <MenuItem
+                                   Text="Edit"
+                                   Clicked="Handle_ContextMenuEditButton"
+                                   CommandParameter="{Binding .}"/>
+                                    <MenuItem
                                    Text="Delete"
                                    CommandParameter="{Binding .}"
                                     Clicked="Handle_ContextMenuDeleteButton"

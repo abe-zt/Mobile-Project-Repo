@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proj441.EditPrescriptionPage"
+            Title="Edit Prescription" >
+    
+    <ContentPage.Content>
+        <Grid
+            Padding="0"
+            RowSpacing="0"
+            ColumnSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <Image 
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.RowSpan="2"
+                Source="doodlepills3.png"
+                Aspect="AspectFill"/>
+
+            <Frame
+                Grid.Row="0"
+
+                Margin="15,15,15,0"
+                Padding="5"
+                CornerRadius="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                BorderColor="{StaticResource MainColor}"
+                BackgroundColor="#F5F5F5">
+
+                <StackLayout
+                    Margin="0"
+                    Spacing="0"
+                    BackgroundColor="#F5F5F5"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    >
+
+                    <Label 
+                        Margin="0,10,0,0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        TextColor="Black"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        Text="Enter information to add"
+                        />
+                    <Label 
+                        Margin="0,0,0,0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        TextColor="Black"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        Text="a new prescription"
+                        />
+
+                    <Label
+                        Margin="15,1"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        Text="Name"
+                        TextColor="Black"
+                        FontSize="12"
+                        />
+                    <Frame
+                        Margin="2"
+                        Padding="2"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        CornerRadius="0"
+                        BorderColor="{StaticResource MainColor}"
+                        BackgroundColor="White"
+                        HasShadow="True">
+                        <Entry
+                            Margin="10,0,10,0"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            BackgroundColor="White"
+                            FontSize="Small"
+                            TextColor="Black"
+                            Text="{Binding Name}"
+                            x:Name="preName">
+                        </Entry>
+                    </Frame>
+
+
+                    <Grid
+                        Padding="0"
+                        Margin="0"
+                        RowSpacing="0"
+                        ColumnSpacing="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Padding="0"
+                            Margin="0"
+                            Spacing="0">
+
+                            <Label
+                                Margin="15,10,0,1"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"
+                                Text="Strength (mg)"
+                                TextColor="Black"
+                                FontSize="12"/>
+
+                            <Frame
+                                Margin="2"
+                                Padding="2"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center"
+                                CornerRadius="0"
+                                BorderColor="{StaticResource MainColor}"
+                                BackgroundColor="White"
+                                HasShadow="True">
+                                <Entry
+                                    Keyboard="Numeric"
+                                    Margin="10,0,10,0"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Fill"
+                                    BackgroundColor="White"
+                                    FontSize="Small"
+                                    TextColor="Black"
+                                    Text="{Binding Strength}"
+                                    x:Name="preStrength">
+
+                                </Entry>
+                            </Frame>
+                        </StackLayout>
+
+
+                        <StackLayout
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Padding="0"
+                            Margin="0"
+                            Spacing="0">
+
+                            <Label
+                                Margin="15,10,0,1"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"
+                                Text="Prescribed Dosage"
+                                TextColor="Black"
+                                FontSize="12"/>
+
+                            <Frame
+                                Margin="2"
+                                Padding="2"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center"
+                                CornerRadius="0"
+                                BorderColor="{StaticResource MainColor}"
+                                BackgroundColor="White"
+                                HasShadow="True">
+                                <Entry
+                                    Keyboard="Numeric"
+                                    Margin="10,0,10,0"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Fill"
+                                    BackgroundColor="White"
+                                    FontSize="Small"
+                                    TextColor="Black"
+                                    Text="{Binding PrescribedDosage}"
+                                    x:Name="preDosage">
+
+                                </Entry>
+                            </Frame>
+                        </StackLayout>
+
+
+                    </Grid>
+
+                    <Label
+                        Margin="15,10,0,1"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        Text="Instructions"
+                        TextColor="Black"
+                        FontSize="12"
+                        />
+
+                    <Frame
+                        Margin="2"
+                        Padding="2"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        CornerRadius="0"                        
+                        BorderColor="{StaticResource MainColor}"
+                        BackgroundColor="White"
+                        HasShadow="True">
+                        <Entry
+                            Margin="10,0,10,0"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            BackgroundColor="White"
+                            FontSize="Small"
+                            TextColor="Black"
+                            Text="{Binding PhysicalDescription}"
+                            x:Name="preInstructions">
+                        </Entry>
+                    </Frame>
+
+                    <Label
+                        Margin="15,10,0,1"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        Text="Physical Description"
+                        TextColor="Black"
+                        FontSize="12"
+                        />
+
+                    <Frame
+                        Margin="2"
+                        Padding="2"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        CornerRadius="0"
+                        BorderColor="{StaticResource MainColor}"
+                        BackgroundColor="White"
+                        HasShadow="True">
+                        <Entry
+                            Margin="10,0,10,0"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            BackgroundColor="White"
+                            FontSize="Small"
+                            TextColor="Black"
+                            Text="{Binding PhysicalDescription}"
+
+                            x:Name="preDescription">
+                        </Entry>
+                    </Frame>
+
+                    <Grid
+                        Padding="0"
+                        Margin="0"
+                        RowSpacing="0"
+                        ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Padding="0"
+                            Margin="0"
+                            Spacing="0">
+                            <Label
+                                Margin="15,10,0,1"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"
+                                Text="Quantity (QTY)"
+                                TextColor="Black"
+                                FontSize="12"
+                                />
+
+                            <Frame
+                                Margin="2"
+                                Padding="2"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center"
+                                CornerRadius="0"
+                                BorderColor="{StaticResource MainColor}"
+                                BackgroundColor="White"
+                                HasShadow="True">
+                                <Entry
+                                    Keyboard="Numeric"
+                                    Margin="10,0,10,0"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Fill"
+                                    BackgroundColor="White"
+                                    FontSize="Small"
+                                    TextColor="Black"
+                                    Text="{Binding Quantity}"
+                                    x:Name="preQuantity">
+                                </Entry>
+                            </Frame>
+                        </StackLayout>
+
+
+                        <StackLayout
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Padding="0"
+                            Margin="0"
+                            Spacing="0">
+                            <Label
+                                Margin="15,10,0,1"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"
+                                Text="Remaining"
+                                TextColor="Black"
+                                FontSize="12"
+                                />
+
+                            <Frame
+                                Margin="2"
+                                Padding="2"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Center"
+                                CornerRadius="0"
+                                BorderColor="{StaticResource MainColor}"
+                                BackgroundColor="White"
+                                HasShadow="True">
+                                <Entry
+                                    Keyboard="Numeric"
+                                    Margin="10,0,10,0"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Fill"
+                                    BackgroundColor="White"
+                                    FontSize="Small"
+                                    TextColor="Black"
+                                    Text="{Binding Remaining}"
+                                    x:Name="preRemaining">
+                                </Entry>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+
+                </StackLayout>
+            </Frame>
+            <StackLayout
+                Padding="10, 20, 10, 20"
+                Grid.Row="1">
+                <Button
+                    Style="{StaticResource MainButtonStyle}" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    x:Name="BackToPrescriptionButton"
+                    Text="Back to Prescriptions"
+                    Clicked="BackToPrescriptionButton_Clicked">
+                </Button>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -55,18 +55,32 @@
                                 <ViewCell.View>
                                     <StackLayout>
                                         <StackLayout
-                                            Orientation="Horizontal">
+                                            Orientation="Horizontal"
+                                            Spacing="2">
+                                            <Label 
+                                                
+                                                FontSize="Large"
+                                                TextColor="Blue"
+                                                Text=" ( "/>
                                             <Label 
                                                 x:Name="quantityLabel"
                                                 FontSize="Large"
+                                                FontAttributes="Bold"
                                                 TextColor="Blue"
                                                 Text="{Binding QuantityTaken}"/>
+                                            <Label 
+                                                
+                                                FontSize="Large"
+                                                TextColor="Blue"
+                                                Text=" ) "/>
                                             <Label
                                                 FontSize="Large"
                                                 Text="{Binding PrescriptionTaken.Name}" />
                                         </StackLayout>
+                                        
                                         <Label
                                             x:Name="dateTimeLabel"
+                                            HorizontalOptions="CenterAndExpand"
                                             Text="{Binding DateTimeTaken}"/>
                                     </StackLayout>
                                 </ViewCell.View>

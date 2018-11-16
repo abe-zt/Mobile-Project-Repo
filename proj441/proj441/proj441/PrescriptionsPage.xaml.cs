@@ -52,6 +52,13 @@ namespace proj441
             await Navigation.PushAsync(new PrescriptionInfoPage(contextSelected));
         }
 
+        async void Handle_ContextMenuEditButton(object sender, EventArgs e)
+        {
+            var menuItem = (MenuItem)sender;
+            var contextSelected = (Prescription)menuItem.CommandParameter;
+            await Navigation.PushAsync(new EditPrescriptionPage(contextSelected));
+        }
+
         private async void Handle_ContextMenuDeleteButton(object sender, EventArgs e)
         {
             var menuItem = (MenuItem)sender;
@@ -86,6 +93,11 @@ namespace proj441
                 //}
             }
             l.SelectedItem = null;
+        }
+
+        private void MenuItem_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
