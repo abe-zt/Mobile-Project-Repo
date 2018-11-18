@@ -99,5 +99,20 @@ namespace proj441
         {
 
         }
+
+        private void MyLogList_Refreshing(object sender, EventArgs e)
+        {
+            var listViewToRefresh = (ListView)sender;
+            //ClearListView();
+            PopulateMyList(App.MyPrescrpitions);
+            MyLogList.IsRefreshing = false;
+        }
+
+
+        public void ClearListView()
+        {
+            MyLogList.ItemsSource = null;
+        }
+
     }
 }

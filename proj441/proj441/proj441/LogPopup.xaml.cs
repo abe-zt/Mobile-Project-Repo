@@ -23,12 +23,23 @@ namespace proj441
             BindingContext = p;
 
             pre.CopyPrescription(p);
-            DosageStepper.Value = pre.PrescribedDosage;
+            //AssignInitialDosageStepperValue();
+            
             dt = DateTime.Now;
             _datePicker.Date = DateTime.Today;
             _datePicker.MaximumDate = DateTime.Today;
             _timePicker.Time = DateTime.Now.TimeOfDay;
         }
+
+        //private void AssignInitialDosageStepperValue()
+        //{
+        //    if (pre.PrescribedDosage < DosageStepper.Minimum)
+        //        DosageStepper.Value = DosageStepper.Minimum;
+        //    else if (pre.PrescribedDosage > DosageStepper.Maximum)
+        //        DosageStepper.Value = DosageStepper.Maximum;
+        //    else
+        //        DosageStepper.Value = pre.PrescribedDosage;
+        //}
 
         //private void DosageStepper_ValueChanged(object sender, ValueChangedEventArgs e)
         //{
@@ -62,6 +73,9 @@ namespace proj441
         private async void AddToHistory_Clicked(object sender, EventArgs e)
         {
 
+            int difference = pre.Remaining - (int)DosageStepper.Value;
+            remainingLabel.Text = difference.ToString();
+
             Dose d1 = new Dose
             {
                 PrescriptionTaken = pre,
@@ -69,10 +83,11 @@ namespace proj441
                 QuantityTaken = (int)DosageStepper.Value
             };
 
+            
 
             d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;
             App.MyHistory.Add(d1);
-            LogPopupStackLayout.IsVisible = false;
+            LogPopupStackLayout.IsVisible = true;
             await DisplayAlert("Added to History:", "Taken " + " ("+ d1.QuantityTaken +") " + d1.PrescriptionTaken.Name + " at " + d1.DateTimeTaken.ToString(), "OK");
             await PopupNavigation.Instance.PopAsync(true);
         }

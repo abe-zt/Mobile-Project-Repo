@@ -89,12 +89,26 @@
                 VerticalOptions="Center"
                 x:Name="DosageStepper"
                 Maximum="99"
-                Minimum="1"
+                Minimum="0"
                 Increment="1"
-                Value="1"
+                Value="{Binding PrescribedDosage, Mode=OneWay}"
                 />
+            
+            
 
         </StackLayout>
+
+        <Label
+                IsVisible="True"
+                Margin="20,0"
+                x:Name="remainingLabel"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="Large"
+                FontAttributes="Bold"
+                TextColor="Blue"
+                Text="{Binding Remaining}"
+                />
 
         <BoxView 
             Margin="0,0,0,20"

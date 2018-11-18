@@ -46,55 +46,102 @@
                         FontSize="12"
                         FontAttributes="Bold"
                         Text="Prescription Information" />
-
-                    <Label 
-                        Text="{Binding Name}"
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"
-                        VerticalOptions="StartAndExpand"
-                        HorizontalOptions="StartAndExpand"/>
-
-                    <Label 
-                        Text="{Binding Strength}"
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"
-                        VerticalOptions="StartAndExpand"
-                        HorizontalOptions="StartAndExpand"/>
                     
-                    <Label 
-                        Text="{Binding PrescribedDosage}"
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"
-                        VerticalOptions="StartAndExpand"
-                        HorizontalOptions="StartAndExpand"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Name: "
+                            TextColor="Blue"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="Start"/>
+                        <Label 
+                            Text="{Binding Name}"
+                            TextColor="Black"
+                            FontSize="16"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
 
-                    <Label 
-                        Text="{Binding Instructions}"
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"
-                        VerticalOptions="StartAndExpand"
-                        HorizontalOptions="StartAndExpand"/>
-                    <Label 
-                        Text="{Binding PhysicalDescription}"
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"
-                        VerticalOptions="StartAndExpand"
-                        HorizontalOptions="StartAndExpand"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Strength: "
+                            TextColor="Blue"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="Start"/>
+                        <Label 
+                            Text="{Binding Strength}"
+                            TextColor="Black"
+                            FontSize="16"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
 
-                    <Label 
-                        x:Name="QuantityLabel"
-                        
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"
-                        VerticalOptions="StartAndExpand"
-                        HorizontalOptions="StartAndExpand"/>
-                    
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Prescribed Dosage: "
+                            TextColor="Blue"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="Start"/>
+                        <Label 
+                            Text="{Binding PrescribedDosage}"
+                            TextColor="Black"
+                            FontSize="16"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Instructions: "
+                            TextColor="Blue"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="Start"/>
+                        <Label 
+                            Text="{Binding Instructions}"
+                            TextColor="Black"
+                            FontSize="16"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Description: "
+                            TextColor="Blue"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="Start"/>
+                        <Label 
+                            Text="{Binding PhysicalDescription}"
+                            TextColor="Black"
+                            FontSize="16"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Quantity: "
+                            TextColor="Blue"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="Start"/>
+                        <Label 
+                            x:Name="QuantityLabel"
+                            TextColor="Black"
+                            FontSize="16"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
 
                 </StackLayout>
             </Frame>

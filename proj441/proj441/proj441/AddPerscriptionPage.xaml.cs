@@ -29,20 +29,29 @@ namespace proj441
 
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
         {
-            Prescription p = new Prescription
+            var exists = App.MyPrescrpitions.Any(i => i.Name == preName.Text && i.Strength == preStrength.Text);    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
+            if (exists)
             {
-                Name = preName.Text,
-                Strength = preStrength.Text,
-                PrescribedDosage = Convert.ToInt32(preDosage.Text),
-                Instructions = preInstructions.Text,
-                PhysicalDescription = preDescription.Text,
-                Quantity = Convert.ToInt32(preQuantity.Text),
-                Remaining = Convert.ToInt32(preRemaining.Text)
-            };
+                await DisplayAlert("Error:", "Prescription already exists", "OK");
+            }
 
-            App.MyPrescrpitions.Add(p);
-            //LogPage logPage = new LogPage(p1);
-            await Navigation.PopAsync();
+            else
+            {
+                Prescription p = new Prescription
+                {
+                    Name = preName.Text,
+                    Strength = preStrength.Text,
+                    PrescribedDosage = Convert.ToInt32(preDosage.Text),
+                    Instructions = preInstructions.Text,
+                    PhysicalDescription = preDescription.Text,
+                    Quantity = Convert.ToInt32(preQuantity.Text),
+                    Remaining = Convert.ToInt32(preRemaining.Text)
+                };
+
+                App.MyPrescrpitions.Add(p);
+                //LogPage logPage = new LogPage(p1);
+                await Navigation.PopAsync();
+            }
         }
     }
 }

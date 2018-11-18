@@ -48,7 +48,9 @@
                     Grid.Row="1" 
                     x:Name = "MyLogList"
                     HasUnevenRows="True"
-                    ItemSelected="MyLogList_ItemSelected">
+                    ItemSelected="MyLogList_ItemSelected"
+                    IsPullToRefreshEnabled="True"
+                    Refreshing="MyLogList_Refreshing">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -69,7 +71,8 @@
                                 </ViewCell.ContextActions>
                                 <ViewCell.View>
                                     <StackLayout
-                                        Orientation="Horizontal">
+                                        Orientation="Horizontal"
+                                        Spacing="0">
                                         <Image
                                             HorizontalOptions="Start"
                                             VerticalOptions="Center"
@@ -79,16 +82,26 @@
                                         <Label
                                             HorizontalOptions="Start"
                                             VerticalOptions="CenterAndExpand"
-                                            FontSize="Large"
-                                            Text="{Binding Name}" />
-                                        <Label
-                                            Margin="0,0,15,0"
-                                            HorizontalOptions="EndAndExpand"
-                                            VerticalOptions="Center"
-                                            FontSize="32"
+                                            FontSize="28"
                                             FontAttributes="Bold"
+                                            TextColor="Black"
+                                            Text="{Binding Name}  " />
+                                        <Label
+                                            Margin="20,0,0,0"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"
+                                            FontSize="28"
+                                            
                                             TextColor="{StaticResource MainColor}"
-                                            Text="  " />
+                                            Text="{Binding Strength}"/>
+                                        <Label
+                                            Margin="0"
+                                            HorizontalOptions="StartAndExpand"
+                                            VerticalOptions="Center"
+                                            FontSize="28"
+                                            
+                                            TextColor="{StaticResource MainColor}"
+                                            Text="mg" />
                                     </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>
