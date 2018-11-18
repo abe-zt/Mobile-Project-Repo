@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 
 namespace proj441
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PrescriptionsPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PrescriptionsPage : ContentPage
+    {
         //public ObservableCollection<Prescription> myPrescriptionCollection = new ObservableCollection<Prescription>();
 
         public PrescriptionsPage()
@@ -22,12 +22,12 @@ namespace proj441
             PopulateMyList(App.MyPrescrpitions);
         }
 
-  //      public LogPage (Prescription p)
-		//{
-		//	InitializeComponent ();
-  //          //AddMyPrescription(p);
-  //          PopulateMyList(App.myPrescrpitions);
-  //      }
+        //      public LogPage (Prescription p)
+        //{
+        //	InitializeComponent ();
+        //          //AddMyPrescription(p);
+        //          PopulateMyList(App.myPrescrpitions);
+        //      }
 
         //private void AddMyPrescription(Prescription p)
         //{
@@ -103,16 +103,21 @@ namespace proj441
         private void MyLogList_Refreshing(object sender, EventArgs e)
         {
             var listViewToRefresh = (ListView)sender;
-            //ClearListView();
+            ClearListView();
             PopulateMyList(App.MyPrescrpitions);
             MyLogList.IsRefreshing = false;
         }
 
 
-        public void ClearListView()
+        private void ClearListView()
         {
             MyLogList.ItemsSource = null;
         }
 
+
+        protected override void OnAppearing()
+        {
+            MyLogList_Refreshing(MyLogList, null);
+        }
     }
 }
