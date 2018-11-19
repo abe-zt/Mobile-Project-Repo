@@ -20,7 +20,7 @@
 
 
     <StackLayout
-        BackgroundColor="White"
+        BackgroundColor="LightGray"
         HorizontalOptions="Center"
         VerticalOptions="Center"
         Margin="20"
@@ -44,25 +44,31 @@
             Text="Date taken: "
             />
 
-        <DatePicker
-            x:Name="_datePicker"
-            MinimumDate="1/1/2018"
-            DateSelected="_datePicker_DateSelected"         
-            />
 
+
+        <DatePicker
+            x:Name="myDatePicker"
+            MinimumDate="01/01/2018"
+            DateSelected="myDatePicker_DateSelected"
+            />
+        <StackLayout>
         <Label
+            BackgroundColor="Orange"
             HorizontalOptions="Start"
             VerticalOptions="Start"
             FontSize="Medium"
             Text="Time taken: "
             />
+            <TimePicker 
+                x:Name="myTimePicker"
+                PropertyChanged="OnTimePicker_PropertyChanged"
+                                                
+                        />
 
-        <TimePicker
-            x:Name="_timePicker"
-            Format="T"
-            PropertyChanged="OnTimePicker_PropertyChanged" />
+        </StackLayout>
 
         <Label
+            BackgroundColor="LightBlue"
             HorizontalOptions="Start"
             VerticalOptions="Start"
             FontSize="Medium"
@@ -74,6 +80,7 @@
             Spacing="5">
 
             <Label
+                BackgroundColor="LightGoldenrodYellow"
                 Margin="20,0"
                 x:Name="AmountLabel"
                 BindingContext="{x:Reference Name=DosageStepper}"
@@ -82,19 +89,19 @@
                 FontSize="Large"
                 FontAttributes="Bold"
                 TextColor="Red"
-                Text="{Binding Value}"
+                Text=""
                 />
             <Stepper 
+                BackgroundColor="LightGray"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="Center"
                 x:Name="DosageStepper"
                 Maximum="99"
                 Minimum="0"
                 Increment="1"
-                Value="{Binding PrescribedDosage, Mode=OneWay}"
+                Value="{Binding PrescribedDosage}"
+                ValueChanged ="DosageStepper_ValueChanged"
                 />
-            
-            
 
         </StackLayout>
 
@@ -133,7 +140,7 @@
                 HorizontalOptions="End"
                 VerticalOptions="Center"
                 BackgroundColor="LightBlue"
-                Text="Add"
+                Text="  Add  "
                 x:Name="AddToHistory"
                 Clicked="AddToHistory_Clicked"
                 />

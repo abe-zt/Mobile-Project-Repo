@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proj441.LogDosagePage">
+
+    <ContentPage.Content>
+        <Grid
+            RowSpacing="0"
+            ColumnSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image 
+            Grid.Row="0"
+            Grid.Column="0"
+            Source="doodlepills3.png"
+            Aspect="AspectFill"/>
+
+            <StackLayout
+                Grid.Row="0"
+                BackgroundColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="20"
+                Padding="20"
+                Spacing="10" 
+                >
+
+                <Label
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    Text="Please Confirm :"
+                    />
+
+                <Label
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    FontSize="Medium"
+                    Text="Date taken: "
+                    />
+
+                <DatePicker
+                    x:Name="myDatePicker"
+                    MinimumDate="01/01/2018"
+                    DateSelected="myDatePicker_DateSelected"
+                    />
+
+                <Label
+                    BackgroundColor="Orange"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    FontSize="Medium"
+                    Text="Time taken: "
+                    />
+
+                <TimePicker 
+                    x:Name="myTimePicker"
+                    PropertyChanged="OnTimePicker_PropertyChanged"
+                    />
+
+                <Label
+                    BackgroundColor="LightBlue"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    FontSize="Medium"
+                    Text="Amount taken: "
+                    />
+
+                <StackLayout 
+                    Orientation="Horizontal"
+                    Spacing="5">
+
+                    <Label
+                        BackgroundColor="LightGoldenrodYellow"
+                        Margin="20,0"
+                        x:Name="AmountLabel"
+                    
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        TextColor="Red"
+                    
+                        />
+                    <Stepper 
+                        BackgroundColor="LightGray"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        x:Name="DosageStepper"
+                        Maximum="99"
+                        Minimum="0"
+                        Increment="1"
+                        Value="{Binding PrescribedDosage, Mode=OneWay}"
+                        ValueChanged="DosageStepper_ValueChanged"
+                    />
+
+                </StackLayout>
+
+                <Label
+                    IsVisible="True"
+                    Margin="20,0"
+                    x:Name="remainingLabel"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="Blue"
+                    Text="{Binding Remaining, Mode=TwoWay}"
+                    />
+
+                <BoxView 
+                    Margin="0,0,0,20"
+                    Color="Red"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Center"
+                    HeightRequest="1"
+                    WidthRequest="300"
+                    />
+
+                <StackLayout 
+                    Orientation="Horizontal">
+                    <Button 
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        BackgroundColor="LightBlue"
+                        Text="Cancel"
+                        x:Name="CancelToHistory"
+                        Clicked="CancelToHistory_Clicked"
+                        />
+
+                    <Button
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        BackgroundColor="LightBlue"
+                        Text="Add"
+                        x:Name="AddToHistory"
+                        Clicked="AddToHistory_Clicked"
+                        />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

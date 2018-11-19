@@ -26,9 +26,11 @@ namespace proj441
             //AssignInitialDosageStepperValue();
             
             dt = DateTime.Now;
-            _datePicker.Date = DateTime.Today;
-            _datePicker.MaximumDate = DateTime.Today;
-            _timePicker.Time = DateTime.Now.TimeOfDay;
+
+            myDatePicker.Date = dt;
+            myDatePicker.MaximumDate = DateTime.Today;
+            myTimePicker.Time = dt.TimeOfDay;
+            AmountLabel.Text = p.PrescribedDosage.ToString();
         }
 
         //private void AssignInitialDosageStepperValue()
@@ -46,28 +48,34 @@ namespace proj441
         //   AmountLabel.Text = ((int)DosageStepper.Value).ToString();  //converting from double to int to string
         //}
 
-        private void _datePicker_DateSelected(object sender, DateChangedEventArgs e)
-        {
-            TimeSpan ts2 = dt.TimeOfDay;
-            dt = e.NewDate;
-            dt += ts2;
-        }
+        //private void _datePicker_DateSelected(object sender, DateChangedEventArgs e)
+        //{
+
+
+
+        //    //TimeSpan ts2 = dt.TimeOfDay;
+        //    //dt = e.NewDate;
+        //    //dt += ts2;
+        //}
 
         private void OnTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            
-            TimeSpan ts = _timePicker.Time;
-            dt = DateTime.Today;
+            myDatePicker.Date = dt;
 
-            dt += ts;                   //timespan can be added to datetime :)
+            //if (e.PropertyName == "Time")
+            //{
+                //TimeSpan ts = _timePicker.Time;
+                //dt = DateTime.Today;
 
-            if (dt > DateTime.Now)
-            {
-                TimeSpan oneDay = new TimeSpan(24,0,0);
-                dt -= oneDay;
-                _datePicker.Date = dt.Date;
-            }
-            
+                //dt += ts;                   //timespan can be added to datetime :)
+
+                //if (dt > DateTime.Now)
+                //{
+                //    TimeSpan oneDay = new TimeSpan(24,0,0);
+                //    dt -= oneDay;
+                //    _datePicker.Date = dt.Date;
+                //}
+            //}
         }
 
         private async void AddToHistory_Clicked(object sender, EventArgs e)
@@ -95,6 +103,16 @@ namespace proj441
         private async void CancelToHistory_Clicked(object sender, EventArgs e)
         {
             await PopupNavigation.Instance.PopAsync(true);
+        }
+
+        private void DosageStepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            AmountLabel.Text = Convert.ToInt32(e.NewValue).ToString();
+        }
+
+        private void myDatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+
         }
 
         

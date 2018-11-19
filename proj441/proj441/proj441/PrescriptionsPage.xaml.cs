@@ -77,7 +77,8 @@ namespace proj441
             Prescription p = (Prescription)l.SelectedItem;
             if (l.SelectedItem != null)
             {
-                await PopupNavigation.Instance.PushAsync(new LogPopup(p));
+                //await PopupNavigation.Instance.PushAsync(new LogPopup(p));
+                await Navigation.PushAsync(new LogDosagePage(p));
 
                 //Prescription p = (Prescription)l.SelectedItem;
                 //bool answer = await DisplayAlert("Confirm:", "Log a dosage of '" + p.Name + "' in Dosage History?", "Yes", "No");
