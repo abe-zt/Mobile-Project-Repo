@@ -39,7 +39,12 @@ namespace proj441
         {
             if(e.PropertyName == "Time")
             {
-                
+                var newTime = (TimeSpan)sender;
+                newTime = myDatePicker.Date.TimeOfDay;
+                if  (newTime >  DateTime.Now.TimeOfDay)
+                {
+
+                }
             }     
         }
 
