@@ -12,8 +12,13 @@ namespace proj441
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LogDosagePage : ContentPage
 	{
-		DateTime dt = new DateTime();
+		//DateTime dt = new DateTime();
         Prescription pDuplicate = new Prescription();
+
+        public LogDosagePage()
+        {
+            InitializeComponent();
+        }
 
         public LogDosagePage(Prescription p)
         {
@@ -32,22 +37,30 @@ namespace proj441
 
         private void myDatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
-            
+            DateTime newDateTime = e.NewDate + myTimePicker.Time;
+
+            if (newDateTime > DateTime.Now)
+            {
+                myTimePicker.Time = DateTime.Today.TimeOfDay;
+            }
         }
 
         private void OnTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if(e.PropertyName == "Time")
+            if (e.PropertyName == "Time")
             {
-                dt = DateTime.Now;
-                var newTime = (TimePicker)sender;
-                //DateTime newDateTime = dt2.Date + newTime;
+                //dt = DateTime.Now;
+                var timePickerTemp = (TimePicker)sender;
+                DateTime newDateTime = myDatePicker.Date + timePickerTemp.Time;
 
-                //if  (newDateTime >  DateTime.Now)
-                //{
-                //    //TimeSpan oneDay = new TimeSpan(24, 0, 0);
-                //    //myDatePicker.Date = newDateTime -  oneDay;
-                //}
+                if (newDateTime >  DateTime.Now)
+                {
+                    TimeSpan oneDay = new TimeSpan(24, 0, 0);
+                    newDateTime -= oneDay;
+                    myDatePicker.Date = newDateTime;
+                }
+
+                //dt = newDateTime;
             }     
         }
 

@@ -18,7 +18,7 @@
             <Image 
             Grid.Row="0"
             Grid.Column="0"
-            Grid.RowSpan="3"
+            Grid.RowSpan="2"
             Source="doodlepills3.png"
             Aspect="AspectFill"/>
 
@@ -33,7 +33,7 @@
 
             <Frame
                 Grid.Row="1"
-                Grid.RowSpan="2"
+                
                 Margin="15"
                 Padding="5"
                 CornerRadius="10"
