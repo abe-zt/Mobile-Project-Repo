@@ -22,11 +22,11 @@ namespace proj441
 
             pDuplicate.CopyPrescription(p);
             //AssignInitialDosageStepperValue(); 
-            dt = DateTime.Now;
+            //dt = DateTime.Now;
 
-            myDatePicker.Date = dt;
-            myDatePicker.MaximumDate = dt;
-            myTimePicker.Time = dt.TimeOfDay;
+            myDatePicker.Date = DateTime.Now;
+            myDatePicker.MaximumDate = DateTime.Now;
+            myTimePicker.Time = DateTime.Now.TimeOfDay;
             AmountLabel.Text = p.PrescribedDosage.ToString();
         }
 
@@ -39,12 +39,15 @@ namespace proj441
         {
             if(e.PropertyName == "Time")
             {
-                var newTime = (TimeSpan)sender;
-                newTime = myDatePicker.Date.TimeOfDay;
-                if  (newTime >  DateTime.Now.TimeOfDay)
-                {
+                dt = DateTime.Now;
+                var newTime = (TimePicker)sender;
+                //DateTime newDateTime = dt2.Date + newTime;
 
-                }
+                //if  (newDateTime >  DateTime.Now)
+                //{
+                //    //TimeSpan oneDay = new TimeSpan(24, 0, 0);
+                //    //myDatePicker.Date = newDateTime -  oneDay;
+                //}
             }     
         }
 
