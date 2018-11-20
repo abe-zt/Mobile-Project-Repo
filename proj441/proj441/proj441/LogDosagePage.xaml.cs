@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace proj441
 	public partial class LogDosagePage : ContentPage
 	{
 		//DateTime dt = new DateTime();
-        Prescription pDuplicate = new Prescription();
+        Prescription p2 = new Prescription();
 
         public LogDosagePage()
         {
@@ -25,7 +26,7 @@ namespace proj441
             InitializeComponent();
             BindingContext = p;
 
-            pDuplicate.CopyPrescription(p);
+            p2.CopyPrescription(p);
             //AssignInitialDosageStepperValue(); 
             //dt = DateTime.Now;
 
@@ -74,18 +75,17 @@ namespace proj441
         private async void AddToHistory_Clicked(object sender, EventArgs e)
         {
 
-            int difference = pDuplicate.Remaining - (int)DosageStepper.Value;
+            int difference = p2.Remaining - (int)DosageStepper.Value;
             remainingLabel.Text = difference.ToString();
+
 
             Dose d1 = new Dose
             {
-                PrescriptionTaken = pDuplicate,
+                PrescriptionTaken = p2,
                 DateTimeTaken = myDatePicker.Date + myTimePicker.Time,
                 QuantityTaken = (int)DosageStepper.Value
             };
-
-
-
+     
             d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;
             App.MyHistory.Add(d1);
             //LogPopupStackLayout.IsVisible = true;
@@ -98,6 +98,5 @@ namespace proj441
             await Navigation.PopAsync();
         }
 
-        
     }
 }

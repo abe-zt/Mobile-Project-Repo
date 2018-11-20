@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:proj441"
              x:Class="proj441.LogDosagePage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:NullableIntConverter x:Key="NullableIntConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <Grid
             RowSpacing="0"
@@ -113,17 +120,7 @@
 
                     </StackLayout>
 
-                    <Label
-                        IsVisible="True"
-                        Margin="20,0"
-                        x:Name="remainingLabel"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"
-                        FontSize="Large"
-                        FontAttributes="Bold"
-                        TextColor="Blue"
-                        Text="{Binding Remaining, Mode=TwoWay}"
-                        />
+                    
 
                     <BoxView 
                         Margin="0,0,0,20"
@@ -133,26 +130,48 @@
                         HeightRequest="1"
                         WidthRequest="300"
                         />
-
                     <StackLayout 
-                    Orientation="Horizontal">
+                        Orientation="Horizontal">
+                        <Label
+                            Margin="20,0"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            FontSize="Small"
+                            FontAttributes="Bold"
+                            TextColor="Blue"
+                            Text="Remaining: "
+                            />
+                        <Label
+                            IsVisible="True"
+                            Margin="20,0"
+                            x:Name="remainingLabel"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            FontSize="Small"
+                            FontAttributes="Bold"
+                            TextColor="Blue"
+                            Text="{Binding Remaining, Mode=TwoWay, Converter={StaticResource NullableIntConverter}}"
+                            />
+                    </StackLayout>
+                    <StackLayout 
+                        Orientation="Horizontal">
                         <Button 
-                        HorizontalOptions="EndAndExpand"
-                        VerticalOptions="Center"
-                        BackgroundColor="LightBlue"
-                        Text="Cancel"
-                        x:Name="CancelToHistory"
-                        Clicked="CancelToHistory_Clicked"
-                        />
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="Center"
+                            BackgroundColor="LightBlue"
+                            Text="Cancel"
+                            x:Name="CancelToHistory"
+                            Clicked="CancelToHistory_Clicked"
+                            />
 
                         <Button
-                        HorizontalOptions="End"
-                        VerticalOptions="Center"
-                        BackgroundColor="LightBlue"
-                        Text="Add"
-                        x:Name="AddToHistory"
-                        Clicked="AddToHistory_Clicked"
-                        />
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            BackgroundColor="LightBlue"
+                            Text="Add"
+                            x:Name="AddToHistory"
+                            Clicked="AddToHistory_Clicked"
+                            />
                     </StackLayout>
                 </StackLayout>
             </Frame>

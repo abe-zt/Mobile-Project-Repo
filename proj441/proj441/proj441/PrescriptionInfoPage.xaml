@@ -136,6 +136,7 @@
                             VerticalOptions="StartAndExpand"
                             HorizontalOptions="Start"/>
                         <Label 
+                            Text="{Binding Quantity}"
                             x:Name="QuantityLabel"
                             TextColor="Black"
                             FontSize="16"
@@ -143,6 +144,23 @@
                             HorizontalOptions="StartAndExpand"/>
                     </StackLayout>
 
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Remaining: "
+                            TextColor="Blue"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="Start"/>
+                        <Label 
+                            Text="{Binding Remaining}"
+                            x:Name="RemainingLabel"
+                            TextColor="Red"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
                 </StackLayout>
             </Frame>
         </Grid>

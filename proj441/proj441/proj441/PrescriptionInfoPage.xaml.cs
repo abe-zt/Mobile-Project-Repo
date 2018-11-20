@@ -21,7 +21,7 @@ namespace proj441
         {
             InitializeComponent();
             BindingContext = prescription;
-            QuantityLabel.Text = prescription.Quantity.ToString();
+            //QuantityLabel.Text = prescription.Quantity.ToString();
             //RemainingLabel.Text = prescription.Remaining.ToString();
         }
     }

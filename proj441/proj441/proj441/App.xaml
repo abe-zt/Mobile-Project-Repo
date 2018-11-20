@@ -4,6 +4,9 @@
              x:Class="proj441.App">
     <Application.Resources>
         <ResourceDictionary>
+
+            
+
             <Color x:Key="MainColor">#D32F2F</Color>
             <Color x:Key="MainBackgroundColor">#FFFFFF</Color>
             <Style x:Key="MainButtonStyle" TargetType="Button" >
