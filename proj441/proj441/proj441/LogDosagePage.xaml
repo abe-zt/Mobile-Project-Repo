@@ -105,7 +105,10 @@
                             VerticalOptions="Center"
                             FontSize="Large"
                             FontAttributes="Bold"
-                            TextColor="Red"/>
+                            TextColor="Red"
+                            
+                            />
+                        
                         <Frame
                             Grid.Row="0"
                             Grid.Column="0"
@@ -126,7 +129,7 @@
                                 Maximum="99"
                                 Minimum="0"
                                 Increment="1"
-                                Value="{Binding PrescribedDosage, Mode=OneWay}"
+                                Value="{Binding PrescribedDosage, Mode=OneWay, Converter={StaticResource NullableIntConverter}}"
                                 ValueChanged="DosageStepper_ValueChanged" 
                              />
                         </Frame>

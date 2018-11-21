@@ -25,15 +25,18 @@ namespace proj441
         {
             InitializeComponent();
             BindingContext = p;
-
             p2.CopyPrescription(p);
-            //AssignInitialDosageStepperValue(); 
-            //dt = DateTime.Now;
 
-            myDatePicker.Date = DateTime.Now;
-            myDatePicker.MaximumDate = DateTime.Now;
-            myTimePicker.Time = DateTime.Now.TimeOfDay;
-            AmountLabel.Text = p.PrescribedDosage.ToString();
+
+            //p2.CopyPrescription(p);
+            ////AssignInitialDosageStepperValue(); 
+            ////dt = DateTime.Now;
+
+            //DosageStepper.Value = p.PrescribedDosage;
+            //myDatePicker.Date = DateTime.Now;
+            //myDatePicker.MaximumDate = DateTime.Now;
+            //myTimePicker.Time = DateTime.Now.TimeOfDay;
+            //AmountLabel.Text = p.PrescribedDosage.ToString();
         }
 
         private void myDatePicker_DateSelected(object sender, DateChangedEventArgs e)
@@ -67,6 +70,7 @@ namespace proj441
 
         private void DosageStepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
+
             AmountLabel.Text = Convert.ToInt32(e.NewValue).ToString();
             //int i = (Convert.ToInt32(remainingLabel.Text)) - (Convert.ToInt32(e.NewValue));
             //remainingLabel.Text = i.ToString();
@@ -96,6 +100,19 @@ namespace proj441
         private async void CancelToHistory_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
+        }
+
+        protected override void OnAppearing()
+        {
+            //p2.CopyPrescription(p);
+            //AssignInitialDosageStepperValue(); 
+            //dt = DateTime.Now;
+
+            //DosageStepper.Value = p.PrescribedDosage;
+            myDatePicker.Date = DateTime.Now;
+            myDatePicker.MaximumDate = DateTime.Now;
+            myTimePicker.Time = DateTime.Now.TimeOfDay;
+            AmountLabel.Text = p2.PrescribedDosage.ToString();
         }
 
     }
