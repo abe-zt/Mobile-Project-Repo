@@ -17,6 +17,8 @@ namespace proj441
             InitializeComponent();
         }
 
+        //json content https://api.fda.gov/drug/enforcement.json?search=report_date:[20180121+TO+20181121]+AND+city:San Diego&limit=100
+
         private async void LogDosageButton_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
