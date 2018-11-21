@@ -21,9 +21,9 @@ namespace proj441
         {
             InitializeComponent();
             BindingContext = dose;
-            doseQuantityLabel.Text = dose.PrescriptionTaken.Quantity.ToString();
-            doseRemainingLabel.Text = dose.PrescriptionTaken.Remaining.ToString();
-            doseTakenLabel.Text = dose.QuantityTaken.ToString();
+            //doseQuantityLabel.Text = dose.PrescriptionTaken.Quantity.ToString();
+            //doseRemainingLabel.Text = dose.PrescriptionTaken.Remaining.ToString();
+            //doseTakenLabel.Text = dose.QuantityTaken.ToString();
         }
     }
 }

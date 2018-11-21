@@ -97,16 +97,20 @@
                         Orientation="Horizontal"
                         Spacing="5">
 
-                        <Label
+                        <Button
                             
-                            Margin="20,0"
+                            Margin="5,0"
                             x:Name="AmountLabel"
                             HorizontalOptions="CenterAndExpand"
                             VerticalOptions="Center"
                             FontSize="Large"
                             FontAttributes="Bold"
                             TextColor="Red"
-                            
+                            BackgroundColor="Transparent"
+                            BindingContext="{x:Reference DosageStepper}"
+                            Text="{Binding Value}"
+                            IsEnabled="True"
+                            BorderColor="Transparent"
                             />
                         
                         <Frame

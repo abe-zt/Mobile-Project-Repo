@@ -37,15 +37,13 @@
                     Grid.Row="1" 
                     x:Name = "MyHistoryList"
                     HasUnevenRows="True"
-                    SelectionMode="None" >
+                    SelectionMode="Single" 
+                    ItemSelected="MyHistoryList_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <ViewCell.ContextActions>
-                                    <MenuItem
-                                       Text="Info"
-                                       Clicked="Handle_ContextMenuInfoButton"
-                                       CommandParameter="{Binding .}"/>
+                                    
                                     <MenuItem
                                        Text="Delete"
                                        CommandParameter="{Binding .}"

@@ -7,8 +7,8 @@
 
     <pages:PopupPage.Animation>
         <animations:ScaleAnimation 
-            DurationIn="500"
-            DurationOut="500"
+            DurationIn="300"
+            DurationOut="300"
             EasingIn="SinOut"
             EasingOut="SinIn"
             HasBackgroundAnimation="True"

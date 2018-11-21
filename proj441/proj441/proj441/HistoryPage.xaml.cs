@@ -24,12 +24,12 @@ namespace proj441
             MyHistoryList.ItemsSource = o;
         }
 
-        async void Handle_ContextMenuInfoButton(object sender, EventArgs e)
-        {
-            var menuItem = (MenuItem)sender;
-            var contextSelected = (Dose)menuItem.CommandParameter;
-            await Navigation.PushAsync(new HistoryInfoPage(contextSelected));
-        }
+        //async void Handle_ContextMenuInfoButton(object sender, EventArgs e)
+        //{
+        //    var menuItem = (MenuItem)sender;
+        //    var contextSelected = (Dose)menuItem.CommandParameter;
+        //    await Navigation.PushAsync(new HistoryInfoPage(contextSelected));
+        //}
 
         private async void Handle_ContextMenuDeleteButton(object sender, EventArgs e)
         {
@@ -48,7 +48,11 @@ namespace proj441
             await Navigation.PushAsync(new PrescriptionsPage());
         }
 
-
-
+        private async void MyHistoryList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ListView tappedItem = (ListView)sender;
+            Dose tappedDose = (Dose)tappedItem.SelectedItem;
+            await Navigation.PushAsync(new HistoryInfoPage(tappedDose));
+        }
     }
 }

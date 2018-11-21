@@ -33,9 +33,9 @@ namespace proj441
             ////dt = DateTime.Now;
 
             //DosageStepper.Value = p.PrescribedDosage;
-            //myDatePicker.Date = DateTime.Now;
-            //myDatePicker.MaximumDate = DateTime.Now;
-            //myTimePicker.Time = DateTime.Now.TimeOfDay;
+            myDatePicker.Date = DateTime.Now;
+            myDatePicker.MaximumDate = DateTime.Now;
+            myTimePicker.Time = DateTime.Now.TimeOfDay;
             //AmountLabel.Text = p.PrescribedDosage.ToString();
         }
 
@@ -71,7 +71,7 @@ namespace proj441
         private void DosageStepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
 
-            AmountLabel.Text = Convert.ToInt32(e.NewValue).ToString();
+            //AmountLabel.Text = Convert.ToInt32(e.NewValue).ToString();
             //int i = (Convert.ToInt32(remainingLabel.Text)) - (Convert.ToInt32(e.NewValue));
             //remainingLabel.Text = i.ToString();
         }
@@ -79,9 +79,10 @@ namespace proj441
         private async void AddToHistory_Clicked(object sender, EventArgs e)
         {
 
-            int difference = p2.Remaining - (int)DosageStepper.Value;
-            remainingLabel.Text = difference.ToString();
-
+            //int difference = p2.Remaining - (int)DosageStepper.Value;
+            //remainingLabel.Text = difference.ToString();
+            p2.Remaining -= (int)DosageStepper.Value;
+            remainingLabel.Text = p2.Remaining.ToString();
 
             Dose d1 = new Dose
             {
@@ -90,7 +91,7 @@ namespace proj441
                 QuantityTaken = (int)DosageStepper.Value
             };
      
-            d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;
+            //d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;
             App.MyHistory.Add(d1);
             //LogPopupStackLayout.IsVisible = true;
             await DisplayAlert("Added to History:", "Taken " + " (" + d1.QuantityTaken + ") " + d1.PrescriptionTaken.Name + " at " + d1.DateTimeTaken.ToString(), "OK");
@@ -109,10 +110,10 @@ namespace proj441
             //dt = DateTime.Now;
 
             //DosageStepper.Value = p.PrescribedDosage;
-            myDatePicker.Date = DateTime.Now;
-            myDatePicker.MaximumDate = DateTime.Now;
-            myTimePicker.Time = DateTime.Now.TimeOfDay;
-            AmountLabel.Text = p2.PrescribedDosage.ToString();
+            //myDatePicker.Date = DateTime.Now;
+            //myDatePicker.MaximumDate = DateTime.Now;
+            //myTimePicker.Time = DateTime.Now.TimeOfDay;
+            //AmountLabel.Text = p2.PrescribedDosage.ToString();
         }
 
     }
