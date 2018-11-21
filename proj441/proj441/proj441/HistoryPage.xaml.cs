@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -52,7 +53,8 @@ namespace proj441
         {
             ListView tappedItem = (ListView)sender;
             Dose tappedDose = (Dose)tappedItem.SelectedItem;
-            await Navigation.PushAsync(new HistoryInfoPage(tappedDose));
+            //await Navigation.PushAsync(new HistoryInfoPage(tappedDose));
+            await PopupNavigation.Instance.PushAsync(new HistoryInfoPage(tappedDose));
         }
     }
 }

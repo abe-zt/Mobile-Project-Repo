@@ -49,7 +49,8 @@ namespace proj441
         {
             var menuItem = (MenuItem)sender;
             var contextSelected = (Prescription)menuItem.CommandParameter;
-            await Navigation.PushAsync(new PrescriptionInfoPage(contextSelected));
+            //await Navigation.PushAsync(new PrescriptionInfoPage(contextSelected));
+            await PopupNavigation.Instance.PushAsync(new PrescriptionInfoPage(contextSelected));
         }
 
         async void Handle_ContextMenuEditButton(object sender, EventArgs e)
