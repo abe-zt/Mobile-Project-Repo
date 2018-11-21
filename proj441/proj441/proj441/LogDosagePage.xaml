@@ -109,7 +109,7 @@
                             Grid.Row="0"
                             Grid.Column="0"
                             Margin="0"
-                            Padding="5"
+                            Padding="2"
                             CornerRadius="0"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
