@@ -38,18 +38,19 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BorderColor="{StaticResource MainColor}"
-                BackgroundColor="#F5F5F5">
+                BackgroundColor="White">
 
                 <StackLayout
                     
-                    BackgroundColor="#F5F5F5"
+                    BackgroundColor="White"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Margin="15"
                     Padding="0"
-                    Spacing="5">
+                    Spacing="0">
 
                     <Label
+                        Margin="0,0,0,10"
                         HorizontalOptions="Start"
                         VerticalOptions="Start"
                         FontSize="28"
@@ -72,7 +73,7 @@
                         />
 
                     <Label
-                        BackgroundColor="Orange"
+                        
                         HorizontalOptions="Start"
                         VerticalOptions="Start"
                         FontSize="Medium"
@@ -85,7 +86,7 @@
                         />
 
                     <Label
-                        BackgroundColor="LightBlue"
+                        
                         HorizontalOptions="Start"
                         VerticalOptions="Start"
                         FontSize="Medium"
@@ -97,7 +98,7 @@
                         Spacing="5">
 
                         <Label
-                            BackgroundColor="LightGoldenrodYellow"
+                            
                             Margin="20,0"
                             x:Name="AmountLabel"
                             HorizontalOptions="CenterAndExpand"
@@ -108,15 +109,17 @@
                         <Frame
                             Grid.Row="0"
                             Grid.Column="0"
-                            Margin="0"
-                            Padding="2"
+                            Margin="10"
+                            Padding="5"
                             CornerRadius="0"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
-                            BorderColor="{StaticResource MainColor}"
-                            BackgroundColor="#F5F5F5">  
+                            BorderColor="#0041DD"
+                            BackgroundColor="White">  
                             <Stepper 
-                                BackgroundColor="LightGray"
+                                
+                                BackgroundColor="White"
+                                
                                 HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="Center"
                                 x:Name="DosageStepper"
@@ -132,7 +135,7 @@
 
                     <BoxView 
                         Margin="0"
-                        Color="Red"
+                        Color="#0041DD"
                         HorizontalOptions="CenterAndExpand"
                         VerticalOptions="Center"
                         HeightRequest="1"
