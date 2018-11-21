@@ -47,7 +47,7 @@
                     VerticalOptions="Center"
                     Margin="15"
                     Padding="0"
-                    Spacing="10">
+                    Spacing="5">
 
                     <Label
                         HorizontalOptions="Start"
@@ -120,10 +120,9 @@
 
                     </StackLayout>
 
-                    
 
                     <BoxView 
-                        Margin="0,0,0,20"
+                        Margin="0"
                         Color="Red"
                         HorizontalOptions="CenterAndExpand"
                         VerticalOptions="Center"
@@ -131,19 +130,21 @@
                         WidthRequest="300"
                         />
                     <StackLayout 
-                        Orientation="Horizontal">
+                        Margin="10"
+                        Orientation="Horizontal"
+                        Spacing="0">
                         <Label
-                            Margin="20,0"
+                            Margin="0"
                             HorizontalOptions="Start"
                             VerticalOptions="Center"
                             FontSize="Small"
                             FontAttributes="Bold"
                             TextColor="Blue"
-                            Text="Remaining: "
+                            Text="Remaining Amount: "
                             />
                         <Label
                             IsVisible="True"
-                            Margin="20,0"
+                            Margin="0,-2,0,0"
                             x:Name="remainingLabel"
                             HorizontalOptions="Start"
                             VerticalOptions="Center"
