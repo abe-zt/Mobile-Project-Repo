@@ -105,19 +105,28 @@
                             FontSize="Large"
                             FontAttributes="Bold"
                             TextColor="Red"/>
-                        
-                        <Stepper 
-                            BackgroundColor="LightGray"
-                            HorizontalOptions="CenterAndExpand"
+                        <Frame
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="0"
+                            Padding="5"
+                            CornerRadius="0"
+                            HorizontalOptions="Center"
                             VerticalOptions="Center"
-                            x:Name="DosageStepper"
-                            Maximum="99"
-                            Minimum="0"
-                            Increment="1"
-                            Value="{Binding PrescribedDosage, Mode=OneWay}"
-                            ValueChanged="DosageStepper_ValueChanged" 
+                            BorderColor="{StaticResource MainColor}"
+                            BackgroundColor="#F5F5F5">  
+                            <Stepper 
+                                BackgroundColor="LightGray"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="Center"
+                                x:Name="DosageStepper"
+                                Maximum="99"
+                                Minimum="0"
+                                Increment="1"
+                                Value="{Binding PrescribedDosage, Mode=OneWay}"
+                                ValueChanged="DosageStepper_ValueChanged" 
                              />
-
+                        </Frame>
                     </StackLayout>
 
 
@@ -130,7 +139,7 @@
                         WidthRequest="300"
                         />
                     <StackLayout 
-                        Margin="10"
+                        Padding="0,0,0,10"
                         Orientation="Horizontal"
                         Spacing="0">
                         <Label
@@ -144,7 +153,7 @@
                             />
                         <Label
                             IsVisible="True"
-                            Margin="0,-2,0,0"
+                            Margin="0,0,0,0"
                             x:Name="remainingLabel"
                             HorizontalOptions="Start"
                             VerticalOptions="Center"
