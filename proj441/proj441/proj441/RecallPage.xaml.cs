@@ -54,9 +54,10 @@ namespace proj441
 
                             myRecalls.Results.ForEach(myRecallsCollection.Add);
 
-                            //userCity.Text = userEntry.Text.ToUpper();
+                            
                             RecallsListView.ItemsSource = myRecallsCollection;
                             RecallsListView.IsVisible = true;
+                            userLabel.IsVisible = false;
                         }
 
                         else
