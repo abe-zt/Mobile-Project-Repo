@@ -2,11 +2,118 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="proj441.RecallPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 0, 0, 0" />
+            <On Platform="Android, UWP" Value="0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="White"
+                 Padding="0"
+                 Margin="0">
+            <StackLayout 
+                Orientation="Vertical">
+
+                <Label  
+                    Margin="5, 20, 5, 5"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    Text="Enter City Name for ONGOING recalls in your city within the last year"
+                    />
+                <StackLayout Orientation="Horizontal"
+                             Spacing="0">
+                    <Entry
+                        x:Name="userEntry"
+                        Margin="5"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="LightGray"
+                        FontSize="Medium"
+                        Placeholder="City"
+                        />
+
+                    <Button
+                        x:Name="RecallLookup"
+                        Style="{StaticResource MainButtonStyle}"
+                        Margin="2"
+                        HorizontalOptions="End"
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Medium"
+                        Text="Lookup"
+                        Clicked="RecallLookup_Clicked"
+                        
+                        />
+                </StackLayout>
+                
+            <Label
+                Margin="5"
+                x:Name="userLabel"
+                FontSize="Large"
+                FontAttributes="Bold"
+                Text=""/>
+
+            </StackLayout>
+            
+            
+            <ListView 
+                Margin="5"
+                x:Name="RecallsListView"
+                HasUnevenRows="True" 
+                IsVisible="False"
+                SeparatorColor="Black">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout
+                                    Spacing="0">
+                                    <Label 
+                                        Margin="5"
+                                        Text="{Binding ProductDescription}"
+                                        TextColor="Black"
+                                        FontAttributes="Bold"
+                                        FontSize="Medium"
+                                        VerticalOptions="StartAndExpand"/>
+                                    <Label 
+                                        Margin="5"
+                                        Text="{Binding City}"
+                                        TextColor="Red"
+                                        VerticalOptions="StartAndExpand"/>
+                                    <Label 
+                                        Margin="5, 5, 5, 0"
+                                        Text="Reason For Recall:"
+                                        TextColor="Blue"
+                                        VerticalOptions="StartAndExpand"/>
+                                    <Label 
+                                        Margin="5, 0, 5, 5"
+                                        Text="{Binding ReasonForRecall}"
+                                        TextColor="Blue"
+                                        VerticalOptions="StartAndExpand"/>
+                                    <Label 
+                                        Margin="5, 5, 5, 0"
+                                        Text="Address:"
+                                        TextColor="Black"
+                                        VerticalOptions="StartAndExpand"/>
+                                    <Label 
+                                        Margin="5, 0, 5, 0"
+                                        Text="{Binding Address1}"
+                                        TextColor="Black"
+                                        VerticalOptions="StartAndExpand"/>
+                                    <Label 
+                                        Margin="5, 0, 5, 5"
+                                        Text="{Binding Address2}"
+                                        TextColor="Black"
+                                        VerticalOptions="StartAndExpand"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

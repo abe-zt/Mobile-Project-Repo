@@ -53,13 +53,14 @@
                                 IconSource="remindersicon.png" 
                                 TargetType="{x:Type local:ReminderPage}" />
                         <local:MasterPageItem 
-                                Title="Log Out" 
-                                IconSource="usericon.png" 
-                                TargetType="{x:Type local:HomePage}"/>
-                        <local:MasterPageItem 
                                 Title="Recalls In Your Area" 
                                 IconSource="exclamation.png" 
                                 TargetType="{x:Type local:RecallPage}"/>
+                        <local:MasterPageItem 
+                                Title="Log Out" 
+                                IconSource="usericon.png" 
+                                TargetType="{x:Type local:HomePage}"/>
+                        
                     </x:Array>
                 </ListView.ItemsSource>
 

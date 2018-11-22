@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace proj441
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -24,5 +25,12 @@ namespace proj441
             //QuantityLabel.Text = prescription.Quantity.ToString();
             //RemainingLabel.Text = prescription.Remaining.ToString();
         }
+
+        protected override void OnAppearing()
+        {
+
+        }
+        
+
     }
 }
