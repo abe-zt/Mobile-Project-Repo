@@ -110,7 +110,7 @@ namespace proj441
             AmountLabel.Text = Convert.ToInt32(e.NewValue).ToString();
         }
 
-        private void myDatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        private void MyDatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
 
         }

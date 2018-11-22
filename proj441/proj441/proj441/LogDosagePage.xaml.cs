@@ -39,7 +39,7 @@ namespace proj441
             //AmountLabel.Text = p.PrescribedDosage.ToString();
         }
 
-        private void myDatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        private void MyDatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
             DateTime newDateTime = e.NewDate + myTimePicker.Time;
 

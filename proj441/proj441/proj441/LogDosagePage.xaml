@@ -69,7 +69,7 @@
                     <DatePicker
                         x:Name="myDatePicker"
                         MinimumDate="01/01/2018"
-                        DateSelected="myDatePicker_DateSelected"
+                        DateSelected="MyDatePicker_DateSelected"
                         />
 
                     <Label

@@ -24,10 +24,9 @@ namespace proj441
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var stringValue = value as string;
-            int intValue;
             int? result = null;
 
-            if (int.TryParse(stringValue, out intValue))
+            if (int.TryParse(stringValue, out int intValue))
             {
                 result = new Nullable<int>(intValue);
             }
