@@ -97,10 +97,10 @@ namespace proj441
             l.SelectedItem = null;
         }
 
-        private void MenuItem_Clicked(object sender, EventArgs e)
-        {
+        //private void MenuItem_Clicked(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void MyLogList_Refreshing(object sender, EventArgs e)
         {

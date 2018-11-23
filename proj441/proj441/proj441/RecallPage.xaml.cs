@@ -15,6 +15,8 @@ namespace proj441
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RecallPage : ContentPage
     {
+        ObservableCollection<Result> myRecallsCollection = new ObservableCollection<Result>();
+
         public RecallPage()
         {
             InitializeComponent();
@@ -50,14 +52,12 @@ namespace proj441
 
                         if (myRecalls.Meta.Results.Total > 0)
                         {
-                            ObservableCollection<Result> myRecallsCollection = new ObservableCollection<Result>();
-
+                            
                             myRecalls.Results.ForEach(myRecallsCollection.Add);
-
-
                             RecallsListView.ItemsSource = myRecallsCollection;
                             RecallsListView.IsVisible = true;
                             userLabel.IsVisible = false;
+                            //RecallsListView_Refreshing(RecallsListView, null);
                         }
 
                         else
@@ -74,7 +74,7 @@ namespace proj441
                 }
                 else
                 {
-                    userLabel.Text = "PLEASE ENTER A CITY NAME";    //for dealing with strings containing illegal characters (including spaces that does not return a success response)
+                    userLabel.Text = "PLEASE ENTER A CITY NAME";
                 }
             }
             else
@@ -82,6 +82,14 @@ namespace proj441
                 await DisplayAlert("No Internet", "No Internet Connection Detected", "OK");
                 RecallsListView.IsVisible = false;
             }
+        }
+
+        private void RecallsListView_Refreshing(object sender, EventArgs e)
+        {
+            var listViewToRefresh = (ListView)sender;
+            RecallsListView.ItemsSource = null;
+            RecallsListView.ItemsSource = myRecallsCollection;
+            RecallsListView.IsRefreshing = false;
         }
 
         protected override void OnAppearing()

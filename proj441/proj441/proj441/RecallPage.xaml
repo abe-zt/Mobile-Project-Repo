@@ -22,7 +22,7 @@
                     TextColor="Black"
                     FontAttributes="Bold"
                     FontSize="Small"
-                    Text="Enter City Name for ONGOING recalls in your city within the last year"
+                    Text="Enter City Name for ONGOING recalls within the last year"
                     />
                 <StackLayout Orientation="Horizontal"
                              Spacing="0">
@@ -64,6 +64,8 @@
                 x:Name="RecallsListView"
                 HasUnevenRows="True" 
                 IsVisible="False"
+                IsPullToRefreshEnabled="True"
+                Refreshing="RecallsListView_Refreshing"
                 SeparatorColor="Black">
                 <ListView.ItemTemplate>
                     <DataTemplate>
