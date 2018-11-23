@@ -12,13 +12,13 @@ using Xamarin.Forms.Xaml;
 
 namespace proj441
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RecallPage : ContentPage
-	{
-		public RecallPage ()
-		{
-			InitializeComponent ();
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class RecallPage : ContentPage
+    {
+        public RecallPage()
+        {
+            InitializeComponent();
+        }
 
         private async void RecallLookup_Clicked(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace proj441
 
                             myRecalls.Results.ForEach(myRecallsCollection.Add);
 
-                            
+
                             RecallsListView.ItemsSource = myRecallsCollection;
                             RecallsListView.IsVisible = true;
                             userLabel.IsVisible = false;
@@ -82,6 +82,11 @@ namespace proj441
                 await DisplayAlert("No Internet", "No Internet Connection Detected", "OK");
                 RecallsListView.IsVisible = false;
             }
+        }
+
+        protected override void OnAppearing()
+        {
+           
         }
     }
 }
