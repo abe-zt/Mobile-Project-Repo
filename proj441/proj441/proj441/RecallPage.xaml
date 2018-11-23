@@ -25,6 +25,7 @@
                     Text="Enter City Name for ONGOING recalls within the last year"
                     />
                 <StackLayout Orientation="Horizontal"
+                             Margin="0"
                              Spacing="0">
                     <Entry
                         x:Name="userEntry"
@@ -38,12 +39,17 @@
 
                     <Button
                         x:Name="RecallLookup"
-                        Style="{StaticResource MainButtonStyle}"
-                        Margin="2"
+                        BorderRadius="10"
+                        BorderColor="{StaticResource MainColor}"
+                        BorderWidth="4"
+                        BackgroundColor="White"
+                        FontAttributes="Bold"
+                        Margin="5"
                         HorizontalOptions="End"
                         VerticalOptions="CenterAndExpand"
-                        FontSize="Medium"
+                        FontSize="16"
                         Text="Lookup"
+                        TextColor="Black"
                         Clicked="RecallLookup_Clicked"
                         
                         />
