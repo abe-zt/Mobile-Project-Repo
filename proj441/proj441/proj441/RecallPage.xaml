@@ -101,6 +101,7 @@
                     x:Name="userSearch"
                     FontSize="Medium"
                     FontAttributes="Bold"
+                    IsVisible="False"
                     Text=""/>
                 
                 <Label

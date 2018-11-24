@@ -109,7 +109,16 @@ namespace proj441
                 RecallsListView.IsVisible = false;
             }
 
-            userSearch.Text = "You've searched: " + userEntry.Text;
+            var s = userZip.Text;
+            var s2 = userEntry.Text;
+
+            if ((userZip.Text != null && userZip.Text != "") && (userEntry.Text != null && userEntry.Text != ""))
+            {
+                userSearch.IsVisible = true;
+                userSearch.Text = "You've searched: " + userEntry.Text;
+            }
+            else
+                userSearch.IsVisible = false;
             if (userZip.Text != null && userZip.Text != "")
                 userSearch.Text += ", " + userZip.Text;
             userEntry.Text = null;
