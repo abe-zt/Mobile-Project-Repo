@@ -29,7 +29,7 @@ namespace proj441
             
             if (item != null &&  detailPage.Title != item.Title && item.Title != "Log Out" )  //don't do anything on the logout cell is pressed
             {
-                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType)) { BarBackgroundColor=Color.FromHex("#D32F2F") };
+                Detail =  new NavigationPage((Page)Activator.CreateInstance(item.TargetType)) { BarBackgroundColor=Color.FromHex("#D32F2F") };
                 masterPage.listView.SelectedItem = null;
                 IsPresented = false;
             }

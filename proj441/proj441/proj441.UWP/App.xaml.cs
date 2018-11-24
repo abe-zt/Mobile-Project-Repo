@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ButtonCircle.FormsPlugin.UWP;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,6 +30,7 @@ namespace proj441.UWP
         public App()
         {
             this.InitializeComponent();
+            ButtonCircleRenderer.Init();
             this.Suspending += OnSuspending;
         }
 

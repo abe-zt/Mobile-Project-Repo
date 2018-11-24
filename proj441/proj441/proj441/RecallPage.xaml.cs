@@ -50,36 +50,40 @@ namespace proj441
 
                         //List<Define> myDefinitions = JsonConvert.DeserializeObject<List<Define>>(jsonContent);
 
-                        if (myRecalls.Meta.Results.Total > 0)
-                        {
-                            
+                        //if (myRecalls.Meta.Results.Total > 0)
+                        //{
+                            myRecallsCollection.Clear();
                             myRecalls.Results.ForEach(myRecallsCollection.Add);
                             RecallsListView.ItemsSource = myRecallsCollection;
                             RecallsListView.IsVisible = true;
                             userLabel.IsVisible = false;
                             //RecallsListView_Refreshing(RecallsListView, null);
-                        }
+                        //}
 
-                        else
-                        {
-                            userLabel.Text = "NO RECALLS IN YOUR CITY WITHIN LAST YEAR";    //strings of letters that are not words, but still return success
-                            RecallsListView.IsVisible = false;
-                        }
+                        //else
+                        //{
+                        //    userLabel.Text = "NO RECALLS IN YOUR CITY WITHIN LAST YEAR";    //strings of letters that are not words, but still return success
+                        //    userLabel.IsVisible = true;
+                        //    RecallsListView.IsVisible = false;
+                        //}
                     }
                     else
                     {
-                        userLabel.Text = "NO ENTRIES/NO RECALLS IN YOUR CITY WITHIN LAST YEAR";    //for empty strings
+                        userLabel.Text = "YOUR ENTRY RETURNED ZERO RESULTS";    //for empty strings
+                        userLabel.IsVisible = true;
                         RecallsListView.IsVisible = false;
                     }
                 }
                 else
                 {
                     userLabel.Text = "PLEASE ENTER A CITY NAME";
+                    userLabel.IsVisible = true;
                 }
             }
             else
             {
                 await DisplayAlert("No Internet", "No Internet Connection Detected", "OK");
+                userLabel.IsVisible = true;
                 RecallsListView.IsVisible = false;
             }
         }

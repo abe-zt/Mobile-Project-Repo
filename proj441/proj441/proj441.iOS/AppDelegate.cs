@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using ButtonCircle.FormsPlugin.iOS;
 using Foundation;
 using UIKit;
 using Xamarin.Forms;
@@ -26,6 +26,7 @@ namespace proj441.iOS
         {
             Rg.Plugins.Popup.Popup.Init();
             Xamarin.Forms.Forms.Init();
+            ButtonCircleRenderer.Init();
             UINavigationBar.Appearance.TintColor = Color.White.ToUIColor(); //to change navigation icon color to white 
             UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes() { TextColor = UIColor.White });  //to navigation change text color to white https://forums.xamarin.com/discussion/19277/how-to-change-xamarin-form-navigationpage-title-color
             LoadApplication(new App());

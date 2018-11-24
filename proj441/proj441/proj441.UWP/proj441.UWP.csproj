@@ -161,6 +161,9 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.2</Version>
     </PackageReference>
+    <PackageReference Include="Plugins.Forms.ButtonCircle">
+      <Version>2.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>1.1.4.168</Version>
     </PackageReference>
@@ -178,6 +181,18 @@
       <Project>{6F274C4F-D8B1-4FC1-ACE1-98B0D1168937}</Project>
       <Name>proj441</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\fontawesome.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\materialicons.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Fonts\fontawesome.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Fonts\materialicons.ttf" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

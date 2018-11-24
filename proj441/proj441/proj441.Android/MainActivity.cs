@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using ButtonCircle.FormsPlugin.Droid;
 
 namespace proj441.Droid
 {
@@ -20,6 +21,7 @@ namespace proj441.Droid
             base.OnCreate(savedInstanceState);
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            ButtonCircleRenderer.Init();
             LoadApplication(new App());
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#D32F2F"));  //changes top color  
         }

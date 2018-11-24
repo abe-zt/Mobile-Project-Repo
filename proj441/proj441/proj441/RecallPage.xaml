@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="proj441.RecallPage">
+             x:Class="proj441.RecallPage"
+             Title="Recalls">
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
@@ -12,7 +13,7 @@
     
     <ContentPage.Content>
         <StackLayout BackgroundColor="White"
-                 Padding="0"
+                 Padding="10"
                  Margin="0">
             <StackLayout 
                 Orientation="Vertical">
@@ -36,34 +37,27 @@
                         FontSize="Medium"
                         Placeholder="City"
                         />
+                    
+                    
+                    
 
-                    <Button
-                        x:Name="RecallLookup"
-                        BorderRadius="10"
-                        BorderColor="{StaticResource MainColor}"
-                        BorderWidth="4"
-                        BackgroundColor="White"
-                        FontAttributes="Bold"
-                        Margin="5"
-                        HorizontalOptions="End"
-                        VerticalOptions="CenterAndExpand"
-                        FontSize="16"
-                        Text="Lookup"
-                        TextColor="Black"
-                        Clicked="RecallLookup_Clicked"
-                        
-                        />
                 </StackLayout>
                 
-            <Label
-                Margin="5"
-                x:Name="userLabel"
-                FontSize="Large"
-                FontAttributes="Bold"
-                Text=""/>
+                <Button
+                    Style="{StaticResource MainButtonStyle}"
+                    x:Name="RecallLookup"
+                    Text="Lookup"
+                    Clicked="RecallLookup_Clicked"  
+                    />
+
+                <Label
+                    Margin="5"
+                    x:Name="userLabel"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    Text=""/>
 
             </StackLayout>
-            
             
             <ListView 
                 Margin="5"

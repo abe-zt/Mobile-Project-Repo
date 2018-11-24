@@ -42,5 +42,11 @@ namespace proj441
             Button button = (Button)sender;
             await Navigation.PushAsync(new HistoryPage());
         }
+
+        private async void RecallButton_Clicked(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            await Navigation.PushAsync(new RecallPage());
+        }
     }
 }
