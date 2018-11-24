@@ -15,9 +15,7 @@
         <StackLayout BackgroundColor="White"
                  Padding="10"
                  Margin="0">
-            <StackLayout 
-                Orientation="Vertical">
-
+            
                 <Label  
                     Margin="5, 20, 5, 5"
                     TextColor="Black"
@@ -25,10 +23,23 @@
                     FontSize="Small"
                     Text="Enter City Name for ONGOING recalls within the last year"
                     />
-                <StackLayout Orientation="Horizontal"
-                             Margin="0"
-                             Spacing="0">
+                <Grid 
+                    Padding="0"
+                    Margin="0"
+                    ColumnSpacing="0"
+                    RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.25*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    
                     <Entry
+                        Grid.Column="0"
+                        Grid.Row="0"
                         x:Name="userEntry"
                         Margin="5"
                         HorizontalOptions="FillAndExpand"
@@ -37,27 +48,69 @@
                         FontSize="Medium"
                         Placeholder="City"
                         />
+
+                    <Label 
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="Or"
+                        FontSize="Medium"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"/>
+
+                    <Entry
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        x:Name="userZip"
+                        Margin="5"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="LightGray"
+                        FontSize="Medium"
+                        Placeholder="Zip Code"
+                        Keyboard="Numeric"
+                        ReturnCommand=""
+                        />
+
+                </Grid>
+                <StackLayout Orientation="Horizontal">
+                    <DatePicker
+                        x:Name="D1"
+                        HorizontalOptions="Start"
+                        DateSelected="D1_DateSelected"/>
+                    <Label 
+                        Text="To"
+                        FontSize="Medium"
+                        VerticalOptions="Center"/>
+                    <DatePicker
+                        x:Name="D2"
+                        HorizontalOptions="Start"
+                        DateSelected="D2_DateSelected"/>
                     
-                    
-                    
+                    <Button
+                        Style="{StaticResource MainButtonStyle}"
+                        HorizontalOptions="EndAndExpand"
+                        x:Name="RecallLookup"
+                        Text="Search"
+                        Clicked="RecallLookup_Clicked"  
+                        />
 
                 </StackLayout>
-                
-                <Button
-                    Style="{StaticResource MainButtonStyle}"
-                    x:Name="RecallLookup"
-                    Text="Lookup"
-                    Clicked="RecallLookup_Clicked"  
-                    />
 
                 <Label
                     Margin="5"
+                    x:Name="userSearch"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Text=""/>
+                
+                <Label
+                    Margin="5"
                     x:Name="userLabel"
-                    FontSize="Large"
+                    FontSize="Medium"
                     FontAttributes="Bold"
                     Text=""/>
 
-            </StackLayout>
+            
             
             <ListView 
                 Margin="5"
@@ -66,7 +119,9 @@
                 IsVisible="False"
                 IsPullToRefreshEnabled="True"
                 Refreshing="RecallsListView_Refreshing"
-                SeparatorColor="Black">
+                SeparatorColor="Black"
+                SelectionMode="None"
+                >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

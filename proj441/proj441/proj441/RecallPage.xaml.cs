@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Plugin.Connectivity;
 using RecallJson;
+using PostalCodesJSON;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,25 +21,46 @@ namespace proj441
         public RecallPage()
         {
             InitializeComponent();
+            D1.MinimumDate = DateTime.Now.AddYears(-1);
+            D1.MaximumDate = DateTime.Now;
+            D2.MinimumDate = DateTime.Now.AddYears(-1);
+            D2.MaximumDate = DateTime.Now;
         }
 
         private async void RecallLookup_Clicked(object sender, EventArgs e)
         {
             bool connection = CrossConnectivity.Current.IsConnected;
+            
 
             if (connection)
             {
+                if (userZip.Text != null)
+                {
+                    HttpClient client = new HttpClient();
+                    string dictionaryEndpoint = "http://api.geonames.org/postalCodeSearchJSON?formatted=true&country=US&postalcode=" + userZip.Text + "&username=abezat";
+                    Uri dictionaryUri = new Uri(dictionaryEndpoint);
+                    HttpResponseMessage response = await client.GetAsync(dictionaryEndpoint);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string jsonString = await response.Content.ReadAsStringAsync();
+                        var myPostal = Postal.FromJson(jsonString);
+
+                        PostalCode result = myPostal.PostalCodes.First();
+                        string ZipToCity = result.PlaceName;
+                        userEntry.Text = ZipToCity;
+                    }
+                }
                 if (userEntry.Text != null)
                 {
-                    string d1 = DateTime.Now.ToString("yyyyMMdd");
-                    string d2 = DateTime.Now.AddYears(-1).ToString("yyyyMMdd");
+                    string d1 = D1.Date.ToString("yyyyMMdd");
+                    string d2 = D2.Date.ToString("yyyyMMdd");
 
-                    string userString = userEntry.Text;
-
+                    //string userString = userEntry.Text;
                     //userString = userString.ToLower();
 
                     HttpClient client = new HttpClient();
-                    string dictionaryEndpoint = "https://api.fda.gov/drug/enforcement.json?search=report_date:[" + d2 + "+TO+" + d1 + "]+AND+city:" + userString + "+AND+status:ongoing&limit=100";
+                    string dictionaryEndpoint = "https://api.fda.gov/drug/enforcement.json?search=report_date:[" + d1 + "+TO+" + d2 + "]+AND+city:" + userEntry.Text + "+AND+status:ongoing&limit=100";
                     Uri dictionaryUri = new Uri(dictionaryEndpoint);
                     HttpResponseMessage response = await client.GetAsync(dictionaryEndpoint);
 
@@ -86,6 +108,12 @@ namespace proj441
                 userLabel.IsVisible = true;
                 RecallsListView.IsVisible = false;
             }
+
+            userSearch.Text = "You've searched: " + userEntry.Text;
+            if (userZip.Text != null)
+                userSearch.Text += ", " + userZip.Text;
+            userEntry.Text = null;
+            userZip.Text = null;
         }
 
         private void RecallsListView_Refreshing(object sender, EventArgs e)
@@ -96,9 +124,22 @@ namespace proj441
             RecallsListView.IsRefreshing = false;
         }
 
+        private void D1_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            D2.MinimumDate = e.NewDate;
+            if (D2.Date < D1.Date)
+                D2.Date = D1.Date;
+        }
+
+        private void D2_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            if (D2.Date < D1.Date)
+                D2.Date = D1.Date;
+        }
+
         protected override void OnAppearing()
         {
-           
+
         }
     }
 }
