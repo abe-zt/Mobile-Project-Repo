@@ -34,7 +34,7 @@ namespace proj441
 
             if (connection)
             {
-                if (userZip.Text != null)
+                if (userZip.Text != null && userZip.Text != "")
                 {
                     HttpClient client = new HttpClient();
                     string dictionaryEndpoint = "http://api.geonames.org/postalCodeSearchJSON?formatted=true&country=US&postalcode=" + userZip.Text + "&username=abezat";
@@ -51,7 +51,7 @@ namespace proj441
                         userEntry.Text = ZipToCity;
                     }
                 }
-                if (userEntry.Text != null)
+                if (userEntry.Text != null && userEntry.Text != "")
                 {
                     string d1 = D1.Date.ToString("yyyyMMdd");
                     string d2 = D2.Date.ToString("yyyyMMdd");
@@ -110,7 +110,7 @@ namespace proj441
             }
 
             userSearch.Text = "You've searched: " + userEntry.Text;
-            if (userZip.Text != null)
+            if (userZip.Text != null && userZip.Text != "")
                 userSearch.Text += ", " + userZip.Text;
             userEntry.Text = null;
             userZip.Text = null;
