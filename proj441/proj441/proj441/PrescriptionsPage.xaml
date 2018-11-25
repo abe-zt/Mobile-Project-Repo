@@ -100,11 +100,11 @@
                                                 
                                                 Spacing="0"
                                                 Orientation="Horizontal"
-                                                HorizontalOptions="EndAndExpand"
-                                                VerticalOptions="EndAndExpand">
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="StartAndExpand">
                                                 <Label
-                                                    HorizontalOptions="EndAndExpand"
-                                                    VerticalOptions="EndAndExpand"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    VerticalOptions="StartAndExpand"
                                                     
                                                     FontSize="24"
                                                     TextColor="{StaticResource MainColor}"
