@@ -42,6 +42,10 @@
 
   <key>NSAppTransportSecurity</key>
   <dict>
+
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+    
     <key>NSExceptionDomains</key>
     <dict>
       <key>www.the-domain-name.com</key>
@@ -58,11 +62,7 @@
     </dict>
   </dict>
 
-  <key>NSAppTransportSecurity</key>
-  <dict>
-    <key>NSAllowsArbitraryLoads</key>
-    <true/>
-  </dict>
+
   
 </dict>
   
