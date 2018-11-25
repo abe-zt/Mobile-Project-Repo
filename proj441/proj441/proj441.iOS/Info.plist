@@ -39,11 +39,12 @@
     <string>materialicons.ttf</string>
     <string>fontawesome.ttf</string>
   </array>
+
   <key>NSAppTransportSecurity</key>
   <dict>
     <key>NSExceptionDomains</key>
     <dict>
-      <key>http://api.geonames.org</key>
+      <key>www.the-domain-name.com</key>
       <dict>
         <key>NSExceptionMinimumTLSVersion</key>
         <string>TLSv1.0</string>
@@ -56,6 +57,13 @@
       </dict>
     </dict>
   </dict>
+
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+  </dict>
+  
 </dict>
   
 </plist>
