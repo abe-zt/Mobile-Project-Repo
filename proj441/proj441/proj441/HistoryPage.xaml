@@ -5,45 +5,47 @@
              Title="History">
     <ContentPage.Content>
         <Grid
+            BackgroundColor="White"
             Padding="0"
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
 
-            <Image 
+            <!--<Image 
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.RowSpan="2"
                 Source="doodlepills3.png"
-                Aspect="AspectFill"/>
+                Aspect="AspectFill"/>-->
        
-            <Frame
+            <!--<Frame
                 Grid.Row="0"
 
                 Margin="15, 15, 15, 0"
                 Padding="5"
                 CornerRadius="10"
                 BorderColor="{StaticResource MainColor}"
-                BackgroundColor="#F5F5F5">
+                BackgroundColor="#F5F5F5">-->
 
                 <ListView
                     Margin="0"
-                    BackgroundColor="#F5F5F5"
+                    BackgroundColor="White"
+                    SeparatorColor="Black"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
-                    Grid.Row="1" 
+                    Grid.Row="0" 
                     x:Name = "MyHistoryList"
-                    HasUnevenRows="True"
+                    HasUnevenRows="False"
                     SelectionMode="Single" 
+                    RowHeight="120"
                     ItemSelected="MyHistoryList_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <ViewCell.ContextActions>
-                                    
                                     <MenuItem
                                        Text="Delete"
                                        CommandParameter="{Binding .}"
@@ -51,47 +53,87 @@
                                        IsDestructive="True"/>
                                 </ViewCell.ContextActions>
                                 <ViewCell.View>
-                                    <StackLayout>
-                                        <StackLayout
-                                            Orientation="Horizontal"
-                                            Spacing="2">
-                                            <Label 
-                                                
-                                                FontSize="Large"
-                                                TextColor="Blue"
-                                                Text=" ( "/>
-                                            <Label 
-                                                x:Name="quantityLabel"
-                                                FontSize="Large"
-                                                FontAttributes="Bold"
-                                                TextColor="Blue"
-                                                Text="{Binding QuantityTaken}"/>
-                                            <Label 
-                                                
-                                                FontSize="Large"
-                                                TextColor="Blue"
-                                                Text=" ) "/>
+                                    <StackLayout
+                                        Orientation="Horizontal"
+                                        Margin="10"
+                                        Spacing="0">
+                                        <Image
+                                            Margin="0, 0, 10, 0"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"
+                                            
+                                            Source="medicinebottle.png"
+                                            Aspect="AspectFill"/>
+                                        <StackLayout 
+                                            HorizontalOptions="StartAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            
+                                            Spacing="0">
                                             <Label
-                                                FontSize="Large"
-                                                Text="{Binding PrescriptionTaken.Name}" />
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="StartAndExpand"
+                                                FontSize="32"
+                                                FontAttributes="Bold"
+                                                TextColor="Black"
+                                                Text="{Binding PrescriptionTaken.Name}  " />
+                                            <StackLayout
+                                                
+                                                Spacing="0"
+                                                Orientation="Horizontal"
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="StartAndExpand">
+                                                <Label
+                                                    HorizontalOptions="StartAndExpand"
+                                                    VerticalOptions="StartAndExpand"
+                                                    
+                                                    FontSize="24"
+                                                    TextColor="{StaticResource MainColor}"
+                                                    Text="{Binding PrescriptionTaken.Strength}"/>
+
+                                                <Label
+                                                    Margin="0"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    VerticalOptions="Center"
+                                                    FontSize="24"
+                                                    TextColor="{StaticResource MainColor}"
+                                                    Text="mg" />
+                                            </StackLayout>
                                         </StackLayout>
-                                        
-                                        <Label
-                                            x:Name="dateTimeLabel"
-                                            HorizontalOptions="CenterAndExpand"
-                                            Text="{Binding DateTimeTaken}"/>
-                                    </StackLayout>
+                                        <StackLayout 
+                                            Spacing="5"
+                                            Orientation="Horizontal"
+                                            HorizontalOptions="EndAndExpand"
+                                            VerticalOptions="EndAndExpand" >
+                                            <Label
+                                                Margin="0"
+                                                HorizontalOptions="End"
+                                                VerticalOptions="End"
+                                                FontSize="20"
+                                                TextColor="Blue"
+                                                Text="{Binding PrescriptionTaken.Remaining}" />
+                                            <Label
+                                                Margin="0"
+                                                HorizontalOptions="End"
+                                                VerticalOptions="End"
+                                                FontSize="20"
+                                                TextColor="Blue"
+                                                Text="Ct" />
+                                        </StackLayout>
+                                           
+                                </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </Frame>
+            <!--</Frame>-->
 
-            <StackLayout
-                Padding="10, 20, 10, 20"
-                Grid.Row="1">
+            <!--<StackLayout
+                Padding="10, 20"
+                Grid.Row="1">-->
                 <Button
+                    Grid.Row="1"
+                    Margin="10, 20"
                     Style="{StaticResource MainButtonStyle}" 
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="EndAndExpand"
@@ -99,7 +141,7 @@
                     Text="LOG A DOSAGE"
                     Clicked="LogDosageButton2_Clicked">
                 </Button>
-            </StackLayout>
+            <!--</StackLayout>-->
 
         </Grid>
     </ContentPage.Content>
