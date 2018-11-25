@@ -37,6 +37,9 @@ namespace proj441
                 if (userZip.Text != null && userZip.Text != "")
                 {
                     HttpClient client = new HttpClient();
+
+                    /*added an exception for iOS in info.plist https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/ats#optout */
+
                     string dictionaryEndpoint = "http://api.geonames.org/postalCodeSearchJSON?formatted=true&country=US&postalcode=" + userZip.Text + "&username=abezat";
                     Uri dictionaryUri = new Uri(dictionaryEndpoint);
                     HttpResponseMessage response = await client.GetAsync(dictionaryEndpoint);
