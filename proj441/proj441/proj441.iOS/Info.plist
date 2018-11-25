@@ -39,7 +39,6 @@
     <string>materialicons.ttf</string>
     <string>fontawesome.ttf</string>
   </array>
-</dict>
   <key>NSAppTransportSecurity</key>
   <dict>
     <key>NSExceptionDomains</key>
@@ -57,4 +56,6 @@
       </dict>
     </dict>
   </dict>
+</dict>
+  
 </plist>
