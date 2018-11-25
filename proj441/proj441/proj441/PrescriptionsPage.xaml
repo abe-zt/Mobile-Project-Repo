@@ -5,49 +5,52 @@
              Title="Add Prescriptions">
     <ContentPage.Content>
         <Grid
+            BackgroundColor="White"
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image 
+            <!--<Image 
             Grid.Row="0"
             Grid.Column="0"
             Grid.RowSpan="2"
             Source="doodlepills3.png"
-            Aspect="AspectFill"/>
+            Aspect="AspectFill"/>-->
 
             <Button
                 Grid.Row="0"
-                Margin="10, 20, 10, 10"
+                Margin="10, 20"
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="AddPrescriptionButton"
                 Text="ADD NEW PRESCRIPTION"
                 Clicked="AddPrescriptionButton_Clicked"
                 />
 
-            <Frame
+            <!--<Frame
                 Grid.Row="1"
                 
-                Margin="15"
-                Padding="5"
-                CornerRadius="10"
+                Margin="0"
+                Padding="0"
+                CornerRadius="0"
                 BorderColor="{StaticResource MainColor}"
-                BackgroundColor="#F5F5F5">
+                BackgroundColor="#F5F5F5">-->
 
                 <ListView
                     Margin="0"
-                    BackgroundColor="#F5F5F5"
+                    BackgroundColor="White"
+                    SeparatorColor="Black"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     Grid.Row="1" 
                     x:Name = "MyLogList"
-                    HasUnevenRows="True"
+                    HasUnevenRows="False"
+                    RowHeight="100"
                     ItemSelected="MyLogList_ItemSelected"
                     IsPullToRefreshEnabled="True"
                     Refreshing="MyLogList_Refreshing">
@@ -56,59 +59,93 @@
                             <ViewCell>
                                 <ViewCell.ContextActions>
                                     <MenuItem
-                                   Text="Info"
-                                   Clicked="Handle_ContextMenuInfoButton"
-                                   CommandParameter="{Binding .}"/>
+                                       Text="Info"
+                                       Clicked="Handle_ContextMenuInfoButton"
+                                       CommandParameter="{Binding .}"/>
                                     <MenuItem
-                                   Text="Edit"
-                                   Clicked="Handle_ContextMenuEditButton"
-                                   CommandParameter="{Binding .}"/>
+                                       Text="Edit"
+                                       Clicked="Handle_ContextMenuEditButton"
+                                       CommandParameter="{Binding .}"/>
                                     <MenuItem
-                                   Text="Delete"
-                                   CommandParameter="{Binding .}"
-                                    Clicked="Handle_ContextMenuDeleteButton"
-                                   IsDestructive="True"/>
+                                       Text="Delete"
+                                       CommandParameter="{Binding .}"
+                                       Clicked="Handle_ContextMenuDeleteButton"
+                                       IsDestructive="True"/>
                                 </ViewCell.ContextActions>
                                 <ViewCell.View>
                                     <StackLayout
                                         Orientation="Horizontal"
+                                        Margin="10"
                                         Spacing="0">
                                         <Image
-                                            HorizontalOptions="Start"
-                                            VerticalOptions="Center"
-                                            HeightRequest="50"
-                                            Source="redpillwhitefill.png"
-                                            Aspect="AspectFill"/>
-                                        <Label
-                                            HorizontalOptions="Start"
-                                            VerticalOptions="CenterAndExpand"
-                                            FontSize="28"
-                                            FontAttributes="Bold"
-                                            TextColor="Black"
-                                            Text="{Binding Name}  " />
-                                        <Label
-                                            Margin="20,0,0,0"
-                                            HorizontalOptions="Start"
-                                            VerticalOptions="Center"
-                                            FontSize="28"
-                                            
-                                            TextColor="{StaticResource MainColor}"
-                                            Text="{Binding Strength}"/>
-                                        <Label
                                             Margin="0"
-                                            HorizontalOptions="StartAndExpand"
+                                            HorizontalOptions="Start"
                                             VerticalOptions="Center"
-                                            FontSize="28"
                                             
-                                            TextColor="{StaticResource MainColor}"
-                                            Text="mg" />
+                                            Source="bottle.png"
+                                            Aspect="AspectFill"/>
+                                        <StackLayout 
+                                            HorizontalOptions="StartAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            
+                                            Spacing="0">
+                                            <Label
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="StartAndExpand"
+                                                FontSize="32"
+                                                FontAttributes="Bold"
+                                                TextColor="Black"
+                                                Text="{Binding Name}  " />
+                                            <StackLayout
+                                                
+                                                Spacing="0"
+                                                Orientation="Horizontal"
+                                                HorizontalOptions="EndAndExpand"
+                                                VerticalOptions="EndAndExpand">
+                                                <Label
+                                                    HorizontalOptions="EndAndExpand"
+                                                    VerticalOptions="EndAndExpand"
+                                                    
+                                                    FontSize="24"
+                                                    TextColor="{StaticResource MainColor}"
+                                                    Text="{Binding Strength}"/>
+
+                                                <Label
+                                                    Margin="0"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    VerticalOptions="Center"
+                                                    FontSize="24"
+                                                    TextColor="{StaticResource MainColor}"
+                                                    Text="mg" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout 
+                                            Spacing="5"
+                                            Orientation="Horizontal"
+                                            HorizontalOptions="EndAndExpand"
+                                            VerticalOptions="EndAndExpand" >
+                                            <Label
+                                                Margin="0"
+                                                HorizontalOptions="End"
+                                                VerticalOptions="End"
+                                                FontSize="20"
+                                                TextColor="Blue"
+                                                Text="{Binding Remaining}" />
+                                            <Label
+                                                Margin="0"
+                                                HorizontalOptions="End"
+                                                VerticalOptions="End"
+                                                FontSize="20"
+                                                TextColor="Blue"
+                                                Text="Ct" />
+                                        </StackLayout>
                                     </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </Frame>
+            <!--</Frame>-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

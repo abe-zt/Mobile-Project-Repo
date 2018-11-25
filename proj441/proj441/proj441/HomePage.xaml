@@ -69,7 +69,7 @@
                 Icon="fa-exclamation"
                 FontSize="30" TextColor="Black" 
                 HeightRequest="50" WidthRequest="50" 
-                BorderThickness="7" BorderColor="{StaticResource MainColor}" 
+                BorderThickness="6" BorderColor="{StaticResource MainColor}" 
                 BackgroundColor="White"
                 HorizontalOptions="End"
                 Clicked="RecallButton_Clicked">

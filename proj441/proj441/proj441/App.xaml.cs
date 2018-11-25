@@ -10,7 +10,16 @@ namespace proj441
     public partial class App : Application
     {
 
-        public static ObservableCollection<Prescription> MyPrescrpitions { get; set; } = new ObservableCollection<Prescription>();
+        public static ObservableCollection<Prescription> MyPrescrpitions { get; set; } = new ObservableCollection<Prescription>()
+        {
+            new Prescription()
+            {
+                Name = "Ibuprofen", 
+                Strength = "200",
+                Remaining = 100
+
+            }
+        };
         public static ObservableCollection<Dose> MyHistory { get; set; } = new ObservableCollection<Dose>();
 
         public App()

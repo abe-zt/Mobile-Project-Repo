@@ -222,4 +222,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\exclamation.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\medicinebottle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bottle.png" />
+  </ItemGroup>
 </Project>
