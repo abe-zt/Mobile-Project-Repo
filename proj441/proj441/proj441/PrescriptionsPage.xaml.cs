@@ -126,6 +126,7 @@ namespace proj441
         {
             Button button = (Button)sender;
             Navigation.InsertPageBefore(new HistoryPage(), this);
+            //await Navigation.PushAsync(new HistoryPage());
             await Navigation.PopAsync();
         }
     }
