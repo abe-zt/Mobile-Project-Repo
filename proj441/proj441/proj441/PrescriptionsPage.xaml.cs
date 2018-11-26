@@ -121,5 +121,12 @@ namespace proj441
         {
             MyLogList_Refreshing(MyLogList, null);
         }
+
+        private async void NavToHistoryButton_Clicked(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            Navigation.InsertPageBefore(new HistoryPage(), this);
+            await Navigation.PopAsync();
+        }
     }
 }

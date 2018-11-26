@@ -16,6 +16,10 @@ namespace proj441
             {
                 Name = "Ibuprofen", 
                 Strength = "200",
+                Instructions = "Take 2 for pain",
+                PrescribedDosage = 2,
+                PhysicalDescription = "oval,white",
+                Quantity = 100,
                 Remaining = 100
 
             }

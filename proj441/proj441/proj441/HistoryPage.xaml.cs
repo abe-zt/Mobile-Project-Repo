@@ -20,9 +20,9 @@ namespace proj441
             PopulateMyList(App.MyHistory);
         }
 
-        private void PopulateMyList(ObservableCollection<Dose> o)
+        private void PopulateMyList(ObservableCollection<Dose> history)
         {
-            MyHistoryList.ItemsSource = o;
+            MyHistoryList.ItemsSource = history;
         }
 
         //async void Handle_ContextMenuInfoButton(object sender, EventArgs e)
