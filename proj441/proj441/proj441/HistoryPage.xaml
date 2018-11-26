@@ -40,7 +40,7 @@
                 x:Name = "MyHistoryList"
                 HasUnevenRows="True"
                 SelectionMode="Single" 
-                RowHeight="120"
+                RowHeight="145"
                 ItemSelected="MyHistoryList_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
