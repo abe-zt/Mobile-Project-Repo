@@ -52,7 +52,7 @@
                     VerticalOptions="FillAndExpand"
                     Grid.Row="1" 
                     x:Name = "MyLogList"
-                    HasUnevenRows="False"
+                    HasUnevenRows="True"
                     RowHeight="100"
                     ItemSelected="MyLogList_ItemSelected"
                     IsPullToRefreshEnabled="True"
@@ -85,7 +85,7 @@
                                             Margin="0"
                                             HorizontalOptions="Start"
                                             VerticalOptions="Center"
-                                            
+                                            HeightRequest="80"
                                             Source="bottle.png"
                                             Aspect="AspectFill"/>
                                         <StackLayout 
@@ -132,16 +132,16 @@
                                                 Margin="0"
                                                 HorizontalOptions="End"
                                                 VerticalOptions="End"
-                                                FontSize="20"
+                                                FontSize="18"
                                                 TextColor="Blue"
                                                 Text="{Binding Remaining}" />
                                             <Label
                                                 Margin="0"
                                                 HorizontalOptions="End"
                                                 VerticalOptions="End"
-                                                FontSize="20"
+                                                FontSize="18"
                                                 TextColor="Blue"
-                                                Text="Ct" />
+                                                Text=" count" />
                                         </StackLayout>
                                     </StackLayout>
                                 </ViewCell.View>
