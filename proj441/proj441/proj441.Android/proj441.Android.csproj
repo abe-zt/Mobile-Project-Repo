@@ -131,9 +131,6 @@
     <AndroidResource Include="Resources\drawable\pillboylogoredshadow.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\pillboylogoredthicc.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\logicon.png" />
   </ItemGroup>
   <ItemGroup>

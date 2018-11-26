@@ -128,7 +128,7 @@
                                         <Label
                                             Margin="0"
                                             HorizontalOptions="StartAndExpand"
-                                            VerticalOptions="Center"
+                                            VerticalOptions="StartAndExpand"
                                             FontSize="18"
                                             FontAttributes="Bold"
                                             TextColor="Blue"
