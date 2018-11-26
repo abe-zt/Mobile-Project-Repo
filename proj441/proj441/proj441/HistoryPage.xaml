@@ -72,7 +72,7 @@
                                             <Label
                                                 HorizontalOptions="StartAndExpand"
                                                 VerticalOptions="StartAndExpand"
-                                                FontSize="32"
+                                                FontSize="24"
                                                 FontAttributes="Bold"
                                                 TextColor="Black"
                                                 Text="{Binding PrescriptionTaken.Name}  " />
@@ -97,8 +97,19 @@
                                                     FontSize="24"
                                                     TextColor="{StaticResource MainColor}"
                                                     Text="mg" />
-                                            </StackLayout>
+
                                         </StackLayout>
+                                        <StackLayout
+                                            Spacing="0">
+                                        <Label
+                                            Margin="0"
+                                            HorizontalOptions="StartAndExpand"
+                                            VerticalOptions="Center"
+                                            FontSize="20"
+                                            TextColor="Blue"
+                                            Text="{Binding QuantityTaken}" />
+                                        </StackLayout>
+                                    </StackLayout>
                                         <StackLayout 
                                             Spacing="5"
                                             Orientation="Horizontal"
