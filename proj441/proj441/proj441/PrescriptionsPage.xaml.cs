@@ -19,23 +19,13 @@ namespace proj441
         public PrescriptionsPage()
         {
             InitializeComponent();
-            PopulateMyList(App.MyPrescrpitions);
+            PopulateMyPrescriptionsList();
         }
 
-        //      public LogPage (Prescription p)
-        //{
-        //	InitializeComponent ();
-        //          //AddMyPrescription(p);
-        //          PopulateMyList(App.myPrescrpitions);
-        //      }
-
-        //private void AddMyPrescription(Prescription p)
-        //{
-        //}
-
-        private void PopulateMyList(ObservableCollection<Prescription> o)
+        private void PopulateMyPrescriptionsList()
         {
-            MyLogList.ItemsSource = o;
+            List<Prescription> prescriptionsSortedMultiple = App.MyPrescrpitions.OrderBy(x => x.Name).ThenBy(x => x.Strength).ToList();
+            MyLogList.ItemsSource = prescriptionsSortedMultiple;  
         }
 
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
@@ -80,33 +70,16 @@ namespace proj441
             {
                 //await PopupNavigation.Instance.PushAsync(new LogPopup(p));
                 await Navigation.PushAsync(new LogDosagePage(p));
-
-                //Prescription p = (Prescription)l.SelectedItem;
-                //bool answer = await DisplayAlert("Confirm:", "Log a dosage of '" + p.Name + "' in Dosage History?", "Yes", "No");
-                //if (answer)
-                //{
-                //    App.MyHistory.Add(p);
-                //    l.SelectedItem = null;
-                //    //await Navigation.PopToRootAsync();
-                //}
-                //else
-                //{
-                //    l.SelectedItem = null;
-                //}
             }
+
             l.SelectedItem = null;
         }
-
-        //private void MenuItem_Clicked(object sender, EventArgs e)
-        //{
-
-        //}
 
         private void MyLogList_Refreshing(object sender, EventArgs e)
         {
             var listViewToRefresh = (ListView)sender;
             ClearListView();
-            PopulateMyList(App.MyPrescrpitions);
+            PopulateMyPrescriptionsList();
             MyLogList.IsRefreshing = false;
         }
 

@@ -42,6 +42,8 @@
                 BorderColor="{StaticResource MainColor}"
                 BackgroundColor="#F5F5F5">-->
 
+            
+            
                 <ListView
                     Margin="0"
                     BackgroundColor="White"
@@ -54,7 +56,8 @@
                     RowHeight="100"
                     ItemSelected="MyLogList_ItemSelected"
                     IsPullToRefreshEnabled="True"
-                    Refreshing="MyLogList_Refreshing">
+                    Refreshing="MyLogList_Refreshing"
+                    >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

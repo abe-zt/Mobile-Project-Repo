@@ -17,20 +17,14 @@ namespace proj441
 		public HistoryPage ()
 		{
 			InitializeComponent ();
-            PopulateMyList(App.MyHistory);
+            PopulateMyHistoryList();
         }
 
-        private void PopulateMyList(ObservableCollection<Dose> history)
+        private void PopulateMyHistoryList()
         {
-            MyHistoryList.ItemsSource = history;
+            List<Dose> historySorted = App.MyHistory.OrderByDescending(x => x.DateTimeTaken).ToList();
+            MyHistoryList.ItemsSource = historySorted;
         }
-
-        //async void Handle_ContextMenuInfoButton(object sender, EventArgs e)
-        //{
-        //    var menuItem = (MenuItem)sender;
-        //    var contextSelected = (Dose)menuItem.CommandParameter;
-        //    await Navigation.PushAsync(new HistoryInfoPage(contextSelected));
-        //}
 
         private async void Handle_ContextMenuDeleteButton(object sender, EventArgs e)
         {

@@ -39,7 +39,7 @@ namespace proj441
             {
                 Prescription p = new Prescription
                 {
-                    Name = preName.Text,
+                    Name = preName.Text.ToUpper(),
                     Strength = preStrength.Text,
                     PrescribedDosage = Convert.ToInt32(preDosage.Text),
                     Instructions = preInstructions.Text,

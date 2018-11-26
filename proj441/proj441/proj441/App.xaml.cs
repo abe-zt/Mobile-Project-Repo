@@ -14,7 +14,7 @@ namespace proj441
         {
             new Prescription()
             {
-                Name = "Ibuprofen", 
+                Name = "IBUPROFEN", 
                 Strength = "200",
                 Instructions = "Take 2 for pain",
                 PrescribedDosage = 2,

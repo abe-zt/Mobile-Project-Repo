@@ -8,7 +8,7 @@
             <Color x:Key="MainColor">#D32F2F</Color>
             <Color x:Key="MainBackgroundColor">#FFFFFF</Color>
             <Style x:Key="MainButtonStyle" TargetType="Button" >
-                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="BorderRadius" Value="24" />
                 <Setter Property="BorderColor" Value="#D32F2F" />
                 <Setter Property="BorderWidth" Value="4" />
