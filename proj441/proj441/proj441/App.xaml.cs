@@ -3,6 +3,9 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace proj441
@@ -18,7 +21,7 @@ namespace proj441
                 Strength = "200",
                 Instructions = "Take 2 for pain",
                 PrescribedDosage = 2,
-                PhysicalDescription = "oval,white",
+                PhysicalDescription = "oval, white",
                 Quantity = 100,
                 Remaining = 100
 
@@ -35,6 +38,10 @@ namespace proj441
         protected override void OnStart()
         {
             // Handle when your app starts
+            AppCenter.Start("android=6d344194-1ae6-4575-b5d0-293ecda8a258;" +
+                  "ios={cbbd70a0-4b17-4f6c-8093-103b181f2fb3}" +
+                  "uwp={cbe8cd48-61c3-4a94-a7a6-302c4966a423};",
+                  typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
