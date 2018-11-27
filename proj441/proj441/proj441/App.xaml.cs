@@ -40,7 +40,7 @@ namespace proj441
             // Handle when your app starts
             AppCenter.Start("uwp=cbe8cd48-61c3-4a94-a7a6-302c4966a423;" +
                   "android={6d344194-1ae6-4575-b5d0-293ecda8a258;}" +
-                  "ios={cbbd70a0-4b17-4f6c-8093-103b181f2fb3}",
+                  "ios={cbbd70a0-4b17-4f6c-8093-103b181f2fb3;}",
                   typeof(Analytics), typeof(Crashes));
         }
 
