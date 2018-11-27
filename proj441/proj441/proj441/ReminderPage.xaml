@@ -15,12 +15,12 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image 
+            <!--<Image 
             Grid.Row="0"
             Grid.Column="0"
             Grid.RowSpan="3"
             Source="doodlepills3.png"
-            Aspect="AspectFill"/>
+            Aspect="AspectFill"/>-->
 
             <Button
                 Grid.Row="0"
@@ -30,6 +30,7 @@
                 Text="SET A REMINDER"
                 Clicked="SetReminderButton2_Clicked"
                 />
+            
 
         </Grid>
     </ContentPage.Content>
