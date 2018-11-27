@@ -96,7 +96,7 @@
                                             <Label
                                                 HorizontalOptions="StartAndExpand"
                                                 VerticalOptions="StartAndExpand"
-                                                FontSize="32"
+                                                FontSize="28"
                                                 FontAttributes="Bold"
                                                 TextColor="Black"
                                                 Text="{Binding Name}  " />
@@ -110,7 +110,7 @@
                                                     HorizontalOptions="StartAndExpand"
                                                     VerticalOptions="StartAndExpand"
                                                     
-                                                    FontSize="24"
+                                                    FontSize="20"
                                                     TextColor="{StaticResource MainColor}"
                                                     Text="{Binding Strength}"/>
 
@@ -118,7 +118,7 @@
                                                     Margin="0"
                                                     HorizontalOptions="StartAndExpand"
                                                     VerticalOptions="Center"
-                                                    FontSize="24"
+                                                    FontSize="20"
                                                     TextColor="{StaticResource MainColor}"
                                                     Text="mg" />
                                             </StackLayout>
@@ -133,14 +133,14 @@
                                                 HorizontalOptions="End"
                                                 VerticalOptions="End"
                                                 FontSize="18"
-                                                TextColor="Blue"
+                                                TextColor="DarkGray"
                                                 Text="{Binding Remaining}" />
                                             <Label
                                                 Margin="0"
                                                 HorizontalOptions="End"
                                                 VerticalOptions="End"
                                                 FontSize="18"
-                                                TextColor="Blue"
+                                                TextColor="DarkGray"
                                                 Text=" count" />
                                         </StackLayout>
                                     </StackLayout>

@@ -30,7 +30,7 @@ namespace proj441
         {
             var menuItem = (MenuItem)sender;
             var contextSelected = (Dose)menuItem.CommandParameter;
-            bool answer = await DisplayAlert("Confirm:", "Delete '" + contextSelected.PrescriptionTaken.Name + "' ?", "Yes", "No");
+            bool answer = await DisplayAlert("Confirm:", "Delete '" + contextSelected.Name + "' ?", "Yes", "No");
             if (answer)
             {
                 App.MyHistory.Remove(contextSelected);

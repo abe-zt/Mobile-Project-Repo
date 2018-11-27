@@ -14,7 +14,7 @@ namespace proj441
 	public partial class LogDosagePage : ContentPage
 	{
 		//DateTime dt = new DateTime();
-        Prescription p2 = new Prescription();
+        Prescription p_copy = new Prescription();
 
         public LogDosagePage()
         {
@@ -25,7 +25,7 @@ namespace proj441
         {
             InitializeComponent();
             BindingContext = p;
-            p2.CopyPrescription(p);
+            CopyPrescription(p_copy,p);
 
 
             //p2.CopyPrescription(p);
@@ -37,6 +37,18 @@ namespace proj441
             myDatePicker.MaximumDate = DateTime.Now;
             myTimePicker.Time = DateTime.Now.TimeOfDay;
             //AmountLabel.Text = p.PrescribedDosage.ToString();
+        }
+
+        //copy constructor
+        public void CopyPrescription(Prescription new_p, Prescription pervious_p)
+        {
+            new_p.Name = pervious_p.Name;
+            new_p.Strength = pervious_p.Strength;
+            new_p.Instructions = pervious_p.Instructions;
+            new_p.PrescribedDosage = pervious_p.PrescribedDosage;
+            new_p.PhysicalDescription = pervious_p.PhysicalDescription;
+            new_p.Quantity = pervious_p.Quantity;
+            new_p.Remaining = pervious_p.Remaining;
         }
 
         private void MyDatePicker_DateSelected(object sender, DateChangedEventArgs e)
@@ -81,12 +93,18 @@ namespace proj441
 
             //int difference = p2.Remaining - (int)DosageStepper.Value;
             //remainingLabel.Text = difference.ToString();
-            p2.Remaining -= (int)DosageStepper.Value;
-            remainingLabel.Text = p2.Remaining.ToString();
+            p_copy.Remaining -= (int)DosageStepper.Value;
+            remainingLabel.Text = p_copy.Remaining.ToString();
 
             Dose d1 = new Dose
             {
-                PrescriptionTaken = p2,
+                Name = p_copy.Name,
+                Strength = p_copy.Strength,
+                Instructions = p_copy.Instructions,
+                PrescribedDosage = p_copy.PrescribedDosage,
+                PhysicalDescription = p_copy.PhysicalDescription,
+                Quantity = p_copy.Quantity,
+                Remaining = p_copy.Remaining,
                 DateTimeTaken = myDatePicker.Date + myTimePicker.Time,
                 QuantityTaken = (int)DosageStepper.Value
             };
@@ -94,7 +112,7 @@ namespace proj441
             //d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;
             App.MyHistory.Add(d1);
             //LogPopupStackLayout.IsVisible = true;
-            await DisplayAlert("Added to History:", "Taken " + " (" + d1.QuantityTaken + ") " + d1.PrescriptionTaken.Name + " at " + d1.DateTimeTaken.ToString(), "OK");
+            await DisplayAlert("Added to History:", "Taken " + " (" + d1.QuantityTaken + ") " + d1.Name + " at " + d1.DateTimeTaken.ToString(), "OK");
             await Navigation.PopAsync();
         }
 

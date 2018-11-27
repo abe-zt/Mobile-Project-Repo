@@ -4,14 +4,9 @@ using System.Text;
 
 namespace proj441
 {
-    public class Dose
+    public class Dose : Prescription
     {
-        public Prescription PrescriptionTaken
-        {
-            get;
-            set;
-        }
-
+        
         public DateTime DateTimeTaken
         {
             get;

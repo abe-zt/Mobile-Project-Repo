@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace proj441
 {
     public class Prescription
     {
+        [PrimaryKey, AutoIncrement]
         public string Name
         {
             get;
@@ -46,19 +48,6 @@ namespace proj441
         {
             get;
             set;
-        }
-
-        //copy constructor
-        public Prescription CopyPrescription(Prescription pervious)
-        {
-            Name = pervious.Name;
-            Strength = pervious.Strength;
-            Instructions = pervious.Instructions;
-            PrescribedDosage = pervious.PrescribedDosage;
-            PhysicalDescription = pervious.PhysicalDescription;
-            Quantity = pervious.Quantity;
-            Remaining = pervious.Remaining;
-            return this;
         }
     }
 }

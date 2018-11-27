@@ -40,7 +40,7 @@
                 x:Name = "MyHistoryList"
                 HasUnevenRows="True"
                 SelectionMode="Single" 
-                RowHeight="145"
+                RowHeight="150"
                 ItemSelected="MyHistoryList_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -65,8 +65,8 @@
                                         Source="medicinebottle.png"
                                         Aspect="AspectFill"/>
                                     <StackLayout 
-                                        HorizontalOptions="StartAndExpand"
-                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand"
                                         Spacing="0">
 
                                         <StackLayout
@@ -79,9 +79,9 @@
                                                 HorizontalOptions="StartAndExpand"
                                                 VerticalOptions="End"
                                                 FontSize="18"
-                                                FontAttributes="None"
+                                                FontAttributes="Bold"
                                                 TextColor="Black"
-                                                Text="{Binding Path=PrescriptionTaken.Name, StringFormat='{0}'}" />
+                                                Text="{Binding Path=Name, StringFormat='{0}'}" />
 
                                             <Label
                                                 HorizontalOptions="StartAndExpand"
@@ -89,7 +89,7 @@
                                                     
                                                 FontSize="18"
                                                 TextColor="{StaticResource MainColor}"
-                                                Text="{Binding Path=PrescriptionTaken.Strength, StringFormat= ' {0} mg'}"/>
+                                                Text="{Binding Path=Strength, StringFormat= ' {0} mg'}"/>
 
                                         </StackLayout>
 
@@ -102,7 +102,7 @@
                                                 VerticalOptions="Center"
                                                 FontSize="18"
                                                 TextColor="Black"
-                                                Text="Quantity of:  " />
+                                                Text="Quantity:  " />
                                             <Label
                                                 Margin="0"
                                                 HorizontalOptions="Start"
@@ -118,21 +118,41 @@
                                             Spacing="0">
                                             <Label
                                                 Margin="0"
-                                                HorizontalOptions="StartAndExpand"
-                                                VerticalOptions="CenterAndExpand"
+                                                HorizontalOptions="Start"
+                                                VerticalOptions="Center"
                                                 FontSize="18"
                                                 TextColor="Black"
-                                                Text="Taken on: " />
+                                                Text="Time: " />
+                                            <Label
+                                                Margin="0"
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="Center"
+                                                FontSize="18"
+                                                FontAttributes="Bold"
+                                                TextColor="Blue"
+                                                Text="{Binding DateTimeTaken, StringFormat='{0:t}'}" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            Orientation="Horizontal"
+                                            Spacing="0">
+                                            <Label
+                                                Margin="0"
+                                                HorizontalOptions="Start"
+                                                VerticalOptions="Center"
+                                                FontSize="18"
+                                                TextColor="Black"
+                                                Text="Date: " />
+                                            <Label
+                                                Margin="0"
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="Center"
+                                                FontSize="18"
+                                                FontAttributes="Bold"
+                                                TextColor="Blue"
+                                                Text="{Binding DateTimeTaken, StringFormat='{0:d}'}" />
                                             
                                         </StackLayout>
-                                        <Label
-                                            Margin="0"
-                                            HorizontalOptions="StartAndExpand"
-                                            VerticalOptions="StartAndExpand"
-                                            FontSize="18"
-                                            FontAttributes="Bold"
-                                            TextColor="Blue"
-                                            Text="{Binding DateTimeTaken, StringFormat='{0:D} at {0:t}'}" />
+                                        
                                         <StackLayout 
                                             Spacing="5"
                                             Orientation="Horizontal"
@@ -140,17 +160,17 @@
                                             VerticalOptions="EndAndExpand" >
                                             <Label
                                                 Margin="0"
-                                                HorizontalOptions="End"
+                                                HorizontalOptions="EndAndExpand"
                                                 VerticalOptions="End"
                                                 FontSize="14"
-                                                TextColor="Blue"
-                                                Text="{Binding PrescriptionTaken.Remaining}" />
+                                                TextColor="DarkGray"
+                                                Text="{Binding Remaining}" />
                                             <Label
                                                 Margin="0"
                                                 HorizontalOptions="End"
                                                 VerticalOptions="End"
                                                 FontSize="14"
-                                                TextColor="Blue"
+                                                TextColor="DarkGray"
                                                 Text=" count" />
 
                                         </StackLayout>
