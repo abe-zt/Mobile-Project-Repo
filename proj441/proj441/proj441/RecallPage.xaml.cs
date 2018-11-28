@@ -23,6 +23,7 @@ namespace proj441
             InitializeComponent();
             D1.MinimumDate = DateTime.Now.AddYears(-1);
             D1.MaximumDate = DateTime.Now;
+            D1.Date = DateTime.Now.AddMonths(-1);
             D2.MinimumDate = DateTime.Now.AddYears(-1);
             D2.MaximumDate = DateTime.Now;
         }

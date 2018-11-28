@@ -141,11 +141,24 @@
                                         FontAttributes="Bold"
                                         FontSize="Medium"
                                         VerticalOptions="StartAndExpand"/>
-                                    <Label 
-                                        Margin="5"
-                                        Text="{Binding City}"
-                                        TextColor="Red"
-                                        VerticalOptions="StartAndExpand"/>
+                                    <StackLayout
+                                        Orientation="Horizontal"
+                                        HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="Center"
+                                        Spacing="0">
+                                        <Label 
+                                            Margin="5"
+                                            Text="{Binding City, StringFormat= '{0}, '}"
+                                            TextColor="Red"
+                                            VerticalOptions="StartAndExpand"
+                                            HorizontalOptions="Start"/>
+                                        <Label 
+                                            Margin="5"
+                                            Text="{Binding State}"
+                                            TextColor="Red"
+                                            VerticalOptions="StartAndExpand"
+                                            HorizontalOptions="Start"/>
+                                    </StackLayout>
                                     <Label 
                                         Margin="5, 5, 5, 0"
                                         Text="Reason For Recall:"
