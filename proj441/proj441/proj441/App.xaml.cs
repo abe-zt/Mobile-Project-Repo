@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using System.IO;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace proj441
@@ -27,12 +28,26 @@ namespace proj441
 
             }
         };
+
         public static ObservableCollection<Dose> MyHistory { get; set; } = new ObservableCollection<Dose>();
 
         public App()
         {
             InitializeComponent();
             MainPage = new proj441.MainPage();
+        }
+
+        private static PrescriptionDatabase database;
+        public static PrescriptionDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new PrescriptionDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PrescriptionSQLite.db3"));
+                }
+                return database;
+            }
         }
 
         protected override void OnStart()
