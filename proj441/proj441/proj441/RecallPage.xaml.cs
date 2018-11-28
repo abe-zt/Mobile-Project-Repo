@@ -34,6 +34,8 @@ namespace proj441
 
             if (connection)
             {
+                Indicator.IsRunning = true;
+
                 if (userZip.Text != null && userZip.Text != "")
                 {
                     HttpClient client = new HttpClient();
@@ -46,6 +48,9 @@ namespace proj441
 
                     if (response.IsSuccessStatusCode)
                     {
+
+                        Indicator.IsRunning = true;
+
                         string jsonString = await response.Content.ReadAsStringAsync();
                         var myPostal = Postal.FromJson(jsonString);
 
@@ -69,7 +74,7 @@ namespace proj441
 
                     if (response.IsSuccessStatusCode)
                     {
-
+                        Indicator.IsRunning = false;
                         string jsonString = await response.Content.ReadAsStringAsync();
                         var myRecalls = MyRecalls.FromJson(jsonString);
 

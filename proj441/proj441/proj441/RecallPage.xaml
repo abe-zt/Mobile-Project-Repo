@@ -111,8 +111,13 @@
                     FontAttributes="Bold"
                     Text=""/>
 
-            
-            
+
+            <ActivityIndicator
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="40"
+                x:Name="Indicator"
+                Color="{StaticResource MainColor}"/>
             <ListView 
                 Margin="5"
                 x:Name="RecallsListView"
