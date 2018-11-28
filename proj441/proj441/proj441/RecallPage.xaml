@@ -103,14 +103,13 @@
                     FontAttributes="Bold"
                     IsVisible="False"
                     Text=""/>
-                
-                <Label
+
+            <Label
                     Margin="5"
                     x:Name="userLabel"
                     FontSize="Medium"
                     FontAttributes="Bold"
                     Text=""/>
-
 
             <ActivityIndicator
                 HorizontalOptions="Center"
@@ -118,6 +117,7 @@
                 HeightRequest="40"
                 x:Name="Indicator"
                 Color="{StaticResource MainColor}"/>
+            
             <ListView 
                 Margin="5"
                 x:Name="RecallsListView"

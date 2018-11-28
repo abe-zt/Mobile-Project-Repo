@@ -35,6 +35,7 @@ namespace proj441
             if (connection)
             {
                 Indicator.IsRunning = true;
+                Indicator.IsVisible = true;
 
                 if (userZip.Text != null && userZip.Text != "")
                 {
@@ -48,8 +49,6 @@ namespace proj441
 
                     if (response.IsSuccessStatusCode)
                     {
-
-                        Indicator.IsRunning = true;
 
                         string jsonString = await response.Content.ReadAsStringAsync();
                         var myPostal = Postal.FromJson(jsonString);
@@ -75,6 +74,7 @@ namespace proj441
                     if (response.IsSuccessStatusCode)
                     {
                         Indicator.IsRunning = false;
+                        Indicator.IsVisible = false;
                         string jsonString = await response.Content.ReadAsStringAsync();
                         var myRecalls = MyRecalls.FromJson(jsonString);
 
@@ -99,6 +99,8 @@ namespace proj441
                     }
                     else
                     {
+                        Indicator.IsRunning = false;
+                        Indicator.IsVisible = false;
                         userLabel.Text = "YOUR ENTRY RETURNED ZERO RESULTS";    //for empty strings
                         userLabel.IsVisible = true;
                         RecallsListView.IsVisible = false;
@@ -106,12 +108,16 @@ namespace proj441
                 }
                 else
                 {
+                    Indicator.IsRunning = false;
+                    Indicator.IsVisible = false;
                     userLabel.Text = "PLEASE ENTER A CITY NAME";
                     userLabel.IsVisible = true;
                 }
             }
             else
             {
+                Indicator.IsRunning = false;
+                Indicator.IsVisible = false;
                 await DisplayAlert("No Internet", "No Internet Connection Detected", "OK");
                 userLabel.IsVisible = true;
                 RecallsListView.IsVisible = false;
