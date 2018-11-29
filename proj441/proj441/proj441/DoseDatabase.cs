@@ -6,27 +6,27 @@ using SQLite;
 
 namespace proj441
 {
-    public class PrescriptionDatabase
+    public class DoseDatabase
     {
         readonly SQLiteAsyncConnection database;
 
-        public PrescriptionDatabase(string path)
+        public DoseDatabase(string path)
         {
             database = new SQLiteAsyncConnection(path);
-            database.CreateTableAsync<Prescription>().Wait();
+            database.CreateTableAsync<Dose>().Wait();
         }
 
-        public Task<List<Prescription>> GetItemsAsync()
+        public Task<List<Dose>> GetItemsAsync()
         {
-            return database.Table<Prescription>().ToListAsync();
+            return database.Table<Dose>().ToListAsync();
         }
 
-        public Task<Prescription> GetItemAsync(int pid)
+        public Task<Dose> GetItemAsync(int pid)
         {
-            return database.Table<Prescription>().Where(i => i.PID == pid).FirstOrDefaultAsync();
+            return database.Table<Dose>().Where(i => i.PID == pid).FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveItemAsync(Prescription item)
+        public Task<int> SaveItemAsync(Dose item)
         {
             if (item.PID != 0)
             {
@@ -38,7 +38,7 @@ namespace proj441
             }
         }
 
-        public Task<int> DeleteItemAsync(Prescription item)
+        public Task<int> DeleteItemAsync(Dose item)
         {
             return database.DeleteAsync(item);
         }

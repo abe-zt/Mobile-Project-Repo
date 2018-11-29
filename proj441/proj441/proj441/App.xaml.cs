@@ -7,26 +7,27 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace proj441
 {
     public partial class App : Application
     {
-
         public static ObservableCollection<Prescription> MyPrescrpitions { get; set; } = new ObservableCollection<Prescription>()
         {
-            new Prescription()
-            {
-                Name = "IBUPROFEN", 
-                Strength = "200",
-                Instructions = "Take 2 for pain",
-                PrescribedDosage = 2,
-                PhysicalDescription = "oval, white",
-                Quantity = 100,
-                Remaining = 100
-
-            }
+            //new Prescription()
+            //{
+            //    //PID = 1, 
+            //    Name = "IBUPROFEN", 
+            //    Strength = "200",
+            //    Instructions = "Take 2 for pain",
+            //    PrescribedDosage = 2,
+            //    PhysicalDescription = "oval, white",
+            //    Quantity = 100,
+            //    Remaining = 100
+            //}
         };
 
         public static ObservableCollection<Dose> MyHistory { get; set; } = new ObservableCollection<Dose>();
@@ -35,19 +36,26 @@ namespace proj441
         {
             InitializeComponent();
             MainPage = new proj441.MainPage();
+            GetAllPrescriptions();
         }
 
-        private static PrescriptionDatabase database;
-        public static PrescriptionDatabase Database
+        private static PrescriptionDatabase myPrescriptionDatabase;
+        public static PrescriptionDatabase MyPrescriptionDatabase
         {
             get
             {
-                if (database == null)
+                if (myPrescriptionDatabase == null)
                 {
-                    database = new PrescriptionDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PrescriptionSQLite.db3"));
+                    myPrescriptionDatabase = new PrescriptionDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PrescriptionSQLite.db3"));
                 }
-                return database;
+                return myPrescriptionDatabase;
             }
+        }
+
+        async void GetAllPrescriptions()
+        {
+            List<Prescription> prescriptions = await MyPrescriptionDatabase.GetItemsAsync();
+            prescriptions.ToList().ForEach(MyPrescrpitions.Add);
         }
 
         protected override void OnStart()

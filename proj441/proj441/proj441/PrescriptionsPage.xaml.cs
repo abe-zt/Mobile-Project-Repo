@@ -59,6 +59,7 @@ namespace proj441
             if (answer)
             {
                 App.MyPrescrpitions.Remove(contextSelected);
+                await App.MyPrescriptionDatabase.DeleteItemAsync(contextSelected);
             }
         }
 

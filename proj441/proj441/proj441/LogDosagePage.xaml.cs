@@ -40,15 +40,16 @@ namespace proj441
         }
 
         //copy constructor
-        public void CopyPrescription(Prescription new_p, Prescription pervious_p)
+        public void CopyPrescription(Prescription originalP, Prescription copyP)
         {
-            new_p.Name = pervious_p.Name;
-            new_p.Strength = pervious_p.Strength;
-            new_p.Instructions = pervious_p.Instructions;
-            new_p.PrescribedDosage = pervious_p.PrescribedDosage;
-            new_p.PhysicalDescription = pervious_p.PhysicalDescription;
-            new_p.Quantity = pervious_p.Quantity;
-            new_p.Remaining = pervious_p.Remaining;
+            originalP.PID = copyP.PID;
+            originalP.Name = copyP.Name;
+            originalP.Strength = copyP.Strength;
+            originalP.Instructions = copyP.Instructions;
+            originalP.PrescribedDosage = copyP.PrescribedDosage;
+            originalP.PhysicalDescription = copyP.PhysicalDescription;
+            originalP.Quantity = copyP.Quantity;
+            originalP.Remaining = copyP.Remaining;
         }
 
         private void MyDatePicker_DateSelected(object sender, DateChangedEventArgs e)
@@ -96,8 +97,11 @@ namespace proj441
             p_copy.Remaining -= (int)DosageStepper.Value;
             remainingLabel.Text = p_copy.Remaining.ToString();
 
+            await App.MyPrescriptionDatabase.SaveItemAsync(p_copy);
+
             Dose d1 = new Dose
             {
+                //should not need to copy over pid, since we want
                 Name = p_copy.Name,
                 Strength = p_copy.Strength,
                 Instructions = p_copy.Instructions,

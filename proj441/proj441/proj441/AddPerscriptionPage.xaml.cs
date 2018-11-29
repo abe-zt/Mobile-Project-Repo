@@ -49,6 +49,7 @@ namespace proj441
                 };
 
                 App.MyPrescrpitions.Add(p);
+                await App.MyPrescriptionDatabase.SaveItemAsync(p);
                 //LogPage logPage = new LogPage(p1);
                 await Navigation.PopAsync();
             }

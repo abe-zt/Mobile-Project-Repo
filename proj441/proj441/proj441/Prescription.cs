@@ -8,6 +8,8 @@ namespace proj441
     public class Prescription
     {
         [PrimaryKey, AutoIncrement]
+        public int PID { get; set; }
+
         public string Name
         {
             get;
