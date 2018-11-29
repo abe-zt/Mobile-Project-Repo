@@ -21,14 +21,14 @@ namespace proj441
             return database.Table<Dose>().ToListAsync();
         }
 
-        public Task<Dose> GetItemAsync(int pid)
+        public Task<Dose> GetItemAsync(int did)
         {
-            return database.Table<Dose>().Where(i => i.PID == pid).FirstOrDefaultAsync();
+            return database.Table<Dose>().Where(i => i.DID == did).FirstOrDefaultAsync();
         }
 
         public Task<int> SaveItemAsync(Dose item)
         {
-            if (item.PID != 0)
+            if (item.DID != 0)
             {
                 return database.UpdateAsync(item);
             }

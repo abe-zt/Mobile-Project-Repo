@@ -47,7 +47,7 @@ namespace proj441
         {
             var menuItem = (MenuItem)sender;
             var contextSelected = (Prescription)menuItem.CommandParameter;
-            await Navigation.PushAsync(new EditPrescriptionPage(contextSelected));
+            await Navigation.PushModalAsync(new EditPrescriptionPage(contextSelected));
         }
 
         private async void Handle_ContextMenuDeleteButton(object sender, EventArgs e)
@@ -84,16 +84,9 @@ namespace proj441
             MyLogList.IsRefreshing = false;
         }
 
-
         private void ClearListView()
         {
             MyLogList.ItemsSource = null;
-        }
-
-
-        protected override void OnAppearing()
-        {
-            MyLogList_Refreshing(MyLogList, null);
         }
 
         private async void NavToHistoryButton_Clicked(object sender, EventArgs e)
@@ -102,6 +95,11 @@ namespace proj441
             Navigation.InsertPageBefore(new HistoryPage(), this);
             //await Navigation.PushAsync(new HistoryPage());
             await Navigation.PopAsync();
+        }
+
+        protected override void OnAppearing()
+        {
+            MyLogList_Refreshing(MyLogList, null);
         }
     }
 }

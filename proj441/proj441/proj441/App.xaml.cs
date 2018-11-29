@@ -36,7 +36,6 @@ namespace proj441
         {
             InitializeComponent();
             MainPage = new proj441.MainPage();
-            GetAllPrescriptions();
         }
 
         private static PrescriptionDatabase myPrescriptionDatabase;
@@ -52,10 +51,29 @@ namespace proj441
             }
         }
 
+        private static DoseDatabase myDoseDatabase;
+        public static DoseDatabase MyDoseDatabase
+        {
+            get
+            {
+                if (myDoseDatabase == null)
+                {
+                    myDoseDatabase = new DoseDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DoseSQLite.db3"));
+                }
+                return myDoseDatabase;
+            }
+        }
+
         async void GetAllPrescriptions()
         {
             List<Prescription> prescriptions = await MyPrescriptionDatabase.GetItemsAsync();
             prescriptions.ToList().ForEach(MyPrescrpitions.Add);
+        }
+
+        async void GetAllDoses()
+        {
+            List<Dose> doses = await MyDoseDatabase.GetItemsAsync();
+            doses.ToList().ForEach(MyHistory.Add);
         }
 
         protected override void OnStart()
@@ -65,6 +83,10 @@ namespace proj441
                   "android=6d344194-1ae6-4575-b5d0-293ecda8a258;" +
                   "ios=cbbd70a0-4b17-4f6c-8093-103b181f2fb3;",
                   typeof(Analytics), typeof(Crashes));
+
+            GetAllPrescriptions();
+            GetAllDoses();
+
         }
 
         protected override void OnSleep()

@@ -34,6 +34,7 @@ namespace proj441
             if (answer)
             {
                 App.MyHistory.Remove(contextSelected);
+                await App.MyDoseDatabase.DeleteItemAsync(contextSelected);
             }          
         }
 

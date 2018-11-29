@@ -5,7 +5,7 @@ using System.Text;
 
 namespace proj441
 {
-    public class Dose : Prescription
+    public class Dose : Pills
     {
         [PrimaryKey, AutoIncrement]
         public int DID { get; set; }

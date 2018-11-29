@@ -97,6 +97,7 @@ namespace proj441
             p_copy.Remaining -= (int)DosageStepper.Value;
             remainingLabel.Text = p_copy.Remaining.ToString();
 
+            //update prescription with correct remaining value
             await App.MyPrescriptionDatabase.SaveItemAsync(p_copy);
 
             Dose d1 = new Dose
@@ -112,8 +113,9 @@ namespace proj441
                 DateTimeTaken = myDatePicker.Date + myTimePicker.Time,
                 QuantityTaken = (int)DosageStepper.Value
             };
-     
+
             //d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;
+            await App.MyDoseDatabase.SaveItemAsync(d1);
             App.MyHistory.Add(d1);
             //LogPopupStackLayout.IsVisible = true;
             await DisplayAlert("Added to History:", "Taken " + " (" + d1.QuantityTaken + ") " + d1.Name + " at " + d1.DateTimeTaken.ToString(), "OK");
