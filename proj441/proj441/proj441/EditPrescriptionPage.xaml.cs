@@ -22,7 +22,6 @@ namespace proj441
 		}
 
 
-
         private async void BackToPrescriptionButton_Clicked(object sender, EventArgs e)
         {
             Prescription pUpdated = new Prescription

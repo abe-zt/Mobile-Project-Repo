@@ -82,7 +82,7 @@
                         CornerRadius="0"
                         BorderColor="{StaticResource MainColor}"
                         BackgroundColor="White"
-                        HasShadow="True">
+                        HasShadow="False">
                         <Entry
                             Margin="10,0,10,0"
                             HorizontalOptions="Fill"
@@ -129,7 +129,7 @@
                                 CornerRadius="0"
                                 BorderColor="{StaticResource MainColor}"
                                 BackgroundColor="White"
-                                HasShadow="True">
+                                HasShadow="False">
                                 <Entry
                                     Keyboard="Numeric"
                                     Margin="10,0,10,0"
@@ -169,7 +169,7 @@
                                 CornerRadius="0"
                                 BorderColor="{StaticResource MainColor}"
                                 BackgroundColor="White"
-                                HasShadow="True">
+                                HasShadow="False">
                                 <Entry
                                     Keyboard="Numeric"
                                     Margin="10,0,10,0"
@@ -192,7 +192,7 @@
                         Margin="15,10,0,1"
                         HorizontalOptions="Start"
                         VerticalOptions="Start"
-                        Text="Instructions"
+                        Text="Instructions/Directions"
                         TextColor="Black"
                         FontSize="12"
                         />
@@ -205,17 +205,19 @@
                         CornerRadius="0"                        
                         BorderColor="{StaticResource MainColor}"
                         BackgroundColor="White"
-                        HasShadow="True">
-                        <Entry
+                        HasShadow="False">
+                        <Editor
                             Margin="10,0,10,0"
                             HorizontalOptions="Fill"
                             VerticalOptions="Fill"
+                            HeightRequest="100"
                             BackgroundColor="White"
                             FontSize="Small"
                             TextColor="Black"
-                            Text="{Binding PhysicalDescription}"
+                            Text="{Binding Instructions}"
+                            MaxLength="300"
                             x:Name="preInstructions">
-                        </Entry>
+                        </Editor>
                     </Frame>
 
                     <Label
@@ -235,7 +237,7 @@
                         CornerRadius="0"
                         BorderColor="{StaticResource MainColor}"
                         BackgroundColor="White"
-                        HasShadow="True">
+                        HasShadow="False">
                         <Entry
                             Margin="10,0,10,0"
                             HorizontalOptions="Fill"
@@ -282,7 +284,7 @@
                                 CornerRadius="0"
                                 BorderColor="{StaticResource MainColor}"
                                 BackgroundColor="White"
-                                HasShadow="True">
+                                HasShadow="False">
                                 <Entry
                                     Keyboard="Numeric"
                                     Margin="10,0,10,0"
@@ -321,7 +323,7 @@
                                 CornerRadius="0"
                                 BorderColor="{StaticResource MainColor}"
                                 BackgroundColor="White"
-                                HasShadow="True">
+                                HasShadow="False">
                                 <Entry
                                     Keyboard="Numeric"
                                     Margin="10,0,10,0"
