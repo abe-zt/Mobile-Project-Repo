@@ -10,7 +10,7 @@ using ButtonCircle.FormsPlugin.Droid;
 
 namespace proj441.Droid
 {
-    [Activity(Label = "Pill-Boy", Icon = "@mipmap/pillicon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Pill-Boy", Icon = "@mipmap/pillicon", Theme = "@style/MainTheme", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

@@ -10,8 +10,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -23,7 +23,7 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>proj441</string>
+	<string>Pill-Boy</string>
 	<key>CFBundleIdentifier</key>
 	<string>Abel.proj441mac</string>
 	<key>CFBundleVersion</key>
