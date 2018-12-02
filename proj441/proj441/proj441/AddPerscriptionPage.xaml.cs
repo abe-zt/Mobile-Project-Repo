@@ -19,6 +19,7 @@ namespace proj441
         public AddPerscriptionPage()
         {
             InitializeComponent();
+            FillPicker();
             //InitializeCollection();
         }
 
@@ -26,6 +27,25 @@ namespace proj441
         //{
         //    myPreCollection = new ObservableCollection<Prescription>();
         //}
+
+        private void FillPicker()
+        {
+            StrengthPicker.Items.Add("mg");
+            StrengthPicker.Items.Add("mcg");
+            StrengthPicker.Items.Add("mL");
+            StrengthPicker.SelectedItem = StrengthPicker.Items.FirstOrDefault();
+        }
+
+        private void StrengthPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var chosen = StrengthPicker.Items[StrengthPicker.SelectedIndex];
+            if (chosen == "mL")
+            {
+                preDosage.Text = "1";
+                preDosage.IsEnabled = false;
+            }
+        }
+    
 
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
         {
@@ -44,7 +64,7 @@ namespace proj441
                 {
                     Name = preName.Text,
                     ProperName = preName.Text.ToUpper(),
-                    Strength = preStrength.Text,
+                    Strength = preStrength.Text + StrengthPicker.SelectedIndex.ToString(),
                     PrescribedDosage = Convert.ToInt32(preDosage.Text),
                     Instructions = preInstructions.Text,
                     PhysicalDescription = preDescription.Text,
@@ -79,5 +99,7 @@ namespace proj441
             }
             return true;
         }
+
+        
     }
 }
