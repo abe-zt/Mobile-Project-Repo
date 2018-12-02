@@ -14,9 +14,8 @@
 
     <Grid RowSpacing="0"  ColumnSpacing="0" >
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -25,25 +24,27 @@
         <Image 
             Grid.Row="0"
             Grid.Column="0"
-            Grid.RowSpan="3"
+            Grid.RowSpan="1"
+            Grid.ColumnSpan="1"
             Source="doodlepills3.png"
             Aspect="AspectFill"/>
 
         <StackLayout 
-            Margin="10, 20, 10, 10"
+            Margin="20"
+            Padding="0"
+            Spacing="10"
             Grid.Row="0"
             Grid.Column="0"
-            VerticalOptions="Start"
-            HorizontalOptions="CenterAndExpand"
-            BackgroundColor="Transparent"
-            Padding="5">
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="Transparent" >
 
-            <StackLayout 
+            <!--<StackLayout 
                 Margin="0"
-                Padding="5"
+                Padding="0"
                 VerticalOptions="StartAndExpand"
                 HorizontalOptions="CenterAndExpand"
-                BackgroundColor="Transparent">
+                BackgroundColor="Transparent">-->
                 <Image
                     VerticalOptions="Start"
                     HorizontalOptions="Center"
@@ -52,30 +53,33 @@
                     Aspect="AspectFit"
                     BackgroundColor="Transparent"
                     />
-            </StackLayout>
-        </StackLayout>
+            <!--</StackLayout>-->
+        <!--</StackLayout>-->
 
-        <StackLayout 
+        <!--<StackLayout 
             Padding="10, 10, 10, 20"
             Spacing="10"
             VerticalOptions="EndAndExpand" 
             Grid.Row="2" 
             Grid.Column="0"  
-            BackgroundColor="Transparent" >
+            BackgroundColor="Transparent" >-->
 
             <local:CircleButton 
                 x:Name="RecallButton"
-                FontIcon="FontAwesome"
-                Icon="fa-exclamation"
+                
+                Image="redrecallicon50.png"
+                
                 FontSize="30" TextColor="Black" 
-                HeightRequest="50" WidthRequest="50" 
-                BorderThickness="5" BorderColor="{StaticResource MainColor}" 
+                HeightRequest="49" WidthRequest="49"
+                BorderThickness="0" BorderColor="{StaticResource MainColor}" 
                 BackgroundColor="White"
-                HorizontalOptions="End"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="EndAndExpand"
                 Clicked="RecallButton_Clicked">
             </local:CircleButton>
             
             <Button
+                VerticalOptions="End"
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="LogDosageButton"
                 Text="LOG A DOSAGE"
@@ -83,6 +87,7 @@
                 />
             
             <Button
+                VerticalOptions="End"
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="seeHistoryButton"
                 Text="HISTORY"
@@ -90,6 +95,7 @@
                 />
 
             <Button
+                VerticalOptions="End"
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="SetReminderButton"
                 Text="SET A REMINDER"
@@ -97,6 +103,7 @@
                 />
 
             <Button
+                VerticalOptions="End"
                 Style="{StaticResource MainButtonStyle}"
                 x:Name="seeRemindersButton"
                 Text="REMINDERS"

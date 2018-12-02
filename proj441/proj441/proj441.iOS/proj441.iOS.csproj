@@ -252,4 +252,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\bottle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\recalliconsmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\redrecallicon50.png" />
+  </ItemGroup>
 </Project>

@@ -35,8 +35,11 @@ namespace proj441
                 await DisplayAlert("Error:", "Prescription already exists", "OK");
             }
 
-            else
+            else if (ValidateFields())
             {
+            
+
+
                 Prescription p = new Prescription
                 {
                     Name = preName.Text,
@@ -54,6 +57,27 @@ namespace proj441
                 //LogPage logPage = new LogPage(p1);
                 await Navigation.PopAsync();
             }
+
+            else
+            {
+                await DisplayAlert("Error:", "Please enter valid values for Required (*) fields", "OK");
+            }
+
+        }
+
+        private bool ValidateFields()
+        {
+            if (preName.Text == null || preName.Text == "" || preName.Text.Remove(' ').Length == 0)
+                return false;
+            if (preStrength.Text == null || preStrength.Text == "" || Convert.ToInt32(preStrength.Text) == 0)
+                return false;
+            if (preDosage.Text == null || preDosage.Text == "" || Convert.ToInt32(preDosage.Text) < 0)
+            {
+                //if (Convert.ToInt32(preDosage.Text) != 0.5)
+                //    await DisplayAlert("Error:", "Please enter a valid Prescribed Dose", "OK");
+                return false;
+            }
+            return true;
         }
     }
 }
