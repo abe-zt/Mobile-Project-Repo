@@ -24,7 +24,7 @@ namespace proj441
 
         private void PopulateMyPrescriptionsList()
         {
-            List<Prescription> prescriptionsSortedMultiple = App.MyPrescrpitions.OrderBy(x => x.Name).ThenBy(x => x.Strength).ToList();
+            List<Prescription> prescriptionsSortedMultiple = App.MyPrescrpitions.OrderBy(x => x.ProperName).ThenBy(x => x.Strength).ToList();
             MyLogList.ItemsSource = prescriptionsSortedMultiple;  
         }
 
@@ -61,6 +61,7 @@ namespace proj441
                 App.MyPrescrpitions.Remove(contextSelected);
                 await App.MyPrescriptionDatabase.DeleteItemAsync(contextSelected);
             }
+            MyLogList_Refreshing(MyLogList, null);
         }
 
         private async void MyLogList_ItemSelected(object sender, SelectedItemChangedEventArgs e)

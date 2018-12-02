@@ -27,7 +27,8 @@ namespace proj441
             Prescription pUpdated = new Prescription
             {
                 PID = originalPID,
-                Name = preName.Text.ToUpper(),
+                Name = preName.Text,
+                ProperName = preName.Text.ToUpper(),
                 Strength = preStrength.Text,
                 PrescribedDosage = Convert.ToInt32(preDosage.Text),
                 Instructions = preInstructions.Text,

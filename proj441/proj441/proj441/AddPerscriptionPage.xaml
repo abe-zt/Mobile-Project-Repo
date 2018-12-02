@@ -4,12 +4,13 @@
              x:Class="proj441.AddPerscriptionPage"
              Title="New Prescription" >
     <ContentPage.Content>
+        <ScrollView>
         <Grid
             Padding="0"
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
 
@@ -344,7 +345,7 @@
                 </StackLayout>
             </Frame>
             <StackLayout
-                Padding="10, 20, 10, 20"
+                Padding="10, 20"
                 Grid.Row="1">
                 <Button
                     Style="{StaticResource MainButtonStyle}" 
@@ -357,5 +358,6 @@
             </StackLayout>
             
         </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

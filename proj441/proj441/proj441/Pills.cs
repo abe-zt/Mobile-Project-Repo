@@ -6,7 +6,14 @@ namespace proj441
 {
     public class Pills
     {
+
         public string Name
+        {
+            get;
+            set;
+        }
+
+        public string ProperName
         {
             get;
             set;
