@@ -114,13 +114,13 @@
                                                     TextColor="{StaticResource MainColor}"
                                                     Text="{Binding Strength}"/>
 
-                                                <Label
+                                                <!--<Label
                                                     Margin="0"
                                                     HorizontalOptions="StartAndExpand"
                                                     VerticalOptions="Center"
                                                     FontSize="20"
                                                     TextColor="{StaticResource MainColor}"
-                                                    Text="mg" />
+                                                    Text="mg" />-->
                                             </StackLayout>
                                         </StackLayout>
                                         <StackLayout 

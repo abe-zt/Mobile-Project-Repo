@@ -12,94 +12,106 @@ namespace proj441
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddPerscriptionPage : ContentPage
-	{
-        //public ObservableCollection<Prescription> myPreCollection;
-        
+	{  
 
         public AddPerscriptionPage()
         {
             InitializeComponent();
-            FillPicker();
+            FillPickers();
             //InitializeCollection();
         }
 
-        //public void InitializeCollection()
-        //{
-        //    myPreCollection = new ObservableCollection<Prescription>();
-        //}
-
-        private void FillPicker()
+        private void FillPickers()
         {
             StrengthPicker.Items.Add("mg");
             StrengthPicker.Items.Add("mcg");
-            StrengthPicker.Items.Add("mL");
-            StrengthPicker.SelectedItem = StrengthPicker.Items.FirstOrDefault();
+            
+            StrengthPicker.SelectedItem = StrengthPicker.Items.FirstOrDefault();        
         }
 
-        private void StrengthPicker_SelectedIndexChanged(object sender, EventArgs e)
+        //private void StrengthPicker_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    var chosen = StrengthPicker.Items[StrengthPicker.SelectedIndex];
+        //    if (chosen == "mL")
+        //    {
+        //        preDosage.Text = "1";
+        //        preDosage.IsEnabled = false;
+        //    }
+        //}
+
+
+        private bool ValidateFields()
         {
-            var chosen = StrengthPicker.Items[StrengthPicker.SelectedIndex];
-            if (chosen == "mL")
+
+            if (preName.Text == null || preName.Text == "")
             {
-                preDosage.Text = "1";
-                preDosage.IsEnabled = false;
+                return false;
             }
+
+            if (preName.Text.Replace("  ", "") == "")
+            {
+                return false;
+            }
+            if (preStrength.Text == null || preStrength.Text == "" || Convert.ToInt32(preStrength.Text) == 0)
+            {
+                return false;
+            }
+
+            if (preDosage.Text == null || preDosage.Text == "" || Convert.ToInt32(preDosage.Text) < 0)
+            {
+                return false;
+            }
+
+            if (preQuantity.Text == null || preQuantity.Text == "" || Convert.ToInt32(preQuantity.Text) < 0)
+            {
+                return false;
+            }
+
+            if (preRemaining.Text == null || preRemaining.Text == "" || Convert.ToInt32(preRemaining.Text) < 0)
+            {
+                return false;
+            }
+
+            return true;
         }
-    
 
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
         {
-            bool exists = App.MyPrescrpitions.Any(i => i.Name == preName.Text && i.Strength == preStrength.Text);    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
-            if (exists)
-            {
-                await DisplayAlert("Error:", "Prescription already exists", "OK");
-            }
+            bool valid = ValidateFields();
 
-            else if (ValidateFields())
-            {         
-
-
-                Prescription p = new Prescription
-                {
-                    Name = preName.Text,
-                    ProperName = preName.Text.ToUpper(),
-                    Strength = preStrength.Text + StrengthPicker.SelectedIndex.ToString(),
-                    PrescribedDosage = Convert.ToInt32(preDosage.Text),
-                    Instructions = preInstructions.Text,
-                    PhysicalDescription = preDescription.Text,
-                    Quantity = Convert.ToInt32(preQuantity.Text),
-                    Remaining = Convert.ToInt32(preRemaining.Text)
-                };
-
-                App.MyPrescrpitions.Add(p);
-                await App.MyPrescriptionDatabase.SaveItemAsync(p);
-                //LogPage logPage = new LogPage(p1);
-                await Navigation.PopAsync();
-            }
-
-            else
+            if (valid == false)
             {
                 await DisplayAlert("Error:", "Please enter valid values for Required (*) fields", "OK");
             }
 
-        }
-
-        private bool ValidateFields()
-        {
-            int length = preName.Text.Replace("  ", "").Length;
-            if (preName.Text == null || preName.Text == "" || length == 0)
-                return false;
-            if (preStrength.Text == null || preStrength.Text == "" || Convert.ToInt32(preStrength.Text) == 0)
-                return false;
-            if (preDosage.Text == null || preDosage.Text == "" || Convert.ToInt32(preDosage.Text) < 0)
+            else
             {
-                //if (Convert.ToInt32(preDosage.Text) != 0.5)
-                //    await DisplayAlert("Error:", "Please enter a valid Prescribed Dose", "OK");
-                return false;
-            }
-            return true;
-        }
+                bool exists = App.MyPrescrpitions.Any(i => i.Name == preName.Text && i.Strength == preStrength.Text);    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
 
-        
+                if (exists)
+                {
+                    await DisplayAlert("Error:", "Prescription already exists", "OK");
+                }
+
+                else
+                {
+                    Prescription p = new Prescription
+                    {
+                        Name = preName.Text.Trim(),
+                        ProperName = preName.Text.ToUpper().Trim(),
+                        Strength = (preStrength.Text + StrengthPicker.SelectedItem.ToString()).Trim(),
+                        PrescribedDosage = Convert.ToInt32(preDosage.Text),
+                        Instructions = preInstructions.Text.Trim(),
+                        PhysicalDescription = preDescription.Text.Trim(),
+                        Quantity = Convert.ToInt32(preQuantity.Text.Trim()),
+                        Remaining = Convert.ToInt32(preRemaining.Text.Trim())
+                    };
+
+                    App.MyPrescrpitions.Add(p);
+                    await App.MyPrescriptionDatabase.SaveItemAsync(p);
+                    await Navigation.PopAsync();
+                }
+            }
+        }
     }
 }
