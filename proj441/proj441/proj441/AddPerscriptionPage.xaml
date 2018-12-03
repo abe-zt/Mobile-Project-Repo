@@ -105,7 +105,7 @@
                         RowSpacing="0"
                         ColumnSpacing="40">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1.5*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
@@ -115,16 +115,29 @@
                             Padding="0"
                             Margin="0"
                             Spacing="0">
-                            
-                            <Label
-                                Margin="0"
-                                BackgroundColor="White"
 
-                                HorizontalOptions="FillAndExpand"
-                                VerticalOptions="Start"
-                                Text="* Strength"
-                                TextColor="Black"
-                                FontSize="12"/>
+                            <StackLayout
+                                Padding="0"
+                                Margin="0"
+                                Spacing="5"
+                                Orientation="Horizontal">
+                                <Label
+                                    Margin="0"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Start"
+                                    Text="* Strength"
+                                    TextColor="Black"
+                                    FontSize="12"/>
+                                <Label
+                                    Margin="0"
+                                    BackgroundColor="White"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Start"
+                                    Text="N/A"
+                                    TextColor="Black"
+                                    FontSize="12"/>
+                            </StackLayout>
 
                             <!--<Frame
                                 Margin="2"
@@ -197,7 +210,7 @@
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="Start"
                                 FontSize="12"
-                                Text="* Prescribed Dosage (e.g.: 0.5, 1, 2)"
+                                Text="* Prescribed Dosage / Amount to take (e.g.: 0.5, 1, 2)"
                                 TextColor="Black"
                                 />
 
