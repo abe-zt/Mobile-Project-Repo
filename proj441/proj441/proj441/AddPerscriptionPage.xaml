@@ -71,7 +71,7 @@
                         BackgroundColor="White"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="Start"
-                        Text="Name"
+                        Text="*Name "
                         TextColor="Black"
                         FontSize="12"
                         />
@@ -122,7 +122,7 @@
 
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="Start"
-                                Text="Tablet Strength/Dose Volume"
+                                Text="*Tablet Strength/Dose Volume"
                                 TextColor="Black"
                                 FontSize="12"/>
 
@@ -140,13 +140,15 @@
                                 Padding="0"
                                 ColumnSpacing="0"
                                 RowSpacing="0" >
+                                
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="2*"/>
                                 <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
+                                
                                 <Entry
                                     Grid.Column="0"
                                     Keyboard="Numeric"
@@ -164,11 +166,11 @@
                                 </Entry>
                                 <Picker
                                     Grid.Column="1"
-                                    Margin="0"
+                                    Margin="0, 0, 0, 10"
                                     HorizontalOptions="StartAndExpand"
-                                    VerticalOptions="StartAndExpand"
+                                    VerticalOptions="EndAndExpand"
                                     FontSize="Small"
-                                    HeightRequest="40"
+                                    
                                     x:Name="StrengthPicker"
                                     BackgroundColor="White"
                                     TextColor="{StaticResource MainColor}"
@@ -192,9 +194,10 @@
                                 BackgroundColor="White"
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="Start"
-                                Text="Prescribed Dosage (e.g.: 0.5, 1, 2)"
+                                FontSize="Small"
+                                Text="*Prescribed Dosage (e.g.: 0.5, 1, 2)"
                                 TextColor="Black"
-                                FontSize="12"/>
+                                />
 
                             <!--<Frame
                                 Margin="2"
@@ -313,7 +316,7 @@
                                 BackgroundColor="White"
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="Start"
-                                Text="Quantity (QTY)"
+                                Text="*Quantity (QTY)"
                                 TextColor="Black"
                                 FontSize="12"
                                 />
@@ -353,7 +356,7 @@
                                 BackgroundColor="White"
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="Start"
-                                Text="Remaining"
+                                Text="*Remaining"
                                 TextColor="Black"
                                 FontSize="12"
                                 />

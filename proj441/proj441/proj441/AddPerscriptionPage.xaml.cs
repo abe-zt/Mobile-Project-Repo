@@ -49,15 +49,14 @@ namespace proj441
 
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
         {
-            var exists = App.MyPrescrpitions.Any(i => i.Name == preName.Text && i.Strength == preStrength.Text);    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
+            bool exists = App.MyPrescrpitions.Any(i => i.Name == preName.Text && i.Strength == preStrength.Text);    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
             if (exists)
             {
                 await DisplayAlert("Error:", "Prescription already exists", "OK");
             }
 
             else if (ValidateFields())
-            {
-            
+            {         
 
 
                 Prescription p = new Prescription
@@ -87,7 +86,8 @@ namespace proj441
 
         private bool ValidateFields()
         {
-            if (preName.Text == null || preName.Text == "" || preName.Text.Remove(' ').Length == 0)
+            int length = preName.Text.Replace("  ", "").Length;
+            if (preName.Text == null || preName.Text == "" || length == 0)
                 return false;
             if (preStrength.Text == null || preStrength.Text == "" || Convert.ToInt32(preStrength.Text) == 0)
                 return false;
