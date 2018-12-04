@@ -118,7 +118,7 @@ namespace proj441
                     Prescription p = new Prescription
                     {
                         Name = preName.Text.Trim(),
-                        ProperName = preName.Text.ToUpper().Trim(),
+                        ProperName = preName.Text.Trim().ToUpper(),
                         Strength = s,
                         StrengthUnits = su,
                         PrescribedDosage = Convert.ToDouble(preDosage.Text),
