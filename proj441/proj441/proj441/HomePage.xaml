@@ -95,7 +95,7 @@
                 Clicked="SeeHistoryButton_Clicked"
                 />
 
-            <Button
+            <!--<Button
                 VerticalOptions="End"
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="SetReminderButton"
@@ -109,7 +109,7 @@
                 x:Name="seeRemindersButton"
                 Text="REMINDERS"
                 Clicked="SeeRemindersButton_Clicked"
-                />
+                />-->
  
         </StackLayout>
     </Grid>

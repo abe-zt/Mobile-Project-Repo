@@ -13,7 +13,7 @@
                     Padding="10"
                     BackgroundColor="DarkRed"
                     HeightRequest="150" >
-                <Label 
+                <!--<Label 
                         Margin="0,10,0,0"
                         x:Name="UserLabel"
                         Text="User Name"
@@ -28,7 +28,7 @@
                         TextColor="LightGray"
                         FontSize="Small"
                         HorizontalOptions="StartAndExpand" 
-                        VerticalOptions="End" />
+                        VerticalOptions="End" />-->
             </StackLayout>
 
             <ListView x:Name="listView" 
@@ -48,18 +48,18 @@
                                 Title="See Dosage History" 
                                 IconSource="calendaricon.png" 
                                 TargetType="{x:Type local:HistoryPage}" />
-                        <local:MasterPageItem 
+                        <!--<local:MasterPageItem 
                                 Title="See Reminders" 
                                 IconSource="remindersicon.png" 
-                                TargetType="{x:Type local:ReminderPage}" />
+                                TargetType="{x:Type local:ReminderPage}" />-->
                         <local:MasterPageItem 
                                 Title="Recalls In Your Area" 
                                 IconSource="redrecallicon80.png" 
                                 TargetType="{x:Type local:RecallPage}"/>
-                        <local:MasterPageItem 
+                        <!--<local:MasterPageItem 
                                 Title="Log Out" 
                                 IconSource="usericon.png" 
-                                TargetType="{x:Type local:HomePage}"/>
+                                TargetType="{x:Type local:HomePage}"/>-->
                         
                     </x:Array>
                 </ListView.ItemsSource>
