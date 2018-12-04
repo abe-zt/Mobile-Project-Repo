@@ -74,7 +74,6 @@ namespace proj441
                     //await PopupNavigation.Instance.PushAsync(new LogPopup(p));
                     await Navigation.PushAsync(new LogDosagePage(p));
                 }
-
                 else
                 {
                     await DisplayAlert("Error:", "Prescription is empty", "OK");

@@ -10,8 +10,8 @@
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="90"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="90"/>
             </Grid.RowDefinitions>
 
             <Image 
@@ -22,10 +22,10 @@
                 Aspect="AspectFill"/>
 
             <Frame
-                Grid.Row="1"
+                Grid.Row="0"
                 Grid.Column="0"
                 HasShadow="False"
-                Margin="20, 0, 20, 20"
+                Margin="20, 20, 20, 0"
                 Padding="3"
                 CornerRadius="0"
                 
@@ -406,8 +406,8 @@
                                 BackgroundColor="White"
                                 FontSize="Small"
                                 TextColor="Black"
-                                    
-                                x:Name="preRemaining">
+                                x:Name="preRemaining"
+                                TextChanged="PreRemaining_Completed">
                             </Entry>
                                 <!--</Frame>-->
                         </StackLayout>
@@ -417,7 +417,7 @@
 
             <Button
                 Padding="0"
-                Grid.Row="0"
+                Grid.Row="1"
                 Grid.Column="0"
                 Margin="20, 0"
                 Style="{StaticResource MainButtonStyle}" 

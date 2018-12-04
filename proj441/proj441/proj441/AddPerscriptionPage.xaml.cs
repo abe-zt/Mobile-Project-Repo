@@ -149,5 +149,13 @@ namespace proj441
                 preStrength.Text = "";
             }
         }
+
+        private void PreRemaining_Completed(object sender, EventArgs e)
+        {
+            if(Convert.ToDouble(preRemaining.Text) > Convert.ToDouble(preQuantity.Text))
+            {
+                preRemaining.Text = preQuantity.Text;
+            }
+        }
     }
 }
