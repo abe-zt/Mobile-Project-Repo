@@ -10,30 +10,30 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout 
-                    Padding="10"
-                    BackgroundColor="DarkRed"
-                    HeightRequest="150" >
-                <!--<Label 
-                        Margin="0,10,0,0"
-                        x:Name="UserLabel"
-                        Text="User Name"
-                        TextColor="White"
-                        FontSize="Medium"
-                        HorizontalOptions="StartAndExpand" 
-                        VerticalOptions="EndAndExpand" />
+                Padding="10"
+                BackgroundColor="DarkRed"
+                HeightRequest="150" >
                 <Label 
-                        Margin="0,0,0,10"
-                        x:Name="emailLabel"
-                        Text="email@gmail.com"
-                        TextColor="LightGray"
-                        FontSize="Small"
-                        HorizontalOptions="StartAndExpand" 
-                        VerticalOptions="End" />-->
+                    Margin="0,10,0,0"
+                    x:Name="UserLabel"
+                    Text="User Name"
+                    TextColor="White"
+                    FontSize="Medium"
+                    HorizontalOptions="StartAndExpand" 
+                    VerticalOptions="EndAndExpand" />
+                <Label 
+                    Margin="0,0,0,10"
+                    x:Name="emailLabel"
+                    Text="email@gmail.com"
+                    TextColor="LightGray"
+                    FontSize="Small"
+                    HorizontalOptions="StartAndExpand" 
+                    VerticalOptions="End" />
             </StackLayout>
 
             <ListView x:Name="listView" 
                           x:FieldModifier="public" 
-                          RowHeight="80" 
+                          RowHeight="50" 
                           SeparatorVisibility="None"
                           HeightRequest="100" >
 
@@ -56,10 +56,10 @@
                                 Title="Recalls In Your Area" 
                                 IconSource="redrecallicon80.png" 
                                 TargetType="{x:Type local:RecallPage}"/>
-                        <!--<local:MasterPageItem 
+                        <local:MasterPageItem 
                                 Title="Log Out" 
                                 IconSource="usericon.png" 
-                                TargetType="{x:Type local:HomePage}"/>-->
+                                TargetType="{x:Type local:HomePage}"/>
                         
                     </x:Array>
                 </ListView.ItemsSource>
