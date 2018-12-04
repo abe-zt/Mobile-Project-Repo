@@ -25,17 +25,17 @@ namespace proj441
             await Navigation.PushAsync(new PrescriptionsPage());
         }
 
-        private async void SetReminderButton_Clicked(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            await Navigation.PushAsync(new SetReminderPage());
-        }
+        //private async void SetReminderButton_Clicked(object sender, EventArgs e)
+        //{
+        //    Button button = (Button)sender;
+        //    await Navigation.PushAsync(new SetReminderPage());
+        //}
 
-        private async void SeeRemindersButton_Clicked(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            await Navigation.PushAsync(new ReminderPage());
-        }
+        //private async void SeeRemindersButton_Clicked(object sender, EventArgs e)
+        //{
+        //    Button button = (Button)sender;
+        //    await Navigation.PushAsync(new ReminderPage());
+        //}
 
         private async void SeeHistoryButton_Clicked(object sender, EventArgs e)
         {

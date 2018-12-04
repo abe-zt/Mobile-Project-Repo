@@ -33,7 +33,7 @@
 
             <ListView x:Name="listView" 
                           x:FieldModifier="public" 
-                          RowHeight="50" 
+                          RowHeight="80" 
                           SeparatorVisibility="None"
                           HeightRequest="100" >
 

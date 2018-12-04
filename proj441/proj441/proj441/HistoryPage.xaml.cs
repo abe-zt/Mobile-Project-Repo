@@ -47,9 +47,14 @@ namespace proj441
         private async void MyHistoryList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             ListView tappedItem = (ListView)sender;
-            Dose tappedDose = (Dose)tappedItem.SelectedItem;
-            //await Navigation.PushAsync(new HistoryInfoPage(tappedDose));
-            await PopupNavigation.Instance.PushAsync(new HistoryInfoPage(tappedDose));
+
+            if (tappedItem.SelectedItem != null)
+            {
+                Dose tappedDose = (Dose)tappedItem.SelectedItem;
+                //await Navigation.PushAsync(new HistoryInfoPage(tappedDose));
+                await PopupNavigation.Instance.PushAsync(new HistoryInfoPage(tappedDose));
+                tappedItem.SelectedItem = null;
+            }
         }
     }
 }

@@ -14,8 +14,6 @@ namespace proj441
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PrescriptionsPage : ContentPage
     {
-        //public ObservableCollection<Prescription> myPrescriptionCollection = new ObservableCollection<Prescription>();
-
         public PrescriptionsPage()
         {
             InitializeComponent();
@@ -67,11 +65,20 @@ namespace proj441
         private async void MyLogList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             ListView l = (ListView)sender;
+
             Prescription p = (Prescription)l.SelectedItem;
             if (l.SelectedItem != null)
             {
-                //await PopupNavigation.Instance.PushAsync(new LogPopup(p));
-                await Navigation.PushAsync(new LogDosagePage(p));
+                if (p.Remaining > 0)
+                {
+                    //await PopupNavigation.Instance.PushAsync(new LogPopup(p));
+                    await Navigation.PushAsync(new LogDosagePage(p));
+                }
+
+                else
+                {
+                    await DisplayAlert("Error:", "Prescription is empty", "OK");
+                }
             }
 
             l.SelectedItem = null;

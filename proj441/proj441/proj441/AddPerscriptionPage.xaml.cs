@@ -18,7 +18,6 @@ namespace proj441
         {
             InitializeComponent();
             FillPickers();
-            //InitializeCollection();
         }
 
         private void FillPickers()
@@ -28,17 +27,6 @@ namespace proj441
 
             preStrengthUnits.SelectedItem = preStrengthUnits.Items.FirstOrDefault();        
         }
-
-        //private void preStrengthUnits_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    var chosen = preStrengthUnits.Items[preStrengthUnits.SelectedIndex];
-        //    if (chosen == "mL")
-        //    {
-        //        preDosage.Text = "1";
-        //        preDosage.IsEnabled = false;
-        //    }
-        //}
-
 
         private bool ValidateFields()
         {
