@@ -16,7 +16,7 @@ namespace proj441
             set;
         }
 
-        public int QuantityTaken
+        public double QuantityTaken
         {
             get;
             set;

@@ -89,7 +89,7 @@
                                                     
                                                 FontSize="18"
                                                 TextColor="{StaticResource MainColor}"
-                                                Text="{Binding Path=Strength, StringFormat= ' {0} mg'}"/>
+                                                Text="{Binding Path=Strength, StringFormat= ' {0}'}"/>
 
                                         </StackLayout>
 

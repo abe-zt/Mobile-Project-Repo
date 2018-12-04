@@ -132,7 +132,7 @@
                                 x:Name="DosageStepper"
                                 Maximum="99"
                                 Minimum="0"
-                                Increment="1"
+                                Increment="0.5"
                                 Value="{Binding PrescribedDosage, Mode=OneWay, Converter={StaticResource NullableIntConverter}}"
                                 ValueChanged="DosageStepper_ValueChanged" 
                              />

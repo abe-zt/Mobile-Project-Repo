@@ -52,22 +52,22 @@ namespace proj441
             {
                 return false;
             }
-            if (preStrength.Text == null || preStrength.Text == "" || Convert.ToInt32(preStrength.Text) == 0)
+            if (preStrength.Text == null || preStrength.Text == "" || Convert.ToDouble(preStrength.Text) == 0)
             {
                 return false;
             }
 
-            if (preDosage.Text == null || preDosage.Text == "" || Convert.ToInt32(preDosage.Text) < 0)
+            if (preDosage.Text == null || preDosage.Text == "" || Convert.ToDouble(preDosage.Text) < 0)
             {
                 return false;
             }
 
-            if (preQuantity.Text == null || preQuantity.Text == "" || Convert.ToInt32(preQuantity.Text) < 0)
+            if (preQuantity.Text == null || preQuantity.Text == "" || Convert.ToDouble(preQuantity.Text) < 0)
             {
                 return false;
             }
 
-            if (preRemaining.Text == null || preRemaining.Text == "" || Convert.ToInt32(preRemaining.Text) < 0)
+            if (preRemaining.Text == null || preRemaining.Text == "" || Convert.ToDouble(preRemaining.Text) < 0)
             {
                 return false;
             }
@@ -100,11 +100,11 @@ namespace proj441
                         Name = preName.Text.Trim(),
                         ProperName = preName.Text.ToUpper().Trim(),
                         Strength = (preStrength.Text + StrengthPicker.SelectedItem.ToString()).Trim(),
-                        PrescribedDosage = Convert.ToInt32(preDosage.Text),
+                        PrescribedDosage = Convert.ToDouble(preDosage.Text),
                         Instructions = preInstructions.Text.Trim(),
                         PhysicalDescription = preDescription.Text.Trim(),
-                        Quantity = Convert.ToInt32(preQuantity.Text.Trim()),
-                        Remaining = Convert.ToInt32(preRemaining.Text.Trim())
+                        Quantity = Convert.ToDouble(preQuantity.Text.Trim()),
+                        Remaining = Convert.ToDouble(preRemaining.Text.Trim())
                     };
 
                     App.MyPrescrpitions.Add(p);
@@ -112,6 +112,11 @@ namespace proj441
                     await Navigation.PopAsync();
                 }
             }
+        }
+
+        private void preQuantity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            preRemaining.Text = preQuantity.Text;
         }
     }
 }

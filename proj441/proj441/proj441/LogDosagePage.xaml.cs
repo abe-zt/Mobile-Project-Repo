@@ -94,7 +94,7 @@ namespace proj441
 
             //int difference = p2.Remaining - (int)DosageStepper.Value;
             //remainingLabel.Text = difference.ToString();
-            p_copy.Remaining -= (int)DosageStepper.Value;
+            p_copy.Remaining -= (double)DosageStepper.Value;
             remainingLabel.Text = p_copy.Remaining.ToString();
 
             //update prescription with correct remaining value
@@ -111,7 +111,7 @@ namespace proj441
                 Quantity = p_copy.Quantity,
                 Remaining = p_copy.Remaining,
                 DateTimeTaken = myDatePicker.Date + myTimePicker.Time,
-                QuantityTaken = (int)DosageStepper.Value
+                QuantityTaken = (double)DosageStepper.Value
             };
 
             //d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;

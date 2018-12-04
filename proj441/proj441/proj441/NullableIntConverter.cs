@@ -10,7 +10,7 @@ namespace proj441
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var nullable = value as int?;
+            var nullable = value as double?;
             var result = string.Empty;
 
             if (nullable.HasValue)
@@ -24,11 +24,11 @@ namespace proj441
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var stringValue = value as string;
-            int? result = null;
+            double? result = null;
 
-            if (int.TryParse(stringValue, out int intValue))
+            if (double.TryParse(stringValue, out double intValue))
             {
-                result = new Nullable<int>(intValue);
+                result = new Nullable<double>(intValue);
             }
 
             return result;

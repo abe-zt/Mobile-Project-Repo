@@ -373,7 +373,8 @@
                                     FontSize="Small"
                                     TextColor="Black"
                                     
-                                    x:Name="preQuantity">
+                                    x:Name="preQuantity"
+                                    TextChanged="preQuantity_TextChanged">
                                 </Entry>
                             <!--</Frame>-->
                         </StackLayout>

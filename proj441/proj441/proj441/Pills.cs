@@ -31,7 +31,7 @@ namespace proj441
             set;
         }
 
-        public int PrescribedDosage
+        public double PrescribedDosage
         {
             get;
             set;
@@ -43,13 +43,13 @@ namespace proj441
             set;
         }
 
-        public int Quantity
+        public double Quantity
         {
             get;
             set;
         }
 
-        public int Remaining
+        public double Remaining
         {
             get;
             set;
