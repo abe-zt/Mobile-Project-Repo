@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace proj441
 {
-    class NullableIntConverter : IValueConverter
+    class NullableDoubleConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

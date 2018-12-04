@@ -18,14 +18,15 @@ namespace proj441
         {
             InitializeComponent();
             FillPickers();
+            
         }
 
         private void FillPickers()
         {
             preStrengthUnits.Items.Add("mg");
             preStrengthUnits.Items.Add("mcg");
-
-            preStrengthUnits.SelectedItem = preStrengthUnits.Items.FirstOrDefault();        
+            preStrengthUnits.Items.Add(" ");
+            preStrengthUnits.SelectedItem = "mg";        
         }
 
         private bool ValidateFields()
@@ -78,7 +79,6 @@ namespace proj441
 
             else
             {
-                ValidateValues();
 
                 bool exists = App.MyPrescrpitions.Any(i => i.ProperName == preName.Text.ToUpper() && i.Strength == preStrength.Text && i.StrengthUnits == preStrengthUnits.SelectedItem.ToString());    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
 
@@ -123,11 +123,6 @@ namespace proj441
             }
         }
 
-        private void ValidateValues()
-        {
-            
-        }
-
         private void PreQuantity_TextChanged(object sender, TextChangedEventArgs e)
         {
             preRemaining.Text = preQuantity.Text;
@@ -140,6 +135,7 @@ namespace proj441
                 strengthLabel.Text = "* Strength";
                 preStrength.IsEnabled = true;
                 preStrengthUnits.IsEnabled = true;
+                preStrengthUnits.SelectedItem = "mg";
             }
             else
             {
@@ -147,14 +143,29 @@ namespace proj441
                 preStrength.IsEnabled = false;
                 preStrengthUnits.IsEnabled = false;
                 preStrength.Text = "";
+                preStrengthUnits.SelectedItem = " ";
             }
         }
 
         private void PreRemaining_Completed(object sender, EventArgs e)
         {
-            if(Convert.ToDouble(preRemaining.Text) > Convert.ToDouble(preQuantity.Text))
+            try
             {
-                preRemaining.Text = preQuantity.Text;
+                double q = Convert.ToDouble(preQuantity.Text);
+                double r = Convert.ToDouble(preRemaining.Text);
+                if (r > q)
+                {
+                    preRemaining.Text = preQuantity.Text;
+                }
+            }
+            catch
+            {
+                double q = 0;
+                double r = 0;
+                if (r > q)
+                {
+                    preRemaining.Text = preQuantity.Text;
+                }
             }
         }
     }

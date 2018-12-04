@@ -182,6 +182,7 @@
                                 WidthRequest="40"
                                 x:Name="preStrengthUnits"
                                 BackgroundColor="White"
+                                SelectedItem="mcg"
                                 TextColor="{StaticResource MainColor}" />
                         </StackLayout>
                         

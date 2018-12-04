@@ -6,7 +6,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:NullableIntConverter x:Key="NullableIntConverter" />
+            <local:NullableDoubleConverter x:Key="NullableDoubleConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -133,7 +133,7 @@
                                 Maximum="99"
                                 Minimum="0"
                                 Increment="0.5"
-                                Value="{Binding PrescribedDosage, Mode=OneWay, Converter={StaticResource NullableIntConverter}}"
+                                Value="{Binding PrescribedDosage, Mode=OneWay, Converter={StaticResource NullableDoubleConverter}}"
                                 ValueChanged="DosageStepper_ValueChanged" 
                              />
                         </Frame>
@@ -170,7 +170,7 @@
                             FontSize="Small"
                             FontAttributes="Bold"
                             TextColor="Blue"
-                            Text="{Binding Remaining, Mode=TwoWay, Converter={StaticResource NullableIntConverter}}"
+                            Text="{Binding Remaining, Mode=TwoWay, Converter={StaticResource NullableDoubleConverter}}"
                             />
                     </StackLayout>
                     <StackLayout 
