@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AppCenter.Analytics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace proj441
 
         private async void LogDosageButton_Clicked(object sender, EventArgs e)
         {
+            Analytics.TrackEvent("Navigate to Log a Dosage button pressed");
             Button button = (Button)sender;
             await Navigation.PushAsync(new PrescriptionsPage());
         }
@@ -39,12 +41,14 @@ namespace proj441
 
         private async void SeeHistoryButton_Clicked(object sender, EventArgs e)
         {
+            Analytics.TrackEvent("Navigate to History button pressed");
             Button button = (Button)sender;
             await Navigation.PushAsync(new HistoryPage());
         }
 
         private async void RecallButton_Clicked(object sender, EventArgs e)
         {
+            Analytics.TrackEvent("Navigate to Recalls button pressed");
             Button button = (Button)sender;
             await Navigation.PushAsync(new RecallPage());
         }

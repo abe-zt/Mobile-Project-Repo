@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AppCenter.Analytics;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -121,7 +122,9 @@ namespace proj441
             //d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;
             await App.MyDoseDatabase.SaveItemAsync(d1);
             App.MyHistory.Add(d1);
-            //LogPopupStackLayout.IsVisible = true;
+
+            Analytics.TrackEvent("Successfully added dose");
+
             await DisplayAlert("Added to History:", "Taken " + " (" + d1.QuantityTaken + ") " + d1.ProperName +" " +d1.Strength + d1.StrengthUnits + " at " + d1.DateTimeTaken.ToString(), "OK");
             await Navigation.PopAsync();
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -70,56 +72,67 @@ namespace proj441
 
         private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
         {
-            bool valid = ValidateFields();
-
-            if (valid == false)
+            try
             {
-                await DisplayAlert("Error:", "Please enter values for Required (*) fields", "OK");
-            }
+                bool valid = ValidateFields();
 
-            else
-            {
-
-                bool exists = App.MyPrescrpitions.Any(i => i.ProperName == preName.Text.ToUpper() && i.Strength == preStrength.Text && i.StrengthUnits == preStrengthUnits.SelectedItem.ToString());    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
-
-                if (exists)
+                if (valid == false)
                 {
-                    await DisplayAlert("Error:", "Prescription already exists", "OK");
+                    await DisplayAlert("Error:", "Please enter values for Required (*) fields", "OK");
                 }
 
                 else
                 {
-                    string s;
-                    string su;
 
-                    if(StrengthSwitch.IsToggled)
+                    bool exists = App.MyPrescrpitions.Any(i => i.ProperName == preName.Text.ToUpper() && i.Strength == preStrength.Text && i.StrengthUnits == preStrengthUnits.SelectedItem.ToString());    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
+
+                    if (exists)
                     {
-                        s = preStrength.Text.Trim();
-                        su = preStrengthUnits.SelectedItem.ToString();
+                        await DisplayAlert("Error:", "Prescription already exists", "OK");
                     }
+
                     else
                     {
-                        s = " ";
-                        su = " ";
+                        string s;
+                        string su;
+
+                        if(StrengthSwitch.IsToggled)
+                        {
+                            s = preStrength.Text.Trim();
+                            su = preStrengthUnits.SelectedItem.ToString();
+                        }
+                        else
+                        {
+                            s = " ";
+                            su = " ";
+                        }
+
+                        Prescription p = new Prescription
+                        {
+                            Name = preName.Text.Trim(),
+                            ProperName = preName.Text.Trim().ToUpper(),
+                            Strength = s,
+                            StrengthUnits = su,
+                            PrescribedDosage = Convert.ToDouble(preDosage.Text),
+                            Instructions = preInstructions.Text.Trim(),
+                            PhysicalDescription = preDescription.Text.Trim(),
+                            Quantity = Convert.ToDouble(preQuantity.Text.Trim()),
+                            Remaining = Convert.ToDouble(preRemaining.Text.Trim())
+                        };
+
+                        App.MyPrescrpitions.Add(p);
+                        await App.MyPrescriptionDatabase.SaveItemAsync(p);
+
+                        Analytics.TrackEvent("Successfully added prescription");
+
+                        await Navigation.PopAsync();
                     }
-
-                    Prescription p = new Prescription
-                    {
-                        Name = preName.Text.Trim(),
-                        ProperName = preName.Text.Trim().ToUpper(),
-                        Strength = s,
-                        StrengthUnits = su,
-                        PrescribedDosage = Convert.ToDouble(preDosage.Text),
-                        Instructions = preInstructions.Text.Trim(),
-                        PhysicalDescription = preDescription.Text.Trim(),
-                        Quantity = Convert.ToDouble(preQuantity.Text.Trim()),
-                        Remaining = Convert.ToDouble(preRemaining.Text.Trim())
-                    };
-
-                    App.MyPrescrpitions.Add(p);
-                    await App.MyPrescriptionDatabase.SaveItemAsync(p);
-                    await Navigation.PopAsync();
                 }
+
+            }
+            catch (Exception exception)
+            {
+                Crashes.TrackError(exception); 
             }
         }
 
