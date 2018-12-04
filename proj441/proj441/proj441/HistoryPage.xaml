@@ -89,7 +89,14 @@
                                                     
                                                 FontSize="18"
                                                 TextColor="{StaticResource MainColor}"
-                                                Text="{Binding Path=Strength, StringFormat= ' {0}'}"/>
+                                                Text="{Binding Path=Strength, StringFormat= '{0}'}"/>
+
+                                            <Label
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="End"
+                                                FontSize="18"
+                                                TextColor="{StaticResource MainColor}"
+                                                Text="{Binding StrengthUnits}" />
 
                                         </StackLayout>
 

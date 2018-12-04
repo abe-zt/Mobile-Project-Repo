@@ -54,7 +54,7 @@
                                 TargetType="{x:Type local:ReminderPage}" />
                         <local:MasterPageItem 
                                 Title="Recalls In Your Area" 
-                                IconSource="recalliconsmall.png" 
+                                IconSource="redrecallicon80.png" 
                                 TargetType="{x:Type local:RecallPage}"/>
                         <local:MasterPageItem 
                                 Title="Log Out" 

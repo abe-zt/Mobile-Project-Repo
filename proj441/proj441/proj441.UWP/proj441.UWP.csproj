@@ -146,7 +146,7 @@
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="recalliconsmall.png" />
     <Content Include="redpillwhitefill.png" />
-    <Content Include="redrecallicon50.png" />
+    <Content Include="redrecallicon80.png" />
     <Content Include="remindersicon.png" />
     <Content Include="usericon.png" />
   </ItemGroup>

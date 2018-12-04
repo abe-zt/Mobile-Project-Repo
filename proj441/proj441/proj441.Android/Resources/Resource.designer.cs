@@ -3067,7 +3067,7 @@ namespace proj441.Droid
 			public const int redpillwhitefill = 2130837820;
 			
 			// aapt resource value: 0x7f02013d
-			public const int redrecallicon50 = 2130837821;
+			public const int redrecallicon80 = 2130837821;
 			
 			// aapt resource value: 0x7f02013e
 			public const int remindersicon = 2130837822;

@@ -10,8 +10,8 @@
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="90"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <Image 
@@ -21,28 +21,26 @@
                 Source="doodlepills3.png"
                 Aspect="AspectFill"/>
 
-            <!--<Frame
-                Grid.Row="0"
+            <Frame
+                Grid.Row="1"
+                Grid.Column="0"
                 HasShadow="False"
-                Margin="15,15,15,0"
-                Padding="0"
+                Margin="20, 0, 20, 20"
+                Padding="3"
                 CornerRadius="0"
                 
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand"
                 BorderColor="{StaticResource MainColor}"
-                BackgroundColor="White">-->
+                BackgroundColor="White">
 
                 <StackLayout
-                    Grid.Row="0"
-                    Grid.Column="0"
                     Padding="0"
-                    Margin="20, 20, 20, 0"
+                    Margin="20, 0, 20, 0"
                     Spacing="0"
                     BackgroundColor="White"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    >
+                    VerticalOptions="Center" >
 
                     <Label 
                         Margin="0"
@@ -84,22 +82,21 @@
                         BorderColor="{StaticResource MainColor}"
                         BackgroundColor="White"
                         HasShadow="False">-->
-                        <Entry
-                            Margin="0, 0, 0, 10"
-                            HorizontalOptions="Fill"
-                            VerticalOptions="Fill"
-                            BackgroundColor="White"
-                            FontSize="Small"
-                            TextColor="Black"
+                    <Entry
+                        Margin="0, 0, 0, 10"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        BackgroundColor="White"
+                        FontSize="Small"
+                        TextColor="Black"
                            
-                            MaxLength="50"
-                            x:Name="preName"
-                            >
-                        </Entry>
+                        MaxLength="50"
+                        x:Name="preName"
+                        >
+                    </Entry>
                     <!--</Frame>-->
 
-
-                    <Grid
+                    <!--<Grid
                         Padding="0"
                         Margin="0"
                         RowSpacing="0"
@@ -107,39 +104,31 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1.5*"/>
                             <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                        </Grid.ColumnDefinitions>-->
+                    
+                    <StackLayout
+                        Padding="0, 0, 0, 0"
+                        Margin="0"
+                        Spacing="0"
+                        Orientation="Horizontal"
+                        BackgroundColor="Transparent" >
 
                         <StackLayout
-                            Grid.Column="0"
-                            Grid.Row="0"
                             Padding="0"
                             Margin="0"
                             Spacing="0">
 
-                            <StackLayout
-                                Padding="0"
+                            <Label
                                 Margin="0"
-                                Spacing="5"
-                                Orientation="Horizontal">
-                                <Label
-                                    Margin="0"
-                                    BackgroundColor="White"
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="Start"
-                                    Text="* Strength"
-                                    TextColor="Black"
-                                    FontSize="12"/>
-                                <Label
-                                    Margin="0"
-                                    BackgroundColor="White"
-                                    HorizontalOptions="End"
-                                    VerticalOptions="Start"
-                                    Text="N/A"
-                                    TextColor="Black"
-                                    FontSize="12"/>
-                            </StackLayout>
-
-                            <!--<Frame
+                                BackgroundColor="White"
+                                WidthRequest="100"
+                                HorizontalOptions="Start"
+                                VerticalOptions="StartAndExpand"
+                                Text=" * Strength"
+                                x:Name="strengthLabel"
+                                TextColor="Black"
+                                FontSize="12"/>
+                                <!--<Frame
                                 Margin="2"
                                 Padding="2"
                                 HorizontalOptions="Fill"
@@ -148,7 +137,7 @@
                                 BorderColor="{StaticResource MainColor}"
                                 BackgroundColor="White"
                                 HasShadow="False">-->
-                            <Grid
+                                <!--<Grid
                                 Margin="0"
                                 Padding="0"
                                 ColumnSpacing="0"
@@ -160,60 +149,73 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                
-                                <Entry
-                                    Grid.Column="0"
-                                    Keyboard="Numeric"
-                                    Margin="0, 0, 0, 10"
-                                    HorizontalOptions="Fill"
-                                    VerticalOptions="EndAndExpand"
-                                    BackgroundColor="White"
-                                    FontSize="Small"
-                                    TextColor="Black"
-                                    
-                                    MaxLength="6"
-                                    x:Name="preStrength"
-                                    >
+                                </Grid.RowDefinitions>-->
 
-                                </Entry>
-                                <Picker
-                                    Grid.Column="1"
-                                    Margin="0, 0, 0, 10"
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="EndAndExpand"
-                                    FontSize="Small"
-                                    WidthRequest="40"
-                                    x:Name="StrengthPicker"
-                                    BackgroundColor="White"
-                                    TextColor="{StaticResource MainColor}"
+                            <Entry
+                                Keyboard="Numeric"
+                                Margin="0, 0, 0, 10"
+                                HorizontalOptions="Start"
+                                VerticalOptions="EndAndExpand"
+                                WidthRequest="100"
+                                BackgroundColor="White"
+                                FontSize="Small"
+                                TextColor="Black"
                                     
-                                    />
+                                MaxLength="6"
+                                x:Name="preStrength"
+                                >
+                            </Entry>
 
-                            </Grid>
+                            <!--</Grid>-->
                             <!--</Frame>-->
                         </StackLayout>
-
-
                         <StackLayout
-                            Grid.Column="1"
-                            Grid.Row="0"
                             Padding="0"
                             Margin="0"
-                            Spacing="0"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="FillAndExpand">
-
-                            <Label
-                                Margin="0"
+                            Spacing="0" >
+                            
+                            <Picker
+                                Margin="0, 0, 0, 10"
+                                HorizontalOptions="Start"
+                                VerticalOptions="EndAndExpand"
+                                FontSize="Small"
+                                WidthRequest="40"
+                                x:Name="preStrengthUnits"
                                 BackgroundColor="White"
-                                HorizontalOptions="FillAndExpand"
-                                VerticalOptions="Start"
-                                FontSize="12"
-                                Text="* Prescribed Dosage / Amount to take (e.g.: 0.5, 1, 2)"
-                                TextColor="Black"
-                                />
+                                TextColor="{StaticResource MainColor}" />
+                        </StackLayout>
+                        
+                        <Switch
+                            Margin="20,0,0,0"
+	                        BackgroundColor="Transparent"
+                            HorizontalOptions="StartAndExpand"
+	                        VerticalOptions="Center"
+	                        RotationY="180"
+	                        IsToggled="True"
+	                        x:Name="StrengthSwitch"
+                            Toggled="StrengthSwitch_Toggled"/>
 
+                    </StackLayout>
+
+                    <StackLayout
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Padding="0"
+                        Margin="0"
+                        Spacing="0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+
+                        <Label
+                            Margin="0"
+                            BackgroundColor="White"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="Start"
+                            FontSize="12"
+                            WidthRequest="140"
+                            Text="* Prescribed Dosage / Amount (e.g.: 0.5, 1, 2)"
+                            TextColor="Black" />
+                        
                             <!--<Frame
                                 Margin="2"
                                 Padding="2"
@@ -224,42 +226,35 @@
                                 BackgroundColor="White"
                                 HasShadow="False">-->
 
-
-                            <Entry
-                                    Keyboard="Numeric"
-                                    Margin="0,0,0,10"
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="FillAndExpand"
-                                    BackgroundColor="White"
-                                    FontSize="Small"
-                                    TextColor="Black"
+                        <Entry
+                            Keyboard="Numeric"
+                            Margin="0,0,0,10"
+                            WidthRequest="100"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            BackgroundColor="White"
+                            FontSize="Small"
+                            TextColor="Black"
                                     
-                                    MaxLength="6"
-                                    x:Name="preDosage"
-                                    >
-                            </Entry>
+                            MaxLength="6"
+                            x:Name="preDosage"
+                            >
+                        </Entry>
 
-                            <!--<Picker
-                                    
-                                    Margin="0, 0, 0, 10"
-                                    
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="EndAndExpand"
-                                    FontSize="Small"
-                                    
-                                    x:Name="preDosagePicker"
-                                    BackgroundColor="White"
-                                    TextColor="{StaticResource MainColor}"
-                                    
-                                    />-->
+                        <!--<Picker
+                                Margin="0, 0, 0, 10"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="EndAndExpand"
+                                FontSize="Small"
+                                x:Name="preDosagePicker"
+                                BackgroundColor="White"
+                                TextColor="{StaticResource MainColor}"
+                                />-->
+                        <!--</Frame>-->
+                        
+                    </StackLayout>
 
-
-
-                            <!--</Frame>-->
-                        </StackLayout>
-
-
-                    </Grid>
+                    <!--</Grid>-->
 
                     <Label
                         Margin="0, 10, 0, 0"
@@ -289,7 +284,7 @@
                             BackgroundColor="White"
                             FontSize="Small"
                             TextColor="Black"
-                            
+                            Text=""
                             MaxLength="150"
                             x:Name="preInstructions"
                             >
@@ -323,27 +318,26 @@
                             FontSize="Small"
                             TextColor="Black"
                             MaxLength="25"
-                            x:Name="preDescription">
+                            x:Name="preDescription"
+                            Text="">
                         </Entry>
                     <!--</Frame>-->
 
                     <Grid
-                        
                         Padding="0"
                         Margin="0"
                         RowSpacing="0"
-                        ColumnSpacing="100">
+                        ColumnSpacing="80">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                     
                         <StackLayout
-                            
                             Grid.Column="0"
                             Grid.Row="0"
                             Padding="0"
-                            Margin="0"
+                            Margin="5"
                             Spacing="0">
                             <Label
                                 Margin="0"
@@ -366,25 +360,24 @@
                                 HasShadow="False">-->
                                 <Entry
                                     Keyboard="Numeric"
-                                    Margin="0,0,0,0"
+                                    Margin="0,0,0,10"
                                     HorizontalOptions="Fill"
-                                    VerticalOptions="Fill"
+                                    VerticalOptions="Start"
                                     BackgroundColor="White"
                                     FontSize="Small"
                                     TextColor="Black"
                                     
                                     x:Name="preQuantity"
-                                    TextChanged="preQuantity_TextChanged">
+                                    TextChanged="PreQuantity_TextChanged">
                                 </Entry>
                             <!--</Frame>-->
                         </StackLayout>
 
-                    
                         <StackLayout
                             Grid.Column="1"
                             Grid.Row="0"
                             Padding="0"
-                            Margin="0"
+                            Margin="5"
                             Spacing="0">
                             <Label
                                 Margin="0"
@@ -405,38 +398,37 @@
                                 BorderColor="{StaticResource MainColor}"
                                 BackgroundColor="White"
                                 HasShadow="False">-->
-                                <Entry
-                                    Keyboard="Numeric"
-                                    Margin="0,0,0,0"
-                                    HorizontalOptions="Fill"
-                                    VerticalOptions="Fill"
-                                    BackgroundColor="White"
-                                    FontSize="Small"
-                                    TextColor="Black"
+                            <Entry
+                                Keyboard="Numeric"
+                                Margin="0,0,0,10"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Start"
+                                BackgroundColor="White"
+                                FontSize="Small"
+                                TextColor="Black"
                                     
-                                    x:Name="preRemaining">
-                                </Entry>
-                            <!--</Frame>-->
+                                x:Name="preRemaining">
+                            </Entry>
+                                <!--</Frame>-->
                         </StackLayout>
                     </Grid>
-
                 </StackLayout>
-            <!--</Frame>-->
-            
-                <Button
-                    Padding="0"
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Margin="20, 0"
-                    Style="{StaticResource MainButtonStyle}" 
+            </Frame>
+
+            <Button
+                Padding="0"
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="20, 0"
+                Style="{StaticResource MainButtonStyle}" 
                     
-                    x:Name="AddPrescriptionButton"
-                    Text="ADD PRESCRIPTION"
-                    Clicked="AddPrescriptionButton_Clicked">
-                </Button>
-            
-            
-        </Grid>
+                x:Name="AddPrescriptionButton"
+                Text="ADD PRESCRIPTION"
+                Clicked="AddPrescriptionButton_Clicked">
+            </Button>
+
+
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

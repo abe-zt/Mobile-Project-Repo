@@ -25,12 +25,5 @@ namespace proj441
             //QuantityLabel.Text = prescription.Quantity.ToString();
             //RemainingLabel.Text = prescription.Remaining.ToString();
         }
-
-        protected override void OnAppearing()
-        {
-
-        }
-        
-
     }
 }

@@ -76,6 +76,12 @@
                             FontSize="16"
                             VerticalOptions="StartAndExpand"
                             HorizontalOptions="StartAndExpand"/>
+                        <Label 
+                            Text="{Binding StrengthUnits}"
+                            TextColor="Black"
+                            FontSize="16"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="StartAndExpand"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal">

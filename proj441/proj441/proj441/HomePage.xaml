@@ -30,9 +30,9 @@
             Aspect="AspectFill"/>
 
         <StackLayout 
-            Margin="20"
+            Margin="20, 40, 20, 20"
             Padding="0"
-            Spacing="10"
+            Spacing="15"
             Grid.Row="0"
             Grid.Column="0"
             VerticalOptions="FillAndExpand"
@@ -48,7 +48,7 @@
                 <Image
                     VerticalOptions="Start"
                     HorizontalOptions="Center"
-                    Source="pillboylogodeepredoutline.png"
+                    Source="pillboylogodeepred.png"
                     Scale="1"
                     Aspect="AspectFit"
                     BackgroundColor="Transparent"
@@ -66,13 +66,14 @@
 
             <local:CircleButton 
                 x:Name="RecallButton"
-                
-                Image="redrecallicon50.png"
-                
-                FontSize="30" TextColor="Black" 
-                HeightRequest="49" WidthRequest="49"
-                BorderThickness="0" BorderColor="{StaticResource MainColor}" 
-                BackgroundColor="White"
+                FontIcon="FontAwesome"
+                Icon="fa-refresh"
+                Padding="0"
+                Margin="0"
+                FontSize="30" TextColor="White" 
+                HeightRequest="50" WidthRequest="50"
+                BorderThickness="6" BorderColor="{StaticResource MainColor}" 
+                BackgroundColor="{StaticResource MainColor}"
                 HorizontalOptions="EndAndExpand"
                 VerticalOptions="EndAndExpand"
                 Clicked="RecallButton_Clicked">

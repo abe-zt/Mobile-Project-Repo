@@ -44,7 +44,9 @@ namespace proj441
         {
             originalP.PID = copyP.PID;
             originalP.Name = copyP.Name;
+            originalP.ProperName = copyP.ProperName;
             originalP.Strength = copyP.Strength;
+            originalP.StrengthUnits = copyP.StrengthUnits;
             originalP.Instructions = copyP.Instructions;
             originalP.PrescribedDosage = copyP.PrescribedDosage;
             originalP.PhysicalDescription = copyP.PhysicalDescription;
@@ -104,7 +106,9 @@ namespace proj441
             {
                 //should not need to copy over pid, since we want
                 Name = p_copy.Name,
+                ProperName = p_copy.ProperName,
                 Strength = p_copy.Strength,
+                StrengthUnits = p_copy.StrengthUnits,
                 Instructions = p_copy.Instructions,
                 PrescribedDosage = p_copy.PrescribedDosage,
                 PhysicalDescription = p_copy.PhysicalDescription,
@@ -118,7 +122,7 @@ namespace proj441
             await App.MyDoseDatabase.SaveItemAsync(d1);
             App.MyHistory.Add(d1);
             //LogPopupStackLayout.IsVisible = true;
-            await DisplayAlert("Added to History:", "Taken " + " (" + d1.QuantityTaken + ") " + d1.Name + " at " + d1.DateTimeTaken.ToString(), "OK");
+            await DisplayAlert("Added to History:", "Taken " + " (" + d1.QuantityTaken + ") " + d1.ProperName +" " +d1.Strength + d1.StrengthUnits + " at " + d1.DateTimeTaken.ToString(), "OK");
             await Navigation.PopAsync();
         }
 

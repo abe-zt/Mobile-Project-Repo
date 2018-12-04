@@ -25,6 +25,12 @@ namespace proj441
             set;
         }
 
+        public string StrengthUnits
+        {
+            get;
+            set;
+        }
+
         public string Instructions
         {
             get;

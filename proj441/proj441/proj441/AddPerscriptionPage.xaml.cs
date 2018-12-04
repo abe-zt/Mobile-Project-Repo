@@ -23,15 +23,15 @@ namespace proj441
 
         private void FillPickers()
         {
-            StrengthPicker.Items.Add("mg");
-            StrengthPicker.Items.Add("mcg");
-            
-            StrengthPicker.SelectedItem = StrengthPicker.Items.FirstOrDefault();        
+            preStrengthUnits.Items.Add("mg");
+            preStrengthUnits.Items.Add("mcg");
+
+            preStrengthUnits.SelectedItem = preStrengthUnits.Items.FirstOrDefault();        
         }
 
-        //private void StrengthPicker_SelectedIndexChanged(object sender, EventArgs e)
+        //private void preStrengthUnits_SelectedIndexChanged(object sender, EventArgs e)
         //{
-        //    var chosen = StrengthPicker.Items[StrengthPicker.SelectedIndex];
+        //    var chosen = preStrengthUnits.Items[preStrengthUnits.SelectedIndex];
         //    if (chosen == "mL")
         //    {
         //        preDosage.Text = "1";
@@ -52,9 +52,13 @@ namespace proj441
             {
                 return false;
             }
-            if (preStrength.Text == null || preStrength.Text == "" || Convert.ToDouble(preStrength.Text) == 0)
+
+            if (StrengthSwitch.IsToggled)
             {
-                return false;
+                if (preStrength.Text == null || preStrength.Text == "" || Convert.ToDouble(preStrength.Text) == 0)
+                {
+                    return false;
+                }
             }
 
             if (preDosage.Text == null || preDosage.Text == "" || Convert.ToDouble(preDosage.Text) < 0)
@@ -81,12 +85,14 @@ namespace proj441
 
             if (valid == false)
             {
-                await DisplayAlert("Error:", "Please enter valid values for Required (*) fields", "OK");
+                await DisplayAlert("Error:", "Please enter values for Required (*) fields", "OK");
             }
 
             else
             {
-                bool exists = App.MyPrescrpitions.Any(i => i.Name == preName.Text && i.Strength == preStrength.Text);    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
+                ValidateValues();
+
+                bool exists = App.MyPrescrpitions.Any(i => i.ProperName == preName.Text.ToUpper() && i.Strength == preStrength.Text && i.StrengthUnits == preStrengthUnits.SelectedItem.ToString());    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
 
                 if (exists)
                 {
@@ -95,11 +101,26 @@ namespace proj441
 
                 else
                 {
+                    string s;
+                    string su;
+
+                    if(StrengthSwitch.IsToggled)
+                    {
+                        s = preStrength.Text.Trim();
+                        su = preStrengthUnits.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        s = " ";
+                        su = " ";
+                    }
+
                     Prescription p = new Prescription
                     {
                         Name = preName.Text.Trim(),
                         ProperName = preName.Text.ToUpper().Trim(),
-                        Strength = (preStrength.Text + StrengthPicker.SelectedItem.ToString()).Trim(),
+                        Strength = s,
+                        StrengthUnits = su,
                         PrescribedDosage = Convert.ToDouble(preDosage.Text),
                         Instructions = preInstructions.Text.Trim(),
                         PhysicalDescription = preDescription.Text.Trim(),
@@ -114,9 +135,31 @@ namespace proj441
             }
         }
 
-        private void preQuantity_TextChanged(object sender, TextChangedEventArgs e)
+        private void ValidateValues()
+        {
+            
+        }
+
+        private void PreQuantity_TextChanged(object sender, TextChangedEventArgs e)
         {
             preRemaining.Text = preQuantity.Text;
+        }
+
+        private void StrengthSwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value)
+            {
+                strengthLabel.Text = "* Strength";
+                preStrength.IsEnabled = true;
+                preStrengthUnits.IsEnabled = true;
+            }
+            else
+            {
+                strengthLabel.Text = "Not Available";
+                preStrength.IsEnabled = false;
+                preStrengthUnits.IsEnabled = false;
+                preStrength.Text = "";
+            }
         }
     }
 }
