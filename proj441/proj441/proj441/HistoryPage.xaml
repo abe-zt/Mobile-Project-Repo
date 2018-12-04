@@ -37,9 +37,12 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                 Grid.Row="0" 
+                IsPullToRefreshEnabled="True"
+                Refreshing="MyHistoryList_Refreshing"
                 x:Name = "MyHistoryList"
                 HasUnevenRows="True"
                 SelectionMode="Single" 
+                
                 RowHeight="150"
                 ItemSelected="MyHistoryList_ItemSelected">
                 <ListView.ItemTemplate>

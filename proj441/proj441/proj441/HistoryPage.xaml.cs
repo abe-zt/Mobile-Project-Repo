@@ -35,7 +35,9 @@ namespace proj441
             {
                 App.MyHistory.Remove(contextSelected);
                 await App.MyDoseDatabase.DeleteItemAsync(contextSelected);
-            }          
+            }
+
+            MyHistoryList_Refreshing(MyHistoryList, null);
         }
 
         private async void LogDosageButton2_Clicked(object sender, EventArgs e)
@@ -55,6 +57,24 @@ namespace proj441
                 await PopupNavigation.Instance.PushAsync(new HistoryInfoPage(tappedDose));
                 tappedItem.SelectedItem = null;
             }
+        }
+
+        private void MyHistoryList_Refreshing(object sender, EventArgs e)
+        {
+            var listViewToRefresh = (ListView)sender;
+            ClearListView();
+            PopulateMyHistoryList();
+            MyHistoryList.IsRefreshing = false;
+        }
+
+        private void ClearListView()
+        {
+            MyHistoryList.ItemsSource = null;
+        }
+
+        protected override void OnAppearing()
+        {
+            MyHistoryList_Refreshing(MyHistoryList, null);
         }
     }
 }
