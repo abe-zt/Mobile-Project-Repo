@@ -97,7 +97,7 @@ namespace proj441
                 await App.MyRemindersDatabase.SaveItemAsync(r1);
                 App.MyReminders.Add(r1);
 
-                CrossLocalNotifications.Current.Show("PILL-BOY", "Time to take " + r1.Name + " " + r1.Strength + r1.StrengthUnits + "!", r1.RID, r1.DateTimeReminder);
+                CrossLocalNotifications.Current.Show("PILL-BOY", "Time to take " + r1.Name + " " + r1.Strength + r1.StrengthUnits, r1.RID, r1.DateTimeReminder);
 
                 Analytics.TrackEvent("Successfully added reminder");
 
