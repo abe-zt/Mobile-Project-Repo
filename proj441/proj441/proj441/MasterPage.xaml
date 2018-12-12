@@ -48,10 +48,10 @@
                                 Title="See Dosage History" 
                                 IconSource="calendaricon.png" 
                                 TargetType="{x:Type local:HistoryPage}" />
-                        <!--<local:MasterPageItem 
+                        <local:MasterPageItem 
                                 Title="See Reminders" 
                                 IconSource="remindersicon.png" 
-                                TargetType="{x:Type local:ReminderPage}" />-->
+                                TargetType="{x:Type local:ReminderPage}" />
                         <local:MasterPageItem 
                                 Title="Recalls In Your Area" 
                                 IconSource="redrecallicon80.png" 

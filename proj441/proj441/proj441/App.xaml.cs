@@ -23,6 +23,9 @@ namespace proj441
         {
             InitializeComponent();
             MainPage = new proj441.MainPage();
+            GetAllPrescriptions();
+            GetAllDoses();
+            GetAllReminders();
         }
 
         private static PrescriptionDatabase myPrescriptionDatabase;
@@ -90,9 +93,7 @@ namespace proj441
                   "ios=cbbd70a0-4b17-4f6c-8093-103b181f2fb3;",
                   typeof(Analytics), typeof(Crashes));
 
-            GetAllPrescriptions();
-            GetAllDoses();
-            GetAllReminders();
+            
         }
 
         protected override void OnSleep()
