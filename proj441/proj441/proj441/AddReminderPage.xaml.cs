@@ -73,40 +73,42 @@ namespace proj441
 
         private async void AddReminder_Clicked(object sender, EventArgs e)
         {
-
-            //int difference = p2.Remaining - (int)DosageStepper.Value;
-            //remainingLabel.Text = difference.ToString();
-            
-
-            //update prescription with correct remaining value
-            //await App.MyPrescriptionDatabase.SaveItemAsync(p_copy);
-
-            Reminder r1 = new Reminder
+            DateTime selectedDateTime = myDatePicker.Date + myTimePicker.Time;
+            if (selectedDateTime > DateTime.Now)
             {
-                //should not need to copy over pid, since we want
-                Name = p_copy.Name,
-                ProperName = p_copy.ProperName,
-                Strength = p_copy.Strength,
-                StrengthUnits = p_copy.StrengthUnits,
-                Instructions = p_copy.Instructions,
-                PrescribedDosage = p_copy.PrescribedDosage,
-                PhysicalDescription = p_copy.PhysicalDescription,
-                Quantity = p_copy.Quantity,
-                Remaining = p_copy.Remaining,
-                DateTimeReminder = myDatePicker.Date + myTimePicker.Time,
-                
-            };
 
-            //d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;
-            await App.MyRemindersDatabase.SaveItemAsync(r1);
-            App.MyReminders.Add(r1);
+                Reminder r1 = new Reminder
+                {
+                    //should not need to copy over pid, since we want
+                    Name = p_copy.Name,
+                    ProperName = p_copy.ProperName,
+                    Strength = p_copy.Strength,
+                    StrengthUnits = p_copy.StrengthUnits,
+                    Instructions = p_copy.Instructions,
+                    PrescribedDosage = p_copy.PrescribedDosage,
+                    PhysicalDescription = p_copy.PhysicalDescription,
+                    Quantity = p_copy.Quantity,
+                    Remaining = p_copy.Remaining,
+                    DateTimeReminder = myDatePicker.Date + myTimePicker.Time,
 
-            CrossLocalNotifications.Current.Show("PILL-BOY", "Time to take " + r1.Name + " " + r1.Strength + r1.StrengthUnits + "!", r1.RID, r1.DateTimeReminder);
+                };
 
-            Analytics.TrackEvent("Successfully added reminder");
+                //d1.PrescriptionTaken.Remaining -= d1.QuantityTaken;
+                await App.MyRemindersDatabase.SaveItemAsync(r1);
+                App.MyReminders.Add(r1);
 
-            await DisplayAlert("Added to Reminders:", "Take " + r1.ProperName + r1.Strength + r1.StrengthUnits + " at " + r1.DateTimeReminder.ToString(), "OK");
-            await Navigation.PopAsync();
+                CrossLocalNotifications.Current.Show("PILL-BOY", "Time to take " + r1.Name + " " + r1.Strength + r1.StrengthUnits + "!", r1.RID, r1.DateTimeReminder);
+
+                Analytics.TrackEvent("Successfully added reminder");
+
+                await DisplayAlert("Added to Reminders:", "Take " + r1.ProperName + r1.Strength + r1.StrengthUnits + " at " + r1.DateTimeReminder.ToString(), "OK");
+                await Navigation.PopAsync();
+            }
+            
+            else
+            {
+                await DisplayAlert("Error:", "Please enter valid Date/Time", "OK");
+            }
             
         }
 

@@ -92,7 +92,7 @@ namespace proj441
 
             GetAllPrescriptions();
             GetAllDoses();
-
+            GetAllReminders();
         }
 
         protected override void OnSleep()

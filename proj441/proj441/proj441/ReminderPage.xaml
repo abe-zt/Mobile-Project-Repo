@@ -141,7 +141,7 @@
                                                 TextColor="Blue"
                                                 Text="{Binding DateTimeReminder, StringFormat='{0:t}'}" />
                                         </StackLayout>
-                                        <!--<StackLayout
+                                        <StackLayout
                                             Orientation="Horizontal"
                                             Spacing="0">
                                             <Label
@@ -158,9 +158,9 @@
                                                 FontSize="18"
                                                 FontAttributes="Bold"
                                                 TextColor="Blue"
-                                                Text="{Binding DateTimeTaken, StringFormat='{0:d}'}" />
+                                                Text="{Binding DateTimeReminder, StringFormat='{0:d}'}" />
 
-                                        </StackLayout>-->
+                                        </StackLayout>
 
                                         <!--<StackLayout 
                                             Spacing="5"

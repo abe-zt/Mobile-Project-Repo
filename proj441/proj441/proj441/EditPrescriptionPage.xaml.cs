@@ -9,26 +9,32 @@ using Xamarin.Forms.Xaml;
 
 namespace proj441
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class EditPrescriptionPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class EditPrescriptionPage : ContentPage
+    {
         int originalPID = 0;
 
-        public EditPrescriptionPage (Prescription p)
-		{
-			InitializeComponent ();
+        public EditPrescriptionPage(Prescription p)
+        {
+            InitializeComponent();
             FillPickers();
             BindingContext = p;
             originalPID = p.PID;
-            
+            ValidatePicker();
         }
 
+        private void ValidatePicker()
+        {
+            if ((string)preStrengthUnits.SelectedItem == " ")
+                StrengthSwitch.IsToggled = false;
+        }
         private void FillPickers()
         {
             preStrengthUnits.Items.Add("mg");
             preStrengthUnits.Items.Add("mcg");
             preStrengthUnits.Items.Add(" ");
             //preStrengthUnits.SelectedItem = preStrengthUnits.Items.FirstOrDefault();
+            
         }
 
         private bool ValidateFields()
