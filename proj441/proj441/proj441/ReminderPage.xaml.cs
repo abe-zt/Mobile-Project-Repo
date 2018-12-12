@@ -29,7 +29,7 @@ namespace proj441
         {
             var menuItem = (MenuItem)sender;
             Reminder contextSelected = (Reminder)menuItem.CommandParameter;
-            bool answer = await DisplayAlert("Confirm:", "Delete Reminder for '" + contextSelected.ProperName + contextSelected.Strength + contextSelected.StrengthUnits + " at " + contextSelected.DateTimeReminder.ToString() + "?", "Yes", "No");
+            bool answer = await DisplayAlert("Confirm:", "Delete Reminder for '" + contextSelected.ProperName + " " + contextSelected.Strength + contextSelected.StrengthUnits + " at " + contextSelected.DateTimeReminder.ToString() + "?", "Yes", "No");
             if (answer) 
             {
                 App.MyReminders.Remove(contextSelected);

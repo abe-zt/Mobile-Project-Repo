@@ -9,7 +9,7 @@
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="0"/>
+                <RowDefinition Height="80"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
@@ -24,14 +24,14 @@
             Source="doodlepills3.png"
             Aspect="AspectFill"/>-->
 
-            <!--<Button
+            <Button
                 Grid.Row="0"
                 Margin="10, 20"
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="AddPrescriptionButton"
-                Text="ADD NEW REMINDER"
-                Clicked="AddReminderButton_Clicked"
-                />-->
+                Text="ADD NEW PRESCRIPTION"
+                Clicked="AddPrescriptionButton_Clicked"
+                />
 
             <!--<Frame
                 Grid.Row="1"

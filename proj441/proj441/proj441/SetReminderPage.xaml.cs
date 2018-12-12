@@ -26,6 +26,13 @@ namespace proj441
             MyReminderList.ItemsSource = prescriptionsSortedMultiple;
         }
 
+        private async void AddPrescriptionButton_Clicked(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+
+            await Navigation.PushAsync(new AddPerscriptionPage());
+        }
+
         private async void AddReminderButton_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
