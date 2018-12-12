@@ -66,15 +66,15 @@
 
             <local:CircleButton 
                 x:Name="RecallButton"
-                Image="redrecallicon80"
+                Image="redrecallicon68.png"
                 
                 Padding="0"
                 Margin="0"
                 FontSize="30" TextColor="White" 
-                HeightRequest="80" WidthRequest="80"
-                BorderThickness="0" BorderColor="{StaticResource MainColor}" 
-                BackgroundColor="{StaticResource MainColor}"
-                HorizontalOptions="EndAndExpand"
+                HeightRequest="67" WidthRequest="67"
+                BorderThickness="0" BorderColor="Transparent" 
+                BackgroundColor="Transparent"
+                HorizontalOptions="End"
                 VerticalOptions="EndAndExpand"
                 Clicked="RecallButton_Clicked">
             </local:CircleButton>

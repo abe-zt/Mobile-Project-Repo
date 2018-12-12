@@ -23,6 +23,9 @@ namespace proj441
         {
             InitializeComponent();
             MainPage = new proj441.MainPage();
+            
+            
+            
             GetAllPrescriptions();
             GetAllDoses();
             GetAllReminders();
@@ -69,18 +72,21 @@ namespace proj441
 
         async void GetAllPrescriptions()
         {
+            MyPrescrpitions.Clear();
             List<Prescription> prescriptions = await MyPrescriptionDatabase.GetItemsAsync();
             prescriptions.ToList().ForEach(MyPrescrpitions.Add);
         }
 
         async void GetAllDoses()
         {
+            MyHistory.Clear();
             List<Dose> doses = await MyDoseDatabase.GetItemsAsync();
             doses.ToList().ForEach(MyHistory.Add);
         }
 
         async void GetAllReminders()
         {
+            MyReminders.Clear();
             List<Reminder> reminders = await MyRemindersDatabase.GetItemsAsync();
             reminders.ToList().ForEach(MyReminders.Add);
         }

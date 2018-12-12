@@ -260,4 +260,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\redrecallicon80.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\redrecallicon68.png" />
+  </ItemGroup>
 </Project>
