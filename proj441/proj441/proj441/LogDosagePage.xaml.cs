@@ -35,6 +35,7 @@ namespace proj441
 
             //DosageStepper.Value = p.PrescribedDosage;
             myDatePicker.Date = DateTime.Now;
+            myDatePicker.Date = DateTime.Now.AddYears(-1);
             myDatePicker.MaximumDate = DateTime.Now;
             myTimePicker.Time = DateTime.Now.TimeOfDay;
             //AmountLabel.Text = p.PrescribedDosage.ToString();

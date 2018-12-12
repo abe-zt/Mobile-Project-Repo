@@ -51,6 +51,19 @@ namespace proj441
             }
         }
 
+        private static RemindersDatabase myRemindersDatabase;
+        public static RemindersDatabase MyRemindersDatabase
+        {
+            get
+            {
+                if (myRemindersDatabase == null)
+                {
+                    myRemindersDatabase = new RemindersDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "RemindersSQLite.db3"));
+                }
+                return myRemindersDatabase;
+            }
+        }
+
         async void GetAllPrescriptions()
         {
             List<Prescription> prescriptions = await MyPrescriptionDatabase.GetItemsAsync();
@@ -61,6 +74,12 @@ namespace proj441
         {
             List<Dose> doses = await MyDoseDatabase.GetItemsAsync();
             doses.ToList().ForEach(MyHistory.Add);
+        }
+
+        async void GetAllReminders()
+        {
+            List<Reminder> reminders = await MyRemindersDatabase.GetItemsAsync();
+            reminders.ToList().ForEach(MyReminders.Add);
         }
 
         protected override void OnStart()

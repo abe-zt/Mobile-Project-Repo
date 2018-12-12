@@ -68,7 +68,7 @@
 
                     <DatePicker
                         x:Name="myDatePicker"
-                        MinimumDate="01/01/2018"
+                        
                         DateSelected="MyDatePicker_DateSelected"
                         />
 
