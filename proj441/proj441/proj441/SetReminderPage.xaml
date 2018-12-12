@@ -5,23 +5,158 @@
              Title="Set Reminder">
     <ContentPage.Content>
         <Grid
+            BackgroundColor="White"
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image 
+            <!--<Image 
             Grid.Row="0"
             Grid.Column="0"
-            Grid.RowSpan="3"
+            Grid.RowSpan="2"
             Source="doodlepills3.png"
-            Aspect="AspectFill"/>
+            Aspect="AspectFill"/>-->
 
+            <Button
+                Grid.Row="0"
+                Margin="10, 20"
+                Style="{StaticResource MainButtonStyle}" 
+                x:Name="AddPrescriptionButton"
+                Text="ADD NEW REMINDER"
+                Clicked="AddReminderButton_Clicked"
+                />
+
+            <!--<Frame
+                Grid.Row="1"
+                
+                Margin="0"
+                Padding="0"
+                CornerRadius="0"
+                BorderColor="{StaticResource MainColor}"
+                BackgroundColor="#F5F5F5">-->
+
+
+
+            <ListView
+                Margin="0"
+                BackgroundColor="White"
+                SeparatorColor="Black"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Row="1" 
+                x:Name ="MyReminderList"
+                HasUnevenRows="True"
+                RowHeight="100"
+                ItemSelected="MyReminderList_ItemSelected"
+                IsPullToRefreshEnabled="True"
+                Refreshing="MyReminderList_Refreshing">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!--<ViewCell.ContextActions>
+                                <MenuItem
+                                       Text="Info"
+                                       Clicked="Handle_ContextMenuInfoButton"
+                                       CommandParameter="{Binding .}"/>
+                                <MenuItem
+                                       Text="Edit"
+                                       Clicked="Handle_ContextMenuEditButton"
+                                       CommandParameter="{Binding .}"/>
+                                <MenuItem
+                                       Text="Delete"
+                                       CommandParameter="{Binding .}"
+                                       Clicked="Handle_ContextMenuDeleteButton"
+                                       IsDestructive="True"/>
+                            </ViewCell.ContextActions>-->
+                            <ViewCell.View>
+                                <StackLayout
+                                        Orientation="Horizontal"
+                                        Margin="10"
+                                        Spacing="0">
+                                    <Image
+                                            Margin="0"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"
+                                            HeightRequest="80"
+                                            Source="remindoersicon.png"
+                                            Aspect="AspectFill"/>
+                                    <StackLayout 
+                                            HorizontalOptions="StartAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            
+                                            Spacing="0">
+                                        <Label
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="StartAndExpand"
+                                                FontSize="28"
+                                                FontAttributes="Bold"
+                                                TextColor="Black"
+                                                Text="{Binding Name}  " />
+                                        <StackLayout
+                                                
+                                                Spacing="0"
+                                                Orientation="Horizontal"
+                                                HorizontalOptions="StartAndExpand"
+                                                VerticalOptions="StartAndExpand">
+                                            <Label
+                                                    HorizontalOptions="StartAndExpand"
+                                                    VerticalOptions="StartAndExpand"
+                                                    
+                                                    FontSize="20"
+                                                    TextColor="{StaticResource MainColor}"
+                                                    Text="{Binding Strength}"/>
+
+                                            <Label
+                                                    Margin="0"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    VerticalOptions="Center"
+                                                    FontSize="20"
+                                                    TextColor="{StaticResource MainColor}"
+                                                    Text="{Binding StrengthUnits}" />
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <!--<StackLayout 
+                                            Spacing="5"
+                                            Orientation="Horizontal"
+                                            HorizontalOptions="EndAndExpand"
+                                            VerticalOptions="EndAndExpand" >
+                                        <Label
+                                                Margin="0"
+                                                HorizontalOptions="End"
+                                                VerticalOptions="End"
+                                                FontSize="18"
+                                                TextColor="DarkGray"
+                                                Text="{Binding Remaining}" />
+                                        <Label
+                                                Margin="0"
+                                                HorizontalOptions="End"
+                                                VerticalOptions="End"
+                                                FontSize="18"
+                                                TextColor="DarkGray"
+                                                Text=" count" />
+                                    </StackLayout>-->
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<Button
+                Grid.Row="2"
+                Margin="10, 20"
+                Style="{StaticResource MainButtonStyle}" 
+                x:Name="NavToHistoryButton"
+                Text="GO TO DOSAGE HISTORY"
+                Clicked="NavToHistoryButton_Clicked"
+                />-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

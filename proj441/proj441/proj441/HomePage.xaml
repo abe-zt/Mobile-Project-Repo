@@ -95,7 +95,7 @@
                 Clicked="SeeHistoryButton_Clicked"
                 />
 
-            <!--<Button
+            <Button
                 VerticalOptions="End"
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="SetReminderButton"
@@ -103,7 +103,7 @@
                 Clicked="SetReminderButton_Clicked"
                 />
 
-            <Button
+            <!--<Button
                 VerticalOptions="End"
                 Style="{StaticResource MainButtonStyle}"
                 x:Name="seeRemindersButton"

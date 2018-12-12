@@ -15,22 +15,9 @@ namespace proj441
 {
     public partial class App : Application
     {
-        public static ObservableCollection<Prescription> MyPrescrpitions { get; set; } = new ObservableCollection<Prescription>()
-        {
-            //new Prescription()
-            //{
-            //    //PID = 1, 
-            //    Name = "IBUPROFEN", 
-            //    Strength = "200",
-            //    Instructions = "Take 2 for pain",
-            //    PrescribedDosage = 2,
-            //    PhysicalDescription = "oval, white",
-            //    Quantity = 100,
-            //    Remaining = 100
-            //}
-        };
-
+        public static ObservableCollection<Prescription> MyPrescrpitions { get; set; } = new ObservableCollection<Prescription>();
         public static ObservableCollection<Dose> MyHistory { get; set; } = new ObservableCollection<Dose>();
+        public static ObservableCollection<Reminder> MyReminders { get; set; } = new ObservableCollection<Reminder>();
 
         public App()
         {
