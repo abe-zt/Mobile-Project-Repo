@@ -103,13 +103,13 @@
                 Clicked="SetReminderButton_Clicked"
                 />
 
-            <!--<Button
+            <Button
                 VerticalOptions="End"
                 Style="{StaticResource MainButtonStyle}"
-                x:Name="seeRemindersButton"
-                Text="REMINDERS"
+                x:Name="SeeRemindersButton"
+                Text="SEE REMINDERS"
                 Clicked="SeeRemindersButton_Clicked"
-                />-->
+                />
  
         </StackLayout>
     </Grid>

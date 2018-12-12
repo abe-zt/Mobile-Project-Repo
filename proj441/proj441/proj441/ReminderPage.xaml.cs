@@ -20,7 +20,8 @@ namespace proj441
         private async void SetReminderButton2_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            await Navigation.PushAsync(new SetReminderPage());
+            Navigation.InsertPageBefore(new SetReminderPage(), this);
+            await Navigation.PopAsync();
         }
     }
 }

@@ -53,6 +53,14 @@ namespace proj441
             MyReminderList.ItemsSource = null;
         }
 
+        private async void SeeRemindersButton_Clicked(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            Navigation.InsertPageBefore(new ReminderPage(), this);
+            //await Navigation.PushAsync(new HistoryPage());
+            await Navigation.PopAsync();
+        }
+
         protected override void OnAppearing()
         {
             MyReminderList_Refreshing(MyReminderList, null);

@@ -9,7 +9,7 @@
             RowSpacing="0"
             ColumnSpacing="0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
+                <RowDefinition Height="0"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
@@ -24,14 +24,14 @@
             Source="doodlepills3.png"
             Aspect="AspectFill"/>-->
 
-            <Button
+            <!--<Button
                 Grid.Row="0"
                 Margin="10, 20"
                 Style="{StaticResource MainButtonStyle}" 
                 x:Name="AddPrescriptionButton"
                 Text="ADD NEW REMINDER"
                 Clicked="AddReminderButton_Clicked"
-                />
+                />-->
 
             <!--<Frame
                 Grid.Row="1"
@@ -149,14 +149,14 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <!--<Button
+            <Button
                 Grid.Row="2"
                 Margin="10, 20"
                 Style="{StaticResource MainButtonStyle}" 
-                x:Name="NavToHistoryButton"
-                Text="GO TO DOSAGE HISTORY"
-                Clicked="NavToHistoryButton_Clicked"
-                />-->
+                x:Name="SeeRemindersButton"
+                Text="SEE REMINDERS"
+                Clicked="SeeRemindersButton_Clicked"
+                />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
