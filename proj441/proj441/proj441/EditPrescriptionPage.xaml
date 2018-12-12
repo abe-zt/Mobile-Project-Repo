@@ -93,6 +93,20 @@
                             x:Name="preName"
                             >
                         </Entry>
+                        <Entry
+                            Margin="0, 0, 0, 10"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            BackgroundColor="White"
+                            FontSize="Small"
+                            TextColor="Black"
+                            Text="{Binding ProperName}"
+                            MaxLength="50"
+                            x:Name="preProperName"
+                            IsVisible="False"
+                            IsEnabled="False"
+                            >
+                        </Entry>
 
                         <StackLayout
                             Padding="0, 0, 0, 0"

@@ -87,53 +87,54 @@ namespace proj441
             {
 
                 //bool exists = App.MyPrescrpitions.Any(i => i.ProperName == preName.Text.ToUpper() && i.Strength == preStrength.Text && i.StrengthUnits == preStrengthUnits.SelectedItem.ToString());    //Here comes Linq https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any?view=netframework-4.7.2
-
                 //if (exists)
                 //{
                 //    await DisplayAlert("Error:", "Prescription already exists", "OK");
                 //}
-
                 //else
                 //{
-                    if (StrengthSwitch.IsToggled)
+
+                preProperName.Text = preName.Text.ToUpper().Trim();
+
+                if (StrengthSwitch.IsToggled)
+                {
+                    Prescription pUpdated = new Prescription
                     {
-                        Prescription pUpdated = new Prescription
-                        {
-                            PID = originalPID,
-                            Name = preName.Text.Trim(),
-                            ProperName = preName.Text.Trim().ToUpper(),
-                            Strength = preStrength.Text.Trim(),
-                            StrengthUnits = preStrengthUnits.SelectedItem.ToString(),
-                            PrescribedDosage = Convert.ToDouble(preDosage.Text),
-                            Instructions = preInstructions.Text.Trim(),
-                            PhysicalDescription = preDescription.Text.Trim(),
-                            Quantity = Convert.ToDouble(preQuantity.Text.Trim()),
-                            Remaining = Convert.ToDouble(preRemaining.Text.Trim())
-                        };
+                        PID = originalPID,
+                        Name = preName.Text.Trim(),
+                        ProperName = preProperName.Text.Trim(),
+                        Strength = preStrength.Text.Trim(),
+                        StrengthUnits = preStrengthUnits.SelectedItem.ToString(),
+                        PrescribedDosage = Convert.ToDouble(preDosage.Text),
+                        Instructions = preInstructions.Text.Trim(),
+                        PhysicalDescription = preDescription.Text.Trim(),
+                        Quantity = Convert.ToDouble(preQuantity.Text.Trim()),
+                        Remaining = Convert.ToDouble(preRemaining.Text.Trim())
+                    };
 
-                        await App.MyPrescriptionDatabase.SaveItemAsync(pUpdated);
-                        await Navigation.PopModalAsync();
-                    }
+                    await App.MyPrescriptionDatabase.SaveItemAsync(pUpdated);
+                    await Navigation.PopModalAsync();
+                }
 
-                    else
+                else
+                {
+                    Prescription pUpdated = new Prescription
                     {
-                        Prescription pUpdated = new Prescription
-                        {
-                            PID = originalPID,
-                            Name = preName.Text.Trim(),
-                            ProperName = preName.Text.Trim().ToUpper(),
-                            Strength = " ",
-                            StrengthUnits = " ",
-                            PrescribedDosage = Convert.ToDouble(preDosage.Text),
-                            Instructions = preInstructions.Text.Trim(),
-                            PhysicalDescription = preDescription.Text.Trim(),
-                            Quantity = Convert.ToDouble(preQuantity.Text.Trim()),
-                            Remaining = Convert.ToDouble(preRemaining.Text.Trim())
-                        };
+                        PID = originalPID,
+                        Name = preName.Text.Trim(),
+                        ProperName = preProperName.Text.Trim().ToUpper(),
+                        Strength = " ",
+                        StrengthUnits = " ",
+                        PrescribedDosage = Convert.ToDouble(preDosage.Text),
+                        Instructions = preInstructions.Text.Trim(),
+                        PhysicalDescription = preDescription.Text.Trim(),
+                        Quantity = Convert.ToDouble(preQuantity.Text.Trim()),
+                        Remaining = Convert.ToDouble(preRemaining.Text.Trim())
+                    };
 
-                        await App.MyPrescriptionDatabase.SaveItemAsync(pUpdated);
-                        await Navigation.PopModalAsync();
-                    }
+                    await App.MyPrescriptionDatabase.SaveItemAsync(pUpdated);
+                    await Navigation.PopModalAsync();
+                }
                 //}
             }
         }

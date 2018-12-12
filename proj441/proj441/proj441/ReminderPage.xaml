@@ -37,11 +37,12 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                 Grid.Row="0" 
+                
                 IsPullToRefreshEnabled="True"
                 Refreshing="MySetRemindersList_Refreshing"
                 x:Name = "MySetRemindersList"
                 HasUnevenRows="True"
-                SelectionMode="Single" 
+                SelectionMode="None" 
                 
                 RowHeight="150">
                 <ListView.ItemTemplate>
@@ -63,9 +64,9 @@
                                         Margin="0, 0, 20, 0"
                                         HorizontalOptions="Start"
                                         VerticalOptions="Center"
-                                        HeightRequest="75"
+                                        HeightRequest="60"
                                         Source="remindersicon.png"
-                                        Aspect="AspectFill"/>
+                                        />
                                     <StackLayout 
                                         HorizontalOptions="FillAndExpand"
                                         VerticalOptions="FillAndExpand"
@@ -76,7 +77,7 @@
                                             Orientation="Horizontal"
                                             HorizontalOptions="StartAndExpand"
                                             VerticalOptions="StartAndExpand">
-
+                                            
                                             <Label
                                                 HorizontalOptions="StartAndExpand"
                                                 VerticalOptions="End"

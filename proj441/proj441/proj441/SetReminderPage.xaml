@@ -80,13 +80,13 @@
                                         Orientation="Horizontal"
                                         Margin="10"
                                         Spacing="0">
-                                    <!--<Image
+                                    <Image
                                             Margin="0"
                                             HorizontalOptions="Start"
                                             VerticalOptions="Center"
                                             HeightRequest="80"
-                                            Source="remindersicon.png"
-                                            Aspect="AspectFill"/>-->
+                                            Source="bottle.png"
+                                            Aspect="AspectFill"/>
                                     <StackLayout 
                                             HorizontalOptions="StartAndExpand"
                                             VerticalOptions="CenterAndExpand"

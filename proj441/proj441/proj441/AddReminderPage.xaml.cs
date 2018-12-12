@@ -101,7 +101,7 @@ namespace proj441
 
                 Analytics.TrackEvent("Successfully added reminder");
 
-                await DisplayAlert("Added to Reminders:", "Take " + r1.ProperName + r1.Strength + r1.StrengthUnits + " at " + r1.DateTimeReminder.ToString(), "OK");
+                await DisplayAlert("Added to Reminders:", "Take " + r1.ProperName +" "+ r1.Strength + r1.StrengthUnits + " at " + r1.DateTimeReminder.ToString(), "OK");
                 await Navigation.PopAsync();
             }
             
