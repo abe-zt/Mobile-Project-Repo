@@ -85,7 +85,7 @@
                                             HorizontalOptions="Start"
                                             VerticalOptions="Center"
                                             HeightRequest="80"
-                                            Source="remindoersicon.png"
+                                            Source="remindersicon.png"
                                             Aspect="AspectFill"/>
                                     <StackLayout 
                                             HorizontalOptions="StartAndExpand"
