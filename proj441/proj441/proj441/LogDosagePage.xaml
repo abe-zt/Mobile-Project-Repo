@@ -128,7 +128,7 @@
                                 HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="Center"
                                 x:Name="DosageStepper"
-                                Maximum="5"
+                                Maximum="100"
                                 Minimum="0"
                                 Increment="0.5"
                                 Value="{Binding PrescribedDosage, Mode=OneWay, Converter={StaticResource NullableDoubleConverter}}"
